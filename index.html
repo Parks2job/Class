@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CarePath Transport | Wheelchair &amp; Non-Emergency Medical Transportation</title>
+<meta name="description" content="CarePath Transport provides safe, reliable, door-to-door non-emergency medical transportation — wheelchair, stretcher, and ambulatory rides. Available 24/7. Licensed, insured, and staffed by trained, compassionate drivers." />
+<meta name="theme-color" content="#0e2a4d" />
+
+<!-- Open Graph / social preview -->
+<meta property="og:title" content="CarePath Transport | Moving You Forward with Care" />
+<meta property="og:description" content="Safe, dependable wheelchair and non-emergency medical transportation. Door-to-door, 24/7, licensed and insured." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/images/carepath-logo.webp" />
+
+<link rel="icon" href="assets/images/carepath-logo.webp" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --navy:#0e2a4d;
+    --navy-700:#123763;
+    --teal:#22b6c6;
+    --teal-600:#1aa0af;
+    --teal-050:#e7f7f9;
+    --orange:#f5a623;
+    --orange-600:#e0940f;
+    --ink:#1f2a37;
+    --muted:#5b6b7b;
+    --line:#e3e9ef;
+    --bg:#ffffff;
+    --bg-soft:#f5f8fb;
+    --white:#ffffff;
+    --shadow-sm:0 1px 2px rgba(14,42,77,.06),0 2px 8px rgba(14,42,77,.06);
+    --shadow-md:0 10px 30px rgba(14,42,77,.10);
+    --shadow-lg:0 24px 60px rgba(14,42,77,.16);
+    --radius:16px;
+    --radius-sm:10px;
+    --maxw:1160px;
+    --font-head:"Poppins",system-ui,sans-serif;
+    --font-body:"Inter",system-ui,sans-serif;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;color:var(--ink);background:var(--bg);
+    font-family:var(--font-body);font-size:17px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{font-family:var(--font-head);color:var(--navy);line-height:1.15;margin:0 0 .5em}
+  h2{font-size:clamp(1.7rem,3.5vw,2.6rem);letter-spacing:-.02em}
+  h3{font-size:1.25rem}
+  p{margin:0 0 1rem}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .eyebrow{
+    font-family:var(--font-head);font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;font-size:.78rem;color:var(--teal-600);margin-bottom:.6rem;
+  }
+  .section{padding:88px 0}
+  .section--soft{background:var(--bg-soft)}
+  .center{text-align:center}
+  .lead{font-size:1.1rem;color:var(--muted);max-width:620px}
+  .center .lead{margin-left:auto;margin-right:auto}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;gap:.55rem;justify-content:center;
+    font-family:var(--font-head);font-weight:700;font-size:1rem;
+    padding:14px 26px;border-radius:999px;cursor:pointer;border:2px solid transparent;
+    transition:transform .15s ease,box-shadow .2s ease,background .2s ease,color .2s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn--primary{background:var(--orange);color:#3a2600;box-shadow:var(--shadow-sm)}
+  .btn--primary:hover{background:var(--orange-600)}
+  .btn--teal{background:var(--teal);color:#04343a}
+  .btn--teal:hover{background:var(--teal-600)}
+  .btn--ghost{background:transparent;color:var(--navy);border-color:var(--line)}
+  .btn--ghost:hover{border-color:var(--teal);color:var(--teal-600)}
+  .btn--white{background:#fff;color:var(--navy)}
+  .btn--lg{padding:17px 32px;font-size:1.05rem}
+
+  /* Top bar */
+  .topbar{background:var(--navy);color:#cfe0f2;font-size:.9rem}
+  .topbar .container{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:9px;padding-bottom:9px;flex-wrap:wrap}
+  .topbar a{color:#fff;font-weight:600}
+  .topbar .tb-right{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+  .topbar .dot{color:var(--teal)}
+
+  /* Header / nav */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 24px;max-width:var(--maxw);margin:0 auto}
+  .brand{display:flex;align-items:center}
+  .brand img{height:52px;width:auto}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-weight:600;color:var(--navy);font-size:.98rem;position:relative}
+  .nav-links a:hover{color:var(--teal-600)}
+  .nav-cta{display:flex;gap:12px;align-items:center}
+  .nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:8px}
+  .nav-toggle span{display:block;width:26px;height:3px;background:var(--navy);border-radius:3px;margin:5px 0;transition:.2s}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;background:
+    radial-gradient(1200px 500px at 80% -10%,rgba(34,182,198,.18),transparent 60%),
+    linear-gradient(180deg,#f5f8fb 0%,#ffffff 100%)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:74px 0 84px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.025em}
+  .hero h1 .accent{color:var(--teal)}
+  .hero p.lead{font-size:1.2rem;margin-bottom:1.7rem}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:1.6rem}
+  .hero-trust{display:flex;gap:22px;flex-wrap:wrap;color:var(--muted);font-size:.95rem;font-weight:600}
+  .hero-trust span{display:inline-flex;align-items:center;gap:8px}
+  .hero-trust svg{color:var(--teal)}
+
+  .hero-card{
+    position:relative;background:#fff;border-radius:24px;box-shadow:var(--shadow-lg);
+    padding:30px;border:1px solid var(--line);
+  }
+  .hero-visual{
+    border-radius:16px;overflow:hidden;aspect-ratio:4/3;
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-700) 55%,var(--teal-600) 130%);
+    display:flex;align-items:center;justify-content:center;color:#fff;position:relative;
+  }
+  .hero-visual .road{position:absolute;inset:0;opacity:.16}
+  .hero-visual .badge-float{
+    position:absolute;bottom:16px;left:16px;background:#fff;color:var(--navy);
+    border-radius:12px;padding:12px 16px;box-shadow:var(--shadow-md);display:flex;gap:10px;align-items:center;font-weight:700;font-family:var(--font-head)
+  }
+  .hero-visual .pin{width:44px;height:44px;background:var(--orange);border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(0,0,0,.25)}
+  .hero-visual .pin::after{content:"";width:16px;height:16px;background:#fff;border-radius:50%}
+  .quick-quote h3{margin-bottom:14px}
+  .quick-quote .field{margin-bottom:12px}
+  .quick-quote label{display:block;font-weight:600;font-size:.85rem;color:var(--navy);margin-bottom:5px}
+  .quick-quote input,.quick-quote select,.quick-quote textarea{
+    width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font:inherit;color:var(--ink);background:#fff
+  }
+  .quick-quote input:focus,.quick-quote select:focus,.quick-quote textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-050)}
+
+  /* Trust strip */
+  .trust-strip{background:var(--navy);color:#dbe7f4}
+  .trust-strip .container{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:34px 24px;text-align:center}
+  .trust-strip .num{font-family:var(--font-head);font-weight:800;font-size:2rem;color:#fff}
+  .trust-strip .lbl{font-size:.9rem;letter-spacing:.03em}
+  .trust-strip .teal{color:var(--teal)}
+
+  /* Services */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;
+    box-shadow:var(--shadow-sm);transition:transform .2s ease,box-shadow .2s ease,border-color .2s;
+    display:flex;flex-direction:column;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--teal)}
+  .card .icon{
+    width:60px;height:60px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    background:var(--teal-050);color:var(--teal-600);margin-bottom:18px
+  }
+  .card h3{margin-bottom:10px}
+  .card p{color:var(--muted);font-size:.98rem}
+  .card ul{list-style:none;padding:0;margin:6px 0 18px;color:var(--muted);font-size:.95rem}
+  .card li{display:flex;gap:9px;align-items:flex-start;margin-bottom:7px}
+  .card li svg{color:var(--teal);flex-shrink:0;margin-top:3px}
+  .card .card-link{margin-top:auto;font-family:var(--font-head);font-weight:700;color:var(--teal-600);display:inline-flex;gap:6px;align-items:center}
+
+  /* Use cases */
+  .pills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+  .pill{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow-sm)}
+  .pill .p-ic{width:46px;height:46px;border-radius:10px;background:var(--teal-050);color:var(--teal-600);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .pill strong{font-family:var(--font-head);color:var(--navy);font-size:1rem}
+  .pill span{display:block;color:var(--muted);font-size:.88rem}
+
+  /* How it works */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px;counter-reset:step}
+  .step{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow-sm)}
+  .step::before{
+    counter-increment:step;content:counter(step);
+    font-family:var(--font-head);font-weight:800;font-size:1.15rem;
+    width:46px;height:46px;border-radius:50%;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px
+  }
+  .step h3{margin-bottom:8px}
+  .step p{color:var(--muted);font-size:.96rem;margin:0}
+
+  /* Why us split */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .why-list{list-style:none;padding:0;margin:26px 0 0}
+  .why-list li{display:flex;gap:16px;margin-bottom:22px}
+  .why-list .w-ic{width:50px;height:50px;border-radius:12px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .why-list h4{margin:0 0 4px;font-size:1.08rem}
+  .why-list p{margin:0;color:var(--muted);font-size:.96rem}
+  .why-visual{background:linear-gradient(150deg,var(--teal) 0%,var(--navy) 120%);border-radius:24px;padding:44px;color:#fff;box-shadow:var(--shadow-lg)}
+  .why-visual h3{color:#fff;font-size:1.5rem}
+  .why-visual p{color:rgba(255,255,255,.88)}
+  .why-visual .mini{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.12);border-radius:12px;padding:14px 16px;margin-top:14px}
+  .why-visual .mini svg{flex-shrink:0}
+
+  /* Service area */
+  .area-box{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow-sm)}
+  .area-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .area-tags span{background:var(--teal-050);color:var(--teal-600);border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem}
+
+  /* Testimonials */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
+  .quote{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-sm)}
+  .stars{color:var(--orange);margin-bottom:12px;letter-spacing:2px}
+  .quote p{font-size:1rem;color:var(--ink)}
+  .quote .who{font-family:var(--font-head);font-weight:700;color:var(--navy);font-size:.95rem;margin-top:14px}
+  .quote .who span{display:block;font-weight:500;color:var(--muted);font-size:.85rem;font-family:var(--font-body)}
+
+  /* FAQ */
+  .faq{max-width:820px;margin:44px auto 0}
+  details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:14px;box-shadow:var(--shadow-sm);overflow:hidden}
+  details summary{cursor:pointer;list-style:none;padding:20px 24px;font-family:var(--font-head);font-weight:600;color:var(--navy);display:flex;justify-content:space-between;align-items:center;gap:16px}
+  details summary::-webkit-details-marker{display:none}
+  details summary .chev{transition:transform .2s ease;color:var(--teal-600);flex-shrink:0}
+  details[open] summary .chev{transform:rotate(180deg)}
+  details .answer{padding:0 24px 22px;color:var(--muted)}
+
+  /* CTA band */
+  .cta-band{background:linear-gradient(120deg,var(--navy) 0%,var(--navy-700) 60%,var(--teal-600) 140%);color:#fff;border-radius:26px;padding:56px;text-align:center;box-shadow:var(--shadow-lg)}
+  .cta-band h2{color:#fff}
+  .cta-band p{color:rgba(255,255,255,.9);max-width:560px;margin:0 auto 26px}
+  .cta-band .btn--ghost{color:#fff;border-color:rgba(255,255,255,.5)}
+  .cta-band .btn--ghost:hover{border-color:#fff;color:#fff;background:rgba(255,255,255,.08)}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .contact-info .ci-item{display:flex;gap:16px;margin-bottom:24px}
+  .contact-info .ci-ic{width:50px;height:50px;border-radius:12px;background:var(--teal-050);color:var(--teal-600);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .contact-info h4{margin:0 0 3px}
+  .contact-info a,.contact-info p{color:var(--muted);margin:0}
+  form.book{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow-md)}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field{margin-bottom:16px}
+  label{display:block;font-weight:600;font-size:.9rem;color:var(--navy);margin-bottom:6px}
+  input,select,textarea{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:10px;font:inherit;color:var(--ink);background:#fff}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-050)}
+  textarea{min-height:110px;resize:vertical}
+  .form-note{font-size:.82rem;color:var(--muted);margin-top:4px}
+  .form-msg{display:none;padding:14px 16px;border-radius:10px;background:var(--teal-050);color:var(--teal-600);font-weight:600;margin-bottom:16px}
+  .form-msg.show{display:block}
+
+  /* Footer */
+  footer{background:var(--navy);color:#b9cbe0;padding:56px 0 26px;font-size:.95rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px}
+  footer h4{color:#fff;font-size:1rem;margin-bottom:16px}
+  footer a{color:#b9cbe0}
+  footer a:hover{color:var(--teal)}
+  footer ul{list-style:none;padding:0;margin:0}
+  footer li{margin-bottom:10px}
+  .foot-brand img{height:56px;margin-bottom:14px;background:#fff;border-radius:10px;padding:8px}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.85rem;color:#8ba6c4}
+  .disclaimer{font-size:.8rem;color:#7e99b8;max-width:640px;margin-top:8px}
+
+  /* Sticky mobile call */
+  .mobile-call{display:none}
+
+  /* Responsive */
+  @media (max-width:960px){
+    .hero-grid,.split,.contact-grid{grid-template-columns:1fr}
+    .cards,.steps,.quotes,.pills{grid-template-columns:1fr 1fr}
+    .trust-strip .container{grid-template-columns:1fr 1fr;gap:28px}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .hero-card{max-width:520px}
+  }
+  @media (max-width:680px){
+    .section{padding:60px 0}
+    .nav-links,.nav-cta .btn--ghost{display:none}
+    .nav-toggle{display:block}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;padding:20px 24px;border-bottom:1px solid var(--line);gap:18px;box-shadow:var(--shadow-md)}
+    .cards,.steps,.quotes,.pills,.form-row{grid-template-columns:1fr}
+    .trust-strip .container{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .cta-band,.why-visual,.area-box{padding:32px 24px}
+    .topbar .tb-left{display:none}
+    body{padding-bottom:64px}
+    .mobile-call{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:60;
+      background:var(--orange);color:#3a2600;font-family:var(--font-head);font-weight:800;
+      align-items:center;justify-content:center;gap:10px;padding:16px;box-shadow:0 -4px 16px rgba(0,0,0,.15)}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Top bar ===== -->
+<div class="topbar">
+  <div class="container">
+    <div class="tb-left">
+      <span class="dot">●</span> Available 24 / 7 &nbsp;•&nbsp; Same-day &amp; scheduled rides
+    </div>
+    <div class="tb-right">
+      <a href="tel:+10000000000">📞 (000) 000-0000</a>
+      <a href="mailto:dispatch@carepathtransport.com">✉ dispatch@carepathtransport.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Header ===== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand" aria-label="CarePath Transport home">
+      <img src="assets/images/carepath-logo.webp" alt="CarePath Transport — Moving You Forward with Care" />
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#how">How It Works</a>
+      <a href="#why">Why Us</a>
+      <a href="#area">Service Area</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+10000000000" class="btn btn--ghost">Call Now</a>
+      <a href="#contact" class="btn btn--primary">Book a Ride</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Non-Emergency Medical Transportation</p>
+        <h1>Safe, dependable rides <span class="accent">to every appointment.</span></h1>
+        <p class="lead">Door-to-door wheelchair, stretcher, and ambulatory transportation for seniors and individuals with mobility needs. Trained, compassionate drivers. On time, every time.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn--primary btn--lg">Book a Ride</a>
+          <a href="tel:+10000000000" class="btn btn--teal btn--lg">Call (000) 000-0000</a>
+        </div>
+        <div class="hero-trust">
+          <span>✔ Licensed &amp; Insured</span>
+          <span>✔ 24/7 Availability</span>
+          <span>✔ Door-Through-Door Assistance</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-visual" aria-hidden="true">
+          <svg class="road" viewBox="0 0 400 300" preserveAspectRatio="none"><path d="M180 300 Q210 150 300 0" stroke="#fff" stroke-width="60" fill="none"/><path d="M180 300 Q210 150 300 0" stroke="#fff" stroke-width="4" stroke-dasharray="14 16" fill="none" opacity=".8"/></svg>
+          <div class="pin"></div>
+          <div class="badge-float">🚐 Wheelchair-Accessible Fleet</div>
+        </div>
+        <form class="quick-quote" onsubmit="return handleQuickQuote(event)" style="margin-top:22px">
+          <h3>Request a ride in 30 seconds</h3>
+          <div class="field">
+            <label for="qq-name">Your name</label>
+            <input id="qq-name" name="name" required placeholder="Full name" />
+          </div>
+          <div class="field">
+            <label for="qq-phone">Phone</label>
+            <input id="qq-phone" name="phone" type="tel" required placeholder="(000) 000-0000" />
+          </div>
+          <div class="field">
+            <label for="qq-type">Type of ride</label>
+            <select id="qq-type" name="type">
+              <option>Wheelchair transport</option>
+              <option>Stretcher / gurney transport</option>
+              <option>Ambulatory (walking) assistance</option>
+              <option>Not sure — please advise</option>
+            </select>
+          </div>
+          <button class="btn btn--primary" style="width:100%" type="submit">Request Callback</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Trust strip ===== -->
+<section class="trust-strip">
+  <div class="container">
+    <div><div class="num teal">24/7</div><div class="lbl">Rides day &amp; night</div></div>
+    <div><div class="num">On-Time</div><div class="lbl">Punctual pickups you can count on</div></div>
+    <div><div class="num teal">100%</div><div class="lbl">Wheelchair-accessible fleet</div></div>
+    <div><div class="num">Trained</div><div class="lbl">Certified, compassionate drivers</div></div>
+  </div>
+</section>
+
+<!-- ===== Services ===== -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="center">
+      <p class="eyebrow">Our Services</p>
+      <h2>Transportation matched to your mobility needs</h2>
+      <p class="lead">Whatever your level of mobility, we have a safe, comfortable option. Every ride includes door-to-door assistance from a trained driver.</p>
+    </div>
+
+    <div class="cards">
+      <!-- Wheelchair -->
+      <div class="card">
+        <div class="icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6" r="2"/><path d="M9 8v6h5l3 5"/><path d="M9 14a5 5 0 1 0 4 8"/><circle cx="18" cy="19" r="1"/></svg>
+        </div>
+        <h3>Wheelchair Transport</h3>
+        <p>For riders who use a manual or power wheelchair. Our vans are equipped with hydraulic lifts and secure four-point restraints.</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Standard, oversized &amp; bariatric chairs</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Lift-equipped, ADA-compliant vans</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Securement by trained staff</li>
+        </ul>
+        <a href="#contact" class="card-link">Book wheelchair transport →</a>
+      </div>
+
+      <!-- Stretcher -->
+      <div class="card">
+        <div class="icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M3 12V9a2 2 0 0 1 2-2h9l5 5"/></svg>
+        </div>
+        <h3>Stretcher / Gurney Transport</h3>
+        <p>For riders who must remain lying down. Comfortable, safe transport with attentive monitoring throughout the trip.</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Ideal for bed-bound patients</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Hospital &amp; facility discharge</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Trained attendant on board</li>
+        </ul>
+        <a href="#contact" class="card-link">Book stretcher transport →</a>
+      </div>
+
+      <!-- Ambulatory -->
+      <div class="card">
+        <div class="icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="M13 6v6l4 3"/><path d="M13 12l-4 2-2 6"/><path d="M9 14l2 4"/></svg>
+        </div>
+        <h3>Ambulatory Assistance</h3>
+        <p>For riders who can walk with a little help. We offer a steady arm, curb-to-curb support, and a friendly, patient escort.</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Walkers, canes &amp; scooters welcome</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Hands-on door-through-door help</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Comfortable, sedan &amp; van options</li>
+        </ul>
+        <a href="#contact" class="card-link">Book ambulatory ride →</a>
+      </div>
+    </div>
+
+    <!-- Use cases -->
+    <div class="center" style="margin-top:64px">
+      <h3 style="font-size:1.35rem">Where we take you</h3>
+    </div>
+    <div class="pills">
+      <div class="pill"><div class="p-ic">🩺</div><div><strong>Doctor &amp; Specialist Visits</strong><span>Routine and follow-up appointments</span></div></div>
+      <div class="pill"><div class="p-ic">💧</div><div><strong>Dialysis &amp; Infusion</strong><span>Recurring standing schedules</span></div></div>
+      <div class="pill"><div class="p-ic">🏥</div><div><strong>Hospital Discharge</strong><span>Safe rides back home or to rehab</span></div></div>
+      <div class="pill"><div class="p-ic">🦷</div><div><strong>Therapy &amp; Rehab</strong><span>Physical, occupational &amp; more</span></div></div>
+      <div class="pill"><div class="p-ic">🏡</div><div><strong>Senior Living &amp; SNFs</strong><span>Facility-to-facility transfers</span></div></div>
+      <div class="pill"><div class="p-ic">🛍️</div><div><strong>Errands &amp; Outings</strong><span>Pharmacy, family events &amp; more</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== How it works ===== -->
+<section class="section section--soft" id="how">
+  <div class="container">
+    <div class="center">
+      <p class="eyebrow">Simple &amp; Stress-Free</p>
+      <h2>Booking a ride in three easy steps</h2>
+      <p class="lead">No apps to figure out, no runaround. A real person helps you every step of the way.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>Call or request online</h3>
+        <p>Tell us the date, time, pickup and drop-off, and what kind of assistance you need. We confirm the details with you.</p>
+      </div>
+      <div class="step">
+        <h3>We arrive on time</h3>
+        <p>A trained driver arrives in a clean, fully equipped vehicle and helps you safely from your door to the vehicle.</p>
+      </div>
+      <div class="step">
+        <h3>Relax — we handle the rest</h3>
+        <p>We get you there safely and comfortably, wait or return as arranged, and bring you home with care.</p>
+      </div>
+    </div>
+    <div class="center" style="margin-top:40px">
+      <a href="#contact" class="btn btn--primary btn--lg">Schedule Your Ride</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Why us ===== -->
+<section class="section" id="why">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Why CarePath</p>
+      <h2>Care is in our name — and in every ride</h2>
+      <p class="lead">We treat every rider like family. From the first phone call to the final drop-off, our focus is your safety, comfort, and dignity.</p>
+      <ul class="why-list">
+        <li>
+          <div class="w-ic">🛡️</div>
+          <div><h4>Safety First, Always</h4><p>Fully insured, regularly inspected vehicles and drivers trained in safe transfers, securement, and passenger assistance.</p></div>
+        </li>
+        <li>
+          <div class="w-ic">❤️</div>
+          <div><h4>Compassionate, Patient Drivers</h4><p>Friendly professionals who take the time to help, never rush you, and treat you with respect.</p></div>
+        </li>
+        <li>
+          <div class="w-ic">⏱️</div>
+          <div><h4>Reliable &amp; On Time</h4><p>Dependable pickups and proactive communication so you never worry about missing an appointment.</p></div>
+        </li>
+        <li>
+          <div class="w-ic">🚪</div>
+          <div><h4>Door-Through-Door Service</h4><p>We don't just drop you at the curb — we assist you all the way to where you need to be.</p></div>
+        </li>
+      </ul>
+    </div>
+    <div class="why-visual">
+      <h3>Peace of mind for families</h3>
+      <p>Caring for a loved one from afar? We keep you informed and make sure they get where they need to go, safely.</p>
+      <div class="mini"><span aria-hidden="true">📞</span><div>Friendly dispatch you can reach any time, day or night.</div></div>
+      <div class="mini"><span aria-hidden="true">🧾</span><div>Simple billing and support with common payment options.</div></div>
+      <div class="mini"><span aria-hidden="true">🗓️</span><div>Standing appointments and recurring schedules made easy.</div></div>
+      <a href="#contact" class="btn btn--white" style="margin-top:24px">Talk to Our Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Service area ===== -->
+<section class="section section--soft" id="area">
+  <div class="container">
+    <div class="area-box">
+      <div class="split" style="gap:40px">
+        <div>
+          <p class="eyebrow">Service Area</p>
+          <h2>Proudly serving our local community</h2>
+          <p class="lead">We provide non-emergency medical transportation throughout the region below. Not sure if we cover your area? Give us a call — we're happy to help.</p>
+          <div class="area-tags">
+            <span>Downtown</span><span>North County</span><span>South County</span>
+            <span>East Side</span><span>West End</span><span>Suburban Areas</span>
+            <span>Surrounding Towns</span>
+          </div>
+          <p class="form-note" style="margin-top:18px">Replace these with your actual cities/counties served.</p>
+        </div>
+        <div>
+          <div style="background:linear-gradient(150deg,var(--teal-050),#fff);border:1px solid var(--line);border-radius:16px;padding:34px;height:100%;display:flex;flex-direction:column;justify-content:center;gap:14px">
+            <div style="display:flex;gap:12px;align-items:center"><span style="font-size:1.6rem">📍</span><strong style="font-family:var(--font-head);color:var(--navy);font-size:1.1rem">Coverage &amp; Availability</strong></div>
+            <p style="margin:0;color:var(--muted)">Same-day requests are welcome based on availability. For dialysis and other recurring appointments, ask about setting up a standing schedule.</p>
+            <a href="#contact" class="btn btn--teal" style="margin-top:8px">Check My Area</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Testimonials ===== -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="center">
+      <p class="eyebrow">What Riders Say</p>
+      <h2>Trusted by families and care teams</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"The driver was so kind and patient with my mother. He helped her every step of the way and got her to dialysis right on time. We finally have transportation we can trust."</p>
+        <div class="who">Denise R.<span>Daughter &amp; caregiver</span></div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"After my hip surgery I couldn't drive for weeks. CarePath got me to every physical therapy session comfortably. Clean vans and always on time."</p>
+        <div class="who">Robert M.<span>Rehabilitation patient</span></div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"As a case manager I schedule rides for many clients. Their dispatch is responsive and reliable — exactly what we need for our patients."</p>
+        <div class="who">Angela T.<span>Case manager</span></div>
+      </div>
+    </div>
+    <p class="center form-note" style="margin-top:20px">Sample testimonials — swap in real, permission-granted client reviews.</p>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section section--soft" id="faq">
+  <div class="container">
+    <div class="center">
+      <p class="eyebrow">Questions &amp; Answers</p>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>How far in advance should I book a ride?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="answer">We recommend booking at least 24–48 hours ahead so we can guarantee your preferred time. Same-day rides are often available too — just call us and we'll do our best to accommodate you.</div>
+      </details>
+      <details>
+        <summary>Do you accept Medicaid or insurance?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="answer">Coverage varies by plan and location. Contact us with your details and we'll explain your options, including private pay and any programs we participate in. (Update this answer with your accepted payment types.)</div>
+      </details>
+      <details>
+        <summary>Can a family member or caregiver ride along?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="answer">Yes. In most cases one companion may ride at no extra charge. Let us know when booking so we can plan for seating and any additional assistance.</div>
+      </details>
+      <details>
+        <summary>What areas do you serve?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="answer">We serve our local region and surrounding communities. If you're unsure whether we reach your area, give us a call — we're glad to check.</div>
+      </details>
+      <details>
+        <summary>Can you set up recurring rides for dialysis or therapy?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="answer">Absolutely. Standing appointments are one of our specialties. We'll build a recurring schedule so you never have to rebook the same trip each week.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA band ===== -->
+<section class="section">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Ready to book your ride?</h2>
+      <p>Call now for same-day availability, or request a callback and we'll take care of the rest.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a href="tel:+10000000000" class="btn btn--primary btn--lg">Call (000) 000-0000</a>
+        <a href="#contact" class="btn btn--ghost btn--lg">Request a Callback</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="section section--soft" id="contact">
+  <div class="container">
+    <div class="center">
+      <p class="eyebrow">Get In Touch</p>
+      <h2>Book a ride or ask a question</h2>
+      <p class="lead">Fill out the form and our team will reach out to confirm your trip. For urgent same-day rides, please call us directly.</p>
+    </div>
+
+    <div class="contact-grid" style="margin-top:44px">
+      <div class="contact-info">
+        <div class="ci-item">
+          <div class="ci-ic">📞</div>
+          <div><h4>Phone / Dispatch</h4><a href="tel:+10000000000">(000) 000-0000</a><p>Available 24/7</p></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ic">✉️</div>
+          <div><h4>Email</h4><a href="mailto:dispatch@carepathtransport.com">dispatch@carepathtransport.com</a></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ic">📍</div>
+          <div><h4>Office</h4><p>123 Example Street, Suite 100<br/>Your City, ST 00000</p></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ic">🕑</div>
+          <div><h4>Hours</h4><p>Rides available 24/7<br/>Office: Mon–Fri, 8am–6pm</p></div>
+        </div>
+        <div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow-sm)">
+          <strong style="font-family:var(--font-head);color:var(--navy)">Prefer to talk?</strong>
+          <p style="margin:6px 0 0;color:var(--muted);font-size:.95rem">Call us and a real person will help you book in minutes.</p>
+        </div>
+      </div>
+
+      <form class="book" onsubmit="return handleBooking(event)">
+        <div class="form-msg" id="formMsg">Thank you! Your request has been noted. Our team will call you shortly to confirm your ride.</div>
+        <div class="form-row">
+          <div class="field"><label for="b-name">Full name *</label><input id="b-name" name="name" required /></div>
+          <div class="field"><label for="b-phone">Phone *</label><input id="b-phone" name="phone" type="tel" required /></div>
+        </div>
+        <div class="field"><label for="b-email">Email</label><input id="b-email" name="email" type="email" /></div>
+        <div class="form-row">
+          <div class="field">
+            <label for="b-type">Type of transport *</label>
+            <select id="b-type" name="type" required>
+              <option value="">Select…</option>
+              <option>Wheelchair</option>
+              <option>Stretcher / gurney</option>
+              <option>Ambulatory (walking assistance)</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="b-when">Preferred date &amp; time</label>
+            <input id="b-when" name="when" type="datetime-local" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="b-from">Pickup address</label><input id="b-from" name="pickup" placeholder="Street, city" /></div>
+          <div class="field"><label for="b-to">Drop-off address</label><input id="b-to" name="dropoff" placeholder="Facility or address" /></div>
+        </div>
+        <div class="field">
+          <label for="b-notes">Anything we should know?</label>
+          <textarea id="b-notes" name="notes" placeholder="Mobility needs, round trip, special assistance, etc."></textarea>
+        </div>
+        <button class="btn btn--primary btn--lg" type="submit" style="width:100%">Request My Ride</button>
+        <p class="form-note">By submitting, you agree to be contacted about your request. Please do not include sensitive medical details. This form is a demo and is not yet connected to a live inbox.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/images/carepath-logo.webp" alt="CarePath Transport" />
+        <p style="color:#b9cbe0">Moving You Forward with Care. Safe, reliable non-emergency medical transportation for your community.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Wheelchair Transport</a></li>
+          <li><a href="#services">Stretcher / Gurney</a></li>
+          <li><a href="#services">Ambulatory Assistance</a></li>
+          <li><a href="#services">Recurring Schedules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#why">Why CarePath</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#area">Service Area</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+10000000000">📞 (000) 000-0000</a></li>
+          <li><a href="mailto:dispatch@carepathtransport.com">✉ dispatch@carepathtransport.com</a></li>
+          <li>📍 Your City, ST</li>
+          <li>🕑 Rides available 24/7</li>
+        </ul>
+        <a href="#contact" class="btn btn--primary" style="margin-top:14px">Book a Ride</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© <span id="year"></span> CarePath Transport. All rights reserved.</div>
+      <div>Privacy Policy &nbsp;•&nbsp; Terms of Service &nbsp;•&nbsp; Accessibility</div>
+    </div>
+    <p class="disclaimer">CarePath Transport provides non-emergency medical transportation only. In a medical emergency, call 911. Service availability, coverage, insurance acceptance, and licensing vary by location — please confirm current details with our team.</p>
+  </div>
+</footer>
+
+<!-- FAQ (placed above footer visually via order? keep here) -->
+
+<a href="tel:+10000000000" class="mobile-call">📞 Tap to Call — (000) 000-0000</a>
+
+<script>
+  // Mobile nav
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+  }));
+
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Demo form handlers (no backend yet)
+  function handleBooking(e){
+    e.preventDefault();
+    const msg = document.getElementById('formMsg');
+    msg.classList.add('show');
+    msg.scrollIntoView({behavior:'smooth', block:'center'});
+    e.target.reset();
+    return false;
+  }
+  function handleQuickQuote(e){
+    e.preventDefault();
+    alert('Thank you! We received your request and will call you back shortly.\n\n(Connect this form to your dispatch email or CRM to go live.)');
+    e.target.reset();
+    return false;
+  }
+</script>
+</body>
+</html>
