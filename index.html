@@ -290,7 +290,24 @@
   @media (prefers-reduced-motion: no-preference){
     .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1)}
     .reveal.in-view{opacity:1;transform:none}
+    /* Flowing road dashes */
+    .road-dash{animation:roadFlow 1.15s linear infinite}
+    @keyframes roadFlow{to{stroke-dashoffset:-42}}
+    /* Pin drop-in */
+    .hero-visual .pin{animation:pinDrop .85s cubic-bezier(.22,1.15,.36,1) both}
+    @keyframes pinDrop{
+      0%{opacity:0;transform:translateY(-46px) rotate(-45deg)}
+      60%{opacity:1}
+      100%{opacity:1;transform:translateY(0) rotate(-45deg)}
+    }
   }
+  /* Header shrink on scroll */
+  header.nav{transition:box-shadow .25s ease}
+  .nav-inner{transition:padding .25s ease}
+  .brand img{transition:height .25s ease}
+  header.nav.scrolled{box-shadow:var(--shadow-md)}
+  header.nav.scrolled .nav-inner{padding-top:6px;padding-bottom:6px}
+  header.nav.scrolled .brand img{height:40px}
 </style>
 </head>
 <body>
@@ -373,7 +390,7 @@
             <path d="M150 300 C138 226 156 152 194 102" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round"/>
             <path d="M250 300 C214 226 188 152 206 102" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round"/>
             <!-- center dashed lane markings (orange, curving) -->
-            <path d="M200 300 C176 226 172 152 200 102" stroke="#f5a623" stroke-width="7" fill="none"
+            <path class="road-dash" d="M200 300 C176 226 172 152 200 102" stroke="#f5a623" stroke-width="7" fill="none"
                   stroke-linecap="round" stroke-dasharray="20 22"/>
           </svg>
           <div class="pin"></div>
@@ -806,6 +823,41 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     items.forEach(el => io.observe(el));
+  })();
+
+  // Header shrink on scroll
+  (function(){
+    const header = document.querySelector('header.nav');
+    if (!header) return;
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  // Count-up trust stats
+  (function(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const nums = document.querySelectorAll('.trust-strip .num');
+    if (!nums.length || !('IntersectionObserver' in window)) return;
+    const run = (el) => {
+      const m = el.textContent.trim().match(/^(\D*)(\d+)(.*)$/);
+      if (!m) return;
+      const prefix = m[1], target = parseInt(m[2], 10), suffix = m[3];
+      const dur = 1200, start = performance.now();
+      const tick = (now) => {
+        const p = Math.min((now - start) / dur, 1);
+        el.textContent = prefix + Math.floor(p * target) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = prefix + target + suffix;
+      };
+      requestAnimationFrame(tick);
+    };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { run(entry.target); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.6 });
+    nums.forEach(el => io.observe(el));
   })();
 </script>
 </body>
