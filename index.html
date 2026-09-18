@@ -336,6 +336,7 @@
       <a href="#how">How It Works</a>
       <a href="#why">Why Us</a>
       <a href="#area">Service Area</a>
+      <a href="#careers">Careers</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -604,6 +605,95 @@
   </div>
 </section>
 
+<!-- ===== Careers / Drivers Wanted ===== -->
+<section class="section" id="careers">
+  <div class="container">
+    <div class="center">
+      <p class="eyebrow">Careers</p>
+      <h2>Drive with purpose — join our team</h2>
+      <p class="lead">We're hiring caring, dependable drivers who want to make a real difference in people's lives. If you take pride in safety and treating people with respect, we'd love to meet you.</p>
+    </div>
+
+    <div class="split" style="margin-top:44px;align-items:start">
+      <div>
+        <h3 style="margin-bottom:18px">Why drive for CarePath</h3>
+        <ul class="why-list" style="margin-top:0">
+          <li>
+            <div class="w-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <div><h4>Meaningful work</h4><p>Help seniors and people with mobility needs get to the care they depend on.</p></div>
+          </li>
+          <li>
+            <div class="w-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <div><h4>Supportive team</h4><p>Friendly dispatch, clear schedules, and training so you're set up to succeed.</p></div>
+          </li>
+          <li>
+            <div class="w-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <div><h4>Well-maintained vehicles</h4><p>Clean, safe, fully equipped accessible vans you'll be proud to drive.</p></div>
+          </li>
+        </ul>
+
+        <div style="background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin-top:8px">
+          <strong style="font-family:var(--font-head);color:var(--navy)">What we look for</strong>
+          <ul style="list-style:none;padding:0;margin:12px 0 0;color:var(--muted);font-size:.96rem">
+            <li style="display:flex;gap:9px;margin-bottom:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Valid driver's license &amp; clean driving record</li>
+            <li style="display:flex;gap:9px;margin-bottom:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Ability to pass a background check &amp; drug screening</li>
+            <li style="display:flex;gap:9px;margin-bottom:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Patience, compassion, and great communication</li>
+            <li style="display:flex;gap:9px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Comfortable assisting passengers with mobility needs</li>
+          </ul>
+          <p class="form-note" style="margin-top:12px">Update these requirements to match your actual hiring criteria and any Michigan/federal certifications you require.</p>
+        </div>
+      </div>
+
+      <form class="book" onsubmit="return handleApplication(event)">
+        <h3 style="margin-bottom:6px">Apply to drive</h3>
+        <p style="color:var(--muted);font-size:.95rem;margin-bottom:18px">Tell us a bit about yourself and we'll be in touch about next steps.</p>
+        <div class="form-msg" id="applyMsg">Thank you for your interest! We've received your application and will reach out about next steps.</div>
+        <div class="form-row">
+          <div class="field"><label for="a-name">Full name *</label><input id="a-name" name="name" required /></div>
+          <div class="field"><label for="a-phone">Phone *</label><input id="a-phone" name="phone" type="tel" required /></div>
+        </div>
+        <div class="field"><label for="a-email">Email *</label><input id="a-email" name="email" type="email" required /></div>
+        <div class="form-row">
+          <div class="field">
+            <label for="a-license">Do you have a valid driver's license? *</label>
+            <select id="a-license" name="license" required>
+              <option value="">Select…</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="a-exp">Driving experience</label>
+            <select id="a-exp" name="experience">
+              <option value="">Select…</option>
+              <option>Less than 1 year</option>
+              <option>1–3 years</option>
+              <option>3–5 years</option>
+              <option>5+ years</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="a-avail">Availability</label>
+          <select id="a-avail" name="availability">
+            <option value="">Select…</option>
+            <option>Full-time</option>
+            <option>Part-time</option>
+            <option>Weekends</option>
+            <option>Flexible / on-call</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="a-notes">Tell us about yourself</label>
+          <textarea id="a-notes" name="notes" placeholder="Relevant experience, certifications, why you'd like to join, etc."></textarea>
+        </div>
+        <button class="btn btn--primary btn--lg" type="submit" style="width:100%">Submit Application</button>
+        <p class="form-note">Please do not include sensitive personal information (such as Social Security number, date of birth, or medical details) in this form. We'll collect any required documents securely later in the hiring process. This form is a demo and is not yet connected to a live inbox.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <!-- ===== FAQ ===== -->
 <section class="section section--soft" id="faq">
   <div class="container">
@@ -741,6 +831,7 @@
           <li><a href="#why">Why CarePath</a></li>
           <li><a href="#how">How It Works</a></li>
           <li><a href="#area">Service Area</a></li>
+          <li><a href="#careers">Careers</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
@@ -795,6 +886,14 @@
   function handleQuickQuote(e){
     e.preventDefault();
     alert('Thank you! We received your request and will call you back shortly.\n\n(Connect this form to your dispatch email or CRM to go live.)');
+    e.target.reset();
+    return false;
+  }
+  function handleApplication(e){
+    e.preventDefault();
+    const msg = document.getElementById('applyMsg');
+    msg.classList.add('show');
+    msg.scrollIntoView({behavior:'smooth', block:'center'});
     e.target.reset();
     return false;
   }
