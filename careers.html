@@ -522,6 +522,26 @@
     onScroll();
   })();
 
+  // Scroll reveal animations
+  (function(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const selectors = '.hero .container > div, .section h2, .why-list li, .section .split > div, form.book, .section > .container > .center';
+    const items = Array.from(document.querySelectorAll(selectors));
+    items.forEach(el => el.classList.add('reveal'));
+    document.querySelectorAll('.why-list').forEach(group => {
+      Array.from(group.children).forEach((child, i) => {
+        if (child.classList.contains('reveal')) child.style.transitionDelay = (i % 3) * 90 + 'ms';
+      });
+    });
+    if (!('IntersectionObserver' in window)) { items.forEach(el => el.classList.add('in-view')); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('in-view'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    items.forEach(el => io.observe(el));
+  })();
+
   // Application submit — automation-ready
   async function handleApplication(e){
     e.preventDefault();
