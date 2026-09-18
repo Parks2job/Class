@@ -155,7 +155,7 @@
   /* Services */
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
   .cards--2{grid-template-columns:repeat(2,1fr);max-width:820px;margin-left:auto;margin-right:auto}
-  .card-tag{font-family:var(--font-head);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-600);display:block;margin-bottom:10px}
+  .card-tag{font-family:var(--font-head);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:10px}
   .card{border-top:4px solid var(--teal)}
   .card{
     background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;
@@ -362,19 +362,14 @@
             <circle cx="150" cy="120" r="18" fill="#ffffff" opacity=".07"/>
             <circle cx="282" cy="150" r="26" fill="#ffffff" opacity=".07"/>
             <circle cx="252" cy="120" r="18" fill="#ffffff" opacity=".07"/>
-            <!-- road surface (perspective trapezoid) -->
-            <path d="M136 300 L264 300 L208 96 L192 96 Z" fill="url(#rdSurface)"/>
+            <!-- road surface (curved, perspective) -->
+            <path d="M132 300 C104 224 168 150 194 100 L206 100 C240 150 296 224 268 300 Z" fill="url(#rdSurface)"/>
             <!-- solid edge lines -->
-            <path d="M148 300 L194 100" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round"/>
-            <path d="M252 300 L206 100" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round"/>
-            <!-- center dashed lane markings (orange, receding) -->
-            <g fill="#f5a623">
-              <polygon points="192,300 208,300 205,258 195,258"/>
-              <polygon points="193.6,240 206.4,240 204,206 196,206"/>
-              <polygon points="195,190 205,190 203.2,163 196.8,163"/>
-              <polygon points="196.2,150 203.8,150 202.4,130 197.6,130"/>
-              <polygon points="197.1,120 202.9,120 201.8,106 198.2,106"/>
-            </g>
+            <path d="M144 300 C118 226 174 152 197 102" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M256 300 C282 226 240 152 203 102" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <!-- center dashed lane markings (orange, curving) -->
+            <path d="M200 300 C176 226 172 152 200 102" stroke="#f5a623" stroke-width="7" fill="none"
+                  stroke-linecap="round" stroke-dasharray="20 22"/>
           </svg>
           <div class="pin"></div>
           <div class="badge-float">Wheelchair-Accessible Fleet</div>
