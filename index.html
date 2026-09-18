@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>CarePath Transport | Wheelchair &amp; Non-Emergency Medical Transportation</title>
-<meta name="description" content="CarePath Transport provides safe, reliable, door-to-door non-emergency medical transportation — wheelchair, stretcher, and ambulatory rides. Available 24/7. Licensed, insured, and staffed by trained, compassionate drivers." />
+<meta name="description" content="CarePath Transport provides safe, reliable, door-to-door non-emergency medical transportation — wheelchair and ambulatory rides. Available 24/7. Licensed, insured, and staffed by trained, compassionate drivers." />
 <meta name="theme-color" content="#0e2a4d" />
 
 <!-- Open Graph / social preview -->
@@ -152,16 +152,15 @@
 
   /* Services */
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
+  .cards--2{grid-template-columns:repeat(2,1fr);max-width:820px;margin-left:auto;margin-right:auto}
+  .card-tag{font-family:var(--font-head);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-600);display:block;margin-bottom:10px}
+  .card{border-top:4px solid var(--teal)}
   .card{
     background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;
     box-shadow:var(--shadow-sm);transition:transform .2s ease,box-shadow .2s ease,border-color .2s;
     display:flex;flex-direction:column;
   }
   .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--teal)}
-  .card .icon{
-    width:60px;height:60px;border-radius:14px;display:flex;align-items:center;justify-content:center;
-    background:var(--teal-050);color:var(--teal-600);margin-bottom:18px
-  }
   .card h3{margin-bottom:10px}
   .card p{color:var(--muted);font-size:.98rem}
   .card ul{list-style:none;padding:0;margin:6px 0 18px;color:var(--muted);font-size:.95rem}
@@ -171,7 +170,7 @@
 
   /* Use cases */
   .pills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
-  .pill{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow-sm)}
+  .pill{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow-sm)}
   .pill .p-ic{width:46px;height:46px;border-radius:10px;background:var(--teal-050);color:var(--teal-600);display:flex;align-items:center;justify-content:center;flex-shrink:0}
   .pill strong{font-family:var(--font-head);color:var(--navy);font-size:1rem}
   .pill span{display:block;color:var(--muted);font-size:.88rem}
@@ -296,8 +295,8 @@
       <span class="dot">●</span> Available 24 / 7 &nbsp;•&nbsp; Same-day &amp; scheduled rides
     </div>
     <div class="tb-right">
-      <span>📞 Phone coming soon</span>
-      <a href="#contact">✉ Request a ride online</a>
+      <span>Phone &amp; email coming soon</span>
+      <a href="#contact">Request a ride online</a>
     </div>
   </div>
 </div>
@@ -335,7 +334,7 @@
       <div class="hero-copy">
         <p class="eyebrow">Non-Emergency Medical Transportation</p>
         <h1>Safe, dependable rides <span class="accent">to every appointment.</span></h1>
-        <p class="lead">Door-to-door wheelchair, stretcher, and ambulatory transportation for seniors and individuals with mobility needs. Trained, compassionate drivers. On time, every time.</p>
+        <p class="lead">Door-to-door wheelchair and ambulatory transportation for seniors and individuals with mobility needs. Trained, compassionate drivers. On time, every time.</p>
         <div class="hero-cta">
           <a href="#contact" class="btn btn--primary btn--lg">Book a Ride</a>
           <a href="#contact" class="btn btn--teal btn--lg">Request a Callback</a>
@@ -376,7 +375,7 @@
             </g>
           </svg>
           <div class="pin"></div>
-          <div class="badge-float">♿ Wheelchair-Accessible Fleet</div>
+          <div class="badge-float">Wheelchair-Accessible Fleet</div>
         </div>
         <form class="quick-quote" onsubmit="return handleQuickQuote(event)" style="margin-top:22px">
           <h3>Request a ride in 30 seconds</h3>
@@ -392,7 +391,6 @@
             <label for="qq-type">Type of ride</label>
             <select id="qq-type" name="type">
               <option>Wheelchair transport</option>
-              <option>Stretcher / gurney transport</option>
               <option>Ambulatory (walking) assistance</option>
               <option>Not sure — please advise</option>
             </select>
@@ -423,12 +421,10 @@
       <p class="lead">Whatever your level of mobility, we have a safe, comfortable option. Every ride includes door-to-door assistance from a trained driver.</p>
     </div>
 
-    <div class="cards">
+    <div class="cards cards--2">
       <!-- Wheelchair -->
       <div class="card">
-        <div class="icon">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6" r="2"/><path d="M9 8v6h5l3 5"/><path d="M9 14a5 5 0 1 0 4 8"/><circle cx="18" cy="19" r="1"/></svg>
-        </div>
+        <span class="card-tag">Service 01</span>
         <h3>Wheelchair Transport</h3>
         <p>For riders who use a manual or power wheelchair. Our vans are equipped with hydraulic lifts and secure four-point restraints.</p>
         <ul>
@@ -439,26 +435,9 @@
         <a href="#contact" class="card-link">Book wheelchair transport →</a>
       </div>
 
-      <!-- Stretcher -->
-      <div class="card">
-        <div class="icon">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M3 12V9a2 2 0 0 1 2-2h9l5 5"/></svg>
-        </div>
-        <h3>Stretcher / Gurney Transport</h3>
-        <p>For riders who must remain lying down. Comfortable, safe transport with attentive monitoring throughout the trip.</p>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Ideal for bed-bound patients</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Hospital &amp; facility discharge</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Trained attendant on board</li>
-        </ul>
-        <a href="#contact" class="card-link">Book stretcher transport →</a>
-      </div>
-
       <!-- Ambulatory -->
       <div class="card">
-        <div class="icon">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="M13 6v6l4 3"/><path d="M13 12l-4 2-2 6"/><path d="M9 14l2 4"/></svg>
-        </div>
+        <span class="card-tag">Service 02</span>
         <h3>Ambulatory Assistance</h3>
         <p>For riders who can walk with a little help. We offer a steady arm, curb-to-curb support, and a friendly, patient escort.</p>
         <ul>
@@ -475,12 +454,12 @@
       <h3 style="font-size:1.35rem">Where we take you</h3>
     </div>
     <div class="pills">
-      <div class="pill"><div class="p-ic">🩺</div><div><strong>Doctor &amp; Specialist Visits</strong><span>Routine and follow-up appointments</span></div></div>
-      <div class="pill"><div class="p-ic">💧</div><div><strong>Dialysis &amp; Infusion</strong><span>Recurring standing schedules</span></div></div>
-      <div class="pill"><div class="p-ic">🏥</div><div><strong>Hospital Discharge</strong><span>Safe rides back home or to rehab</span></div></div>
-      <div class="pill"><div class="p-ic">🦷</div><div><strong>Therapy &amp; Rehab</strong><span>Physical, occupational &amp; more</span></div></div>
-      <div class="pill"><div class="p-ic">🏡</div><div><strong>Senior Living &amp; SNFs</strong><span>Facility-to-facility transfers</span></div></div>
-      <div class="pill"><div class="p-ic">🛍️</div><div><strong>Errands &amp; Outings</strong><span>Pharmacy, family events &amp; more</span></div></div>
+      <div class="pill"><div><strong>Doctor &amp; Specialist Visits</strong><span>Routine and follow-up appointments</span></div></div>
+      <div class="pill"><div><strong>Dialysis &amp; Infusion</strong><span>Recurring standing schedules</span></div></div>
+      <div class="pill"><div><strong>Hospital Discharge</strong><span>Safe rides back home or to rehab</span></div></div>
+      <div class="pill"><div><strong>Therapy &amp; Rehab</strong><span>Physical, occupational &amp; more</span></div></div>
+      <div class="pill"><div><strong>Senior Living &amp; Facilities</strong><span>Facility-to-facility transfers</span></div></div>
+      <div class="pill"><div><strong>Errands &amp; Outings</strong><span>Pharmacy, family events &amp; more</span></div></div>
     </div>
   </div>
 </section>
@@ -522,19 +501,19 @@
       <p class="lead">We treat every rider like family. From the first phone call to the final drop-off, our focus is your safety, comfort, and dignity.</p>
       <ul class="why-list">
         <li>
-          <div class="w-ic">🛡️</div>
+          <div class="w-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
           <div><h4>Safety First, Always</h4><p>Fully insured, regularly inspected vehicles and drivers trained in safe transfers, securement, and passenger assistance.</p></div>
         </li>
         <li>
-          <div class="w-ic">❤️</div>
+          <div class="w-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
           <div><h4>Compassionate, Patient Drivers</h4><p>Friendly professionals who take the time to help, never rush you, and treat you with respect.</p></div>
         </li>
         <li>
-          <div class="w-ic">⏱️</div>
+          <div class="w-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
           <div><h4>Reliable &amp; On Time</h4><p>Dependable pickups and proactive communication so you never worry about missing an appointment.</p></div>
         </li>
         <li>
-          <div class="w-ic">🚪</div>
+          <div class="w-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
           <div><h4>Door-Through-Door Service</h4><p>We don't just drop you at the curb — we assist you all the way to where you need to be.</p></div>
         </li>
       </ul>
@@ -542,9 +521,9 @@
     <div class="why-visual">
       <h3>Peace of mind for families</h3>
       <p>Caring for a loved one from afar? We keep you informed and make sure they get where they need to go, safely.</p>
-      <div class="mini"><span aria-hidden="true">📞</span><div>Friendly dispatch you can reach any time, day or night.</div></div>
-      <div class="mini"><span aria-hidden="true">🧾</span><div>Simple billing and support with common payment options.</div></div>
-      <div class="mini"><span aria-hidden="true">🗓️</span><div>Standing appointments and recurring schedules made easy.</div></div>
+      <div class="mini"><div>Friendly dispatch you can reach any time, day or night.</div></div>
+      <div class="mini"><div>Simple billing and support with common payment options.</div></div>
+      <div class="mini"><div>Standing appointments and recurring schedules made easy.</div></div>
       <a href="#contact" class="btn btn--white" style="margin-top:24px">Talk to Our Team</a>
     </div>
   </div>
@@ -568,7 +547,7 @@
         </div>
         <div>
           <div style="background:linear-gradient(150deg,var(--teal-050),#fff);border:1px solid var(--line);border-radius:16px;padding:34px;height:100%;display:flex;flex-direction:column;justify-content:center;gap:14px">
-            <div style="display:flex;gap:12px;align-items:center"><span style="font-size:1.6rem">📍</span><strong style="font-family:var(--font-head);color:var(--navy);font-size:1.1rem">Coverage &amp; Availability</strong></div>
+            <div style="display:flex;gap:12px;align-items:center"><strong style="font-family:var(--font-head);color:var(--navy);font-size:1.1rem">Coverage &amp; Availability</strong></div>
             <p style="margin:0;color:var(--muted)">Same-day requests are welcome based on availability. For dialysis and other recurring appointments, ask about setting up a standing schedule.</p>
             <a href="#contact" class="btn btn--teal" style="margin-top:8px">Check My Area</a>
           </div>
@@ -663,19 +642,19 @@
     <div class="contact-grid" style="margin-top:44px">
       <div class="contact-info">
         <div class="ci-item">
-          <div class="ci-ic">📞</div>
+          <div class="ci-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
           <div><h4>Phone / Dispatch</h4><p>Coming soon — please use the booking form for now.</p></div>
         </div>
         <div class="ci-item">
-          <div class="ci-ic">✉️</div>
+          <div class="ci-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
           <div><h4>Email</h4><p>Coming soon — please use the booking form for now.</p></div>
         </div>
         <div class="ci-item">
-          <div class="ci-ic">📍</div>
+          <div class="ci-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <div><h4>Office</h4><p>203 S. Washington Ave<br/>Saginaw, MI 48607</p></div>
         </div>
         <div class="ci-item">
-          <div class="ci-ic">🕑</div>
+          <div class="ci-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
           <div><h4>Hours</h4><p>Rides available 24/7<br/>Office: Mon–Fri, 8am–6pm</p></div>
         </div>
         <div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow-sm)">
@@ -697,7 +676,6 @@
             <select id="b-type" name="type" required>
               <option value="">Select…</option>
               <option>Wheelchair</option>
-              <option>Stretcher / gurney</option>
               <option>Ambulatory (walking assistance)</option>
               <option>Not sure</option>
             </select>
@@ -734,7 +712,6 @@
         <h4>Services</h4>
         <ul>
           <li><a href="#services">Wheelchair Transport</a></li>
-          <li><a href="#services">Stretcher / Gurney</a></li>
           <li><a href="#services">Ambulatory Assistance</a></li>
           <li><a href="#services">Recurring Schedules</a></li>
         </ul>
@@ -751,10 +728,10 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li>📞 Phone coming soon</li>
-          <li><a href="#contact">✉ Request a ride online</a></li>
-          <li>📍 203 S. Washington Ave, Saginaw, MI 48607</li>
-          <li>🕑 Rides available 24/7</li>
+          <li>Phone coming soon</li>
+          <li><a href="#contact">Request a ride online</a></li>
+          <li>203 S. Washington Ave, Saginaw, MI 48607</li>
+          <li>Rides available 24/7</li>
         </ul>
         <a href="#contact" class="btn btn--primary" style="margin-top:14px">Book a Ride</a>
       </div>
@@ -769,7 +746,7 @@
 
 <!-- FAQ (placed above footer visually via order? keep here) -->
 
-<a href="#contact" class="mobile-call">📅 Request a Ride Online</a>
+<a href="#contact" class="mobile-call">Request a Ride Online</a>
 
 <script>
   // Mobile nav
