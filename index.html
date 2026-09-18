@@ -286,6 +286,11 @@
       background:var(--orange);color:#3a2600;font-family:var(--font-head);font-weight:800;
       align-items:center;justify-content:center;gap:10px;padding:16px;box-shadow:0 -4px 16px rgba(0,0,0,.15)}
   }
+  /* Scroll reveal animations */
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1)}
+    .reveal.in-view{opacity:1;transform:none}
+  }
 </style>
 </head>
 <body>
@@ -776,6 +781,32 @@
     e.target.reset();
     return false;
   }
+
+  // Scroll reveal animations
+  (function(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const selectors = '.section .center, .card, .step, .pill, .quote, .why-list li, .area-box, .cta-band, .contact-info, form.book, .faq details, .hero-copy, .hero-card';
+    const items = Array.from(document.querySelectorAll(selectors));
+    items.forEach(el => el.classList.add('reveal'));
+    // Stagger children within grid groups
+    ['.cards', '.steps', '.pills', '.quotes', '.why-list'].forEach(sel => {
+      document.querySelectorAll(sel).forEach(group => {
+        Array.from(group.children).forEach((child, i) => {
+          if (child.classList.contains('reveal')) child.style.transitionDelay = (i % 3) * 90 + 'ms';
+        });
+      });
+    });
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(el => el.classList.add('in-view'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('in-view'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    items.forEach(el => io.observe(el));
+  })();
 </script>
 </body>
 </html>
