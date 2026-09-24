@@ -336,7 +336,7 @@
     </nav>
     <div class="nav-cta">
       <a href="index.html" class="btn btn--ghost">&#8592; Home</a>
-      <a href="#apply" class="btn btn--primary">Apply Now</a>
+      <a href="apply.html" class="btn btn--primary">Apply Now</a>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -352,7 +352,7 @@
       <h1 style="font-size:clamp(2rem,4.5vw,3.2rem)">Drive with purpose. <span style="color:var(--teal)">Join our team.</span></h1>
       <p class="lead" style="margin-left:auto;margin-right:auto">We're hiring caring, dependable drivers who want to make a real difference in people's lives. If you take pride in safety and treating people with respect, we'd love to meet you.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:24px">
-        <a href="#apply" class="btn btn--primary btn--lg">Apply to Drive</a>
+        <a href="apply.html" class="btn btn--primary btn--lg">Apply to Drive</a>
         <a href="index.html" class="btn btn--ghost btn--lg">Back to Home</a>
       </div>
     </div>
@@ -394,61 +394,13 @@
         </div>
       </div>
 
-      <form class="book" id="apply" onsubmit="return handleApplication(event)"
-            data-endpoint="" data-method="POST">
-        <!--
-          AUTOMATION HOOK
-          To connect submissions to an automation (Formspree, Zapier, Make,
-          a custom webhook, or an ATS/onboarding workflow):
-            1. Put the destination URL in the form's data-endpoint attribute above.
-            2. The script will POST the form fields there as JSON.
-          Leave data-endpoint empty to keep the on-page confirmation (demo) behavior.
-        -->
-        <h3 style="margin-bottom:6px">Apply to drive</h3>
-        <p style="color:var(--muted);font-size:.95rem;margin-bottom:18px">Tell us a bit about yourself and we'll be in touch about next steps.</p>
-        <div class="form-msg" id="applyMsg">Thank you for your interest! We've received your application and will reach out about next steps.</div>
-        <div class="form-row">
-          <div class="field"><label for="a-name">Full name *</label><input id="a-name" name="name" required /></div>
-          <div class="field"><label for="a-phone">Phone *</label><input id="a-phone" name="phone" type="tel" required /></div>
-        </div>
-        <div class="field"><label for="a-email">Email *</label><input id="a-email" name="email" type="email" required /></div>
-        <div class="form-row">
-          <div class="field">
-            <label for="a-license">Valid driver's license? *</label>
-            <select id="a-license" name="license" required>
-              <option value="">Select&#8230;</option>
-              <option>Yes</option>
-              <option>No</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="a-exp">Driving experience</label>
-            <select id="a-exp" name="experience">
-              <option value="">Select&#8230;</option>
-              <option>Less than 1 year</option>
-              <option>1&#8211;3 years</option>
-              <option>3&#8211;5 years</option>
-              <option>5+ years</option>
-            </select>
-          </div>
-        </div>
-        <div class="field">
-          <label for="a-avail">Availability</label>
-          <select id="a-avail" name="availability">
-            <option value="">Select&#8230;</option>
-            <option>Full-time</option>
-            <option>Part-time</option>
-            <option>Weekends</option>
-            <option>Flexible / on-call</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="a-notes">Tell us about yourself</label>
-          <textarea id="a-notes" name="notes" placeholder="Relevant experience, certifications, why you'd like to join, etc."></textarea>
-        </div>
-        <button class="btn btn--primary btn--lg" type="submit" style="width:100%">Submit Application</button>
-        <p class="form-note">Please do not include sensitive personal information (such as Social Security number, date of birth, or medical details) in this form. We'll collect any required documents securely later in the hiring process. This form is a demo and is not yet connected to a live inbox.</p>
-      </form>
+      <div class="why-visual" id="apply">
+        <h3>Ready to apply?</h3>
+        <p>Our online driver application takes about 10 minutes. You'll share your contact details, eligibility, certifications, work history, availability, and two references.</p>
+        <div class="mini"><div>No certifications yet? Apply anyway &#8212; we help qualified candidates get certified.</div></div>
+        <div class="mini"><div>No Social Security number or documents needed to apply.</div></div>
+        <a href="apply.html" class="btn btn--primary btn--lg" style="margin-top:24px">Start Your Application</a>
+      </div>
     </div>
   </div>
 </section>
@@ -486,7 +438,7 @@
           <li>203 S. Washington Ave, Saginaw, MI 48607</li>
           <li>Rides available 24/7</li>
         </ul>
-        <a href="#apply" class="btn btn--primary" style="margin-top:14px">Apply to Drive</a>
+        <a href="apply.html" class="btn btn--primary" style="margin-top:14px">Apply to Drive</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -497,7 +449,7 @@
   </div>
 </footer>
 
-<a href="#apply" class="mobile-call">Apply to Drive</a>
+<a href="apply.html" class="mobile-call">Apply to Drive</a>
 
 <script>
   // Mobile nav
@@ -544,31 +496,6 @@
     items.forEach(el => io.observe(el));
   })();
 
-  // Application submit — automation-ready
-  async function handleApplication(e){
-    e.preventDefault();
-    const form = e.target;
-    const msg = document.getElementById('applyMsg');
-    const endpoint = form.getAttribute('data-endpoint');
-    const data = Object.fromEntries(new FormData(form).entries());
-    if (endpoint) {
-      try {
-        const res = await fetch(endpoint, {
-          method: form.getAttribute('data-method') || 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(data)
-        });
-        if (!res.ok) throw new Error('Request failed');
-      } catch (err) {
-        alert('Sorry, something went wrong submitting your application. Please try again later.');
-        return false;
-      }
-    }
-    msg.classList.add('show');
-    msg.scrollIntoView({behavior:'smooth', block:'center'});
-    form.reset();
-    return false;
-  }
 </script>
 </body>
 </html>
