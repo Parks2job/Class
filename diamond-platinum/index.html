@@ -146,9 +146,9 @@
   .hero h1 .line > span { display: inline-block; transform: translateY(110%); animation: rise 1s var(--ease) forwards; }
   .hero h1 .line:nth-child(2) > span { animation-delay: .15s; }
   @keyframes rise { to { transform: none; } }
-  .hero-sub { font-size: clamp(1.05rem, 1.6vw, 1.22rem); color: #c9d3ea; max-width: 560px; opacity: 0; animation: fadeUp .9s .45s var(--ease) forwards; }
-  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; opacity: 0; animation: fadeUp .9s .6s var(--ease) forwards; }
-  .hero-points { display: flex; flex-wrap: wrap; gap: 12px 26px; margin-top: 36px; opacity: 0; animation: fadeUp .9s .75s var(--ease) forwards; }
+  .hero-sub { font-size: clamp(1.05rem, 1.6vw, 1.22rem); color: #c9d3ea; max-width: 560px; animation: fadeUp .9s .45s var(--ease) backwards; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; animation: fadeUp .9s .6s var(--ease) backwards; }
+  .hero-points { display: flex; flex-wrap: wrap; gap: 12px 26px; margin-top: 36px; animation: fadeUp .9s .75s var(--ease) backwards; }
   .hero-points li { list-style: none; display: flex; align-items: center; gap: 9px; font-weight: 600; color: #dfe6f5; font-size: .95rem; }
   .hero-points svg { width: 20px; height: 20px; color: #9fb7ef; flex: none; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
@@ -156,7 +156,7 @@
   .hero-logo { width: clamp(170px, 20vw, 250px); aspect-ratio: 1; margin: -20px 0 10px -12px; filter: drop-shadow(0 0 18px rgba(63,162,255,.45)); animation: logoIn 1.1s var(--ease) both, logoGlow 4s 1.1s ease-in-out infinite; }
   @keyframes logoIn { from { opacity: 0; transform: scale(.85) translateY(-10px); } to { opacity: 1; transform: none; } }
   @keyframes logoGlow { 0%,100% { filter: drop-shadow(0 0 14px rgba(63,162,255,.35)); } 50% { filter: drop-shadow(0 0 30px rgba(63,162,255,.75)); } }
-  .hero-visual { position: relative; opacity: 0; animation: fadeUp 1s .35s var(--ease) forwards; }
+  .hero-visual { position: relative; animation: fadeUp 1s .35s var(--ease) backwards; }
   @keyframes gemFloat { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-14px) rotate(4deg); } }
 
   /* Quote card */
@@ -219,8 +219,8 @@
   @keyframes marquee { to { transform: translateX(-50%); } }
 
   /* Reveal */
-  .reveal { opacity: 0; transform: translateY(36px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
-  .reveal.in { opacity: 1; transform: none; }
+  .js .reveal { transform: translateY(22px); transition: transform .9s var(--ease); }
+  .js .reveal.in { transform: none; }
   .reveal[data-delay="1"] { transition-delay: .1s; } .reveal[data-delay="2"] { transition-delay: .2s; }
   .reveal[data-delay="3"] { transition-delay: .3s; } .reveal[data-delay="4"] { transition-delay: .4s; }
   .reveal[data-delay="5"] { transition-delay: .5s; }
@@ -343,11 +343,11 @@
   .panel li {
     list-style: none; display: flex; gap: 14px; align-items: center; padding: 16px 18px; background: #fff; border-radius: 14px;
     border: 1px solid rgba(13,27,69,.07); box-shadow: var(--shadow-sm); font-weight: 600; color: var(--navy-800);
-    opacity: 0; transform: translateX(-16px); animation: slideIn .5s var(--ease) forwards;
+    animation: slideIn .5s var(--ease) backwards;
   }
   .panel li .chk { flex: none; width: 26px; height: 26px; border-radius: 8px; background: var(--ice); display: grid; place-items: center; color: var(--royal); }
   .panel li .chk svg { width: 16px; height: 16px; stroke-dasharray: 24; stroke-dashoffset: 24; animation: draw .5s .25s var(--ease) forwards; }
-  @keyframes slideIn { to { opacity: 1; transform: none; } }
+  @keyframes slideIn { from { opacity: 0; transform: translateX(-16px); } to { opacity: 1; transform: none; } }
   @keyframes draw { to { stroke-dashoffset: 0; } }
 
   /* Pricing */
@@ -525,6 +525,7 @@
     footer { padding-bottom: 100px; }
   }
   @media (max-width: 640px) {
+    .section { padding-block: 56px; }
     .topbar .tb-right { display: none; }
     .grid-3, .panel.active, .why-grid, .row2 { grid-template-columns: 1fr; }
     .aud ul, .addon-grid, .roles { grid-template-columns: 1fr; }
@@ -538,7 +539,7 @@
   }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
-    .reveal { opacity: 1; transform: none; }
+    .js .reveal { transform: none; }
     .hero h1 .line > span { transform: none; }
   }
 </style>
@@ -691,7 +692,7 @@
             </div>
           </div>
           <div class="estimate" aria-live="polite">
-            <div><small>Estimated from</small><strong id="estPrice">$0</strong></div>
+            <div><small>Estimated from</small><strong id="estPrice" data-current="300">$300</strong></div>
             <em>Final price confirmed after a quick walkthrough</em>
           </div>
           <div class="row2">
@@ -970,7 +971,7 @@
       <article class="plan reveal" data-delay="1">
         <h3>Standard</h3>
         <p class="for">Recurring maintenance clean</p>
-        <div class="price"><small>from</small><strong data-price="standard">$0</strong></div>
+        <div class="price"><small>from</small><strong data-price="standard">$100</strong></div>
         <ul>
           <li><svg><use href="#i-check-circle"/></svg>$0.10 to $0.15 per sq ft</li>
           <li><svg><use href="#i-check-circle"/></svg>Kitchens, baths, bedrooms and living areas</li>
@@ -983,7 +984,7 @@
         <span class="ribbon">Flagship</span>
         <h3>Move-In / Move-Out</h3>
         <p class="for">Turnover clean with final inspection</p>
-        <div class="price"><small>from</small><strong data-price="move">$0</strong></div>
+        <div class="price"><small>from</small><strong data-price="move">$195</strong></div>
         <ul>
           <li><svg><use href="#i-check-circle"/></svg>$0.20 to $0.30 per sq ft</li>
           <li><svg><use href="#i-check-circle"/></svg>Inside cabinets, fridge, oven and dishwasher</li>
@@ -995,7 +996,7 @@
       <article class="plan reveal" data-delay="3">
         <h3>Deep Clean</h3>
         <p class="for">Top-to-bottom detail clean</p>
-        <div class="price"><small>from</small><strong data-price="deep">$0</strong></div>
+        <div class="price"><small>from</small><strong data-price="deep">$170</strong></div>
         <ul>
           <li><svg><use href="#i-check-circle"/></svg>$0.16 to $0.24 per sq ft</li>
           <li><svg><use href="#i-check-circle"/></svg>Everything in Standard</li>
@@ -1193,6 +1194,7 @@
 
 <script>
 (function () {
+  document.documentElement.classList.add("js");
   /* ---------------------------------------------------------------
      PRICING CONFIG (Business Plan, Section 5): midpoint rate per sq ft
      and per-visit minimum for each tier. Adjust after local competitor
