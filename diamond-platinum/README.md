@@ -8,7 +8,7 @@ Package (July 2026).
 ## What's included
 
 - `index.html`: the full responsive site (HTML, CSS and JavaScript in one file, no build step)
-- `assets/logo.png`: the DPC logo (**add this file**; the site shows a drawn diamond until it exists)
+- `assets/logo.webp`: the DPC logo (transparent background), used in the header, hero, footer, why-us section and browser tab
 
 ## Sections
 
@@ -39,7 +39,6 @@ All animation respects the visitor's "reduce motion" setting.
 | Phone | search `(000) 000-0000` and `tel:+10000000000` | placeholder |
 | Email | search `info@diamondplatinumcleaning.com` | placeholder address |
 | Hours | search `Mon to Sat` | placeholder, not in source documents |
-| Logo | `assets/logo.png` | file needs to be added |
 | Prices | `PRICING` at the top of the script | uses Business Plan midpoints; the plan says to confirm with 2 to 3 local competitor quotes before publishing |
 | Reviews | Reviews section | sample text, marked "Sample review"; replace with real client reviews |
 | Forms | quote and contact forms | demo only; connect to an email/CRM form service with privacy protections |

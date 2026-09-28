@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Diamond Platinum Cleaning | Metro Detroit Move-Out, Deep &amp; Recurring Cleaning</title>
 <meta name="description" content="Diamond Platinum Cleaning serves Metro Detroit landlords, property managers, homeowners and real estate agents with checklist-driven move-in/move-out, deep and recurring cleaning, finished with a formal final inspection." />
-<meta name="theme-color" content="#0d1b45" />
+<meta name="theme-color" content="#0a1226" />
+<link rel="icon" type="image/webp" href="assets/logo.webp" />
+<link rel="apple-touch-icon" href="assets/logo.webp" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -105,8 +107,7 @@
   header.site.scrolled { box-shadow: var(--shadow-sm); border-color: rgba(13,27,69,.06); }
   .nav { display: flex; align-items: center; justify-content: space-between; height: 78px; gap: 20px; }
   .brand { display: flex; align-items: center; gap: 12px; }
-  .brand-mark { width: 46px; height: 46px; flex: none; }
-  .brand-mark .gem { transform-origin: 50% 60%; animation: gemFloat 5s ease-in-out infinite; }
+  .brand-mark { width: 56px; height: 56px; flex: none; object-fit: contain; }
   .brand-text { line-height: 1; }
   .brand-text strong { display: block; font-family: "Cinzel", serif; font-size: 1.08rem; font-weight: 800; color: var(--navy-800); letter-spacing: .05em; }
   .brand-text span { display: block; font-size: .72rem; font-weight: 800; letter-spacing: .42em; color: var(--royal); margin-top: 5px; }
@@ -151,11 +152,11 @@
   .hero-points svg { width: 20px; height: 20px; color: #9fb7ef; flex: none; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 
+  .hero-logo { width: clamp(170px, 20vw, 250px); height: auto; margin: -20px 0 10px -12px; filter: drop-shadow(0 0 18px rgba(63,162,255,.45)); animation: logoIn 1.1s var(--ease) both, logoGlow 4s 1.1s ease-in-out infinite; }
+  @keyframes logoIn { from { opacity: 0; transform: scale(.85) translateY(-10px); } to { opacity: 1; transform: none; } }
+  @keyframes logoGlow { 0%,100% { filter: drop-shadow(0 0 14px rgba(63,162,255,.35)); } 50% { filter: drop-shadow(0 0 30px rgba(63,162,255,.75)); } }
   .hero-visual { position: relative; opacity: 0; animation: fadeUp 1s .35s var(--ease) forwards; }
-  .gem-stage { position: absolute; top: -70px; right: -20px; width: 150px; height: 150px; z-index: 2; filter: drop-shadow(0 20px 40px rgba(0,0,0,.45)); animation: gemFloat 6s ease-in-out infinite; }
   @keyframes gemFloat { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-14px) rotate(4deg); } }
-  .gem-stage .facet-shine { animation: facetShine 3.5s ease-in-out infinite; }
-  @keyframes facetShine { 0%,100% { opacity: .15; } 50% { opacity: .9; } }
 
   /* Quote card */
   .quote-card {
@@ -390,7 +391,7 @@
   /* Why us */
   .why { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
   .why-visual { position: relative; }
-  .why-visual .frame { border-radius: 28px; background: #fff; padding: 30px; box-shadow: var(--shadow-md); border: 1px solid rgba(13,27,69,.06); }
+  .why-visual .frame { border-radius: 28px; background: radial-gradient(420px 320px at 50% 40%, #13275e, #03050b); padding: 30px; box-shadow: var(--shadow-md); border: 1px solid rgba(13,27,69,.06); }
   .why-visual .frame img { width: 100%; height: auto; border-radius: 16px; }
   .why-visual .floater { position: absolute; background: #fff; border-radius: 16px; padding: 14px 18px; box-shadow: var(--shadow-md); display: flex; gap: 12px; align-items: center; font-weight: 800; color: var(--navy-800); font-size: .92rem; animation: gemFloat 6s ease-in-out infinite; }
   .why-visual .floater svg { width: 28px; height: 28px; color: var(--royal); }
@@ -510,8 +511,7 @@
     .menu-open .nav-links { transform: none; opacity: 1; pointer-events: auto; }
     .nav-cta .btn { display: none; }
     .hero .container, .ba-wrap, .why, .careers, .contact { grid-template-columns: 1fr; }
-    .gem-stage { width: 110px; height: 110px; top: -50px; right: 0; }
-    .split, .plans { grid-template-columns: 1fr; }
+      .split, .plans { grid-template-columns: 1fr; }
     .addon-grid { grid-template-columns: 1fr 1fr; }
     .plan.featured { transform: none; } .plan.featured:hover { transform: translateY(-8px); }
     .grid-3 { grid-template-columns: 1fr 1fr; }
@@ -611,7 +611,7 @@
 <header class="site" id="header">
   <div class="container nav">
     <a href="#top" class="brand" aria-label="Diamond Platinum Cleaning home">
-      <svg class="brand-mark" viewBox="0 0 100 90" aria-hidden="true"><g class="gem"><use href="#gem"/></g></svg>
+      <img class="brand-mark" src="assets/logo.webp" alt="" width="56" height="56" />
       <div class="brand-text"><strong>DIAMOND PLATINUM</strong><span>CLEANING</span></div>
     </a>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
@@ -640,6 +640,7 @@
   </svg>
   <div class="container">
     <div>
+      <img class="hero-logo" src="assets/logo.webp" alt="Diamond Platinum Cleaning" width="1254" height="1254" />
       <span class="hero-badge"><b>METRO DETROIT</b> Move-out, deep &amp; recurring cleaning</span>
       <h1 class="display">
         <span class="line"><span>Clean Spaces.</span></span>
@@ -658,10 +659,6 @@
     </div>
 
     <div class="hero-visual" id="quote">
-      <svg class="gem-stage" viewBox="0 0 100 90" aria-hidden="true">
-        <use href="#gem"/>
-        <polygon class="facet-shine" points="36,30 50,4 64,30" fill="#fff"/>
-      </svg>
       <form class="quote-card" id="quoteForm" novalidate>
         <div class="form-body">
           <h3>Get an Instant Estimate</h3>
@@ -1027,7 +1024,7 @@
   <div class="container why">
     <div class="why-visual reveal">
       <div class="frame">
-        <img src="assets/logo.png" alt="Diamond Platinum Cleaning logo" width="1000" height="1000" onerror="this.closest('.frame').innerHTML='<svg viewBox=&quot;0 0 100 90&quot; style=&quot;width:60%;margin:30px auto&quot;><use href=&quot;#gem&quot;/></svg>'" />
+        <img src="assets/logo.webp" alt="Diamond Platinum Cleaning logo" width="1254" height="1254" loading="lazy" onerror="this.closest('.frame').innerHTML='<svg viewBox=&quot;0 0 100 90&quot; style=&quot;width:60%;margin:30px auto&quot;><use href=&quot;#gem&quot;/></svg>'" />
       </div>
       <div class="floater f1"><svg><use href="#i-shield"/></svg>Vetted &amp; trained</div>
       <div class="floater f2"><svg><use href="#i-award"/></svg>Inspected &amp; signed off</div>
@@ -1173,7 +1170,7 @@
   <div class="container">
     <div class="foot">
       <div>
-        <a href="#top" class="brand"><svg class="brand-mark" viewBox="0 0 100 90" aria-hidden="true"><use href="#gem"/></svg><div class="brand-text"><strong>DIAMOND PLATINUM</strong><span>CLEANING</span></div></a>
+        <a href="#top" class="brand"><img class="brand-mark" src="assets/logo.webp" alt="" width="56" height="56" /><div class="brand-text"><strong>DIAMOND PLATINUM</strong><span>CLEANING</span></div></a>
         <p>Checklist-driven move-out, deep and recurring cleaning for Metro Detroit. Clean spaces. Strong impressions.</p>
       </div>
       <div><h4>Services</h4><ul><li><a href="#services">Move-In / Move-Out</a></li><li><a href="#services">Deep Cleaning</a></li><li><a href="#services">Standard Recurring</a></li><li><a href="#addons">Add-On Services</a></li></ul></div>
