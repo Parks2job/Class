@@ -8,7 +8,7 @@ Package (July 2026).
 ## What's included
 
 - `index.html`: the full responsive site (HTML, CSS and JavaScript in one file, no build step)
-- `assets/logo.webp`: the DPC logo (transparent background), used in the header, hero, footer, why-us section and browser tab
+- `assets/logo.webp`: the original full-size DPC logo (transparent background). A web-sized copy is embedded directly in `index.html`, so the page shows the logo even when the HTML file is downloaded or opened on its own.
 
 ## Sections
 
