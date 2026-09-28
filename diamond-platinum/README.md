@@ -1,36 +1,49 @@
 # Diamond Platinum Cleaning: Website
 
-A single-page, animated marketing website for **Diamond Platinum Cleaning**
-(Apartment / Business cleaning). "Clean Spaces. Strong Impressions."
+A single-page, animated marketing website for **Diamond Platinum Cleaning**, a
+checklist-driven move-in/move-out, deep and recurring cleaning service in Metro Detroit.
+Content is drawn from the company's Business Plan, Policy & Procedure Manual and Hiring
+Package (July 2026).
 
 ## What's included
 
 - `index.html`: the full responsive site (HTML, CSS and JavaScript in one file, no build step)
-- `assets/logo.png`: the company logo (add this file; the site falls back to a drawn diamond if it is missing)
+- `assets/logo.png`: the DPC logo (**add this file**; the site shows a drawn diamond until it exists)
 
 ## Sections
 
-Top contact bar · Sticky header · Animated hero with sparkle particles and an instant price
-estimator · Scrolling trust marquee · Residential vs. Commercial split · Services grid
-(3D tilt cards) · Interactive before/after slider · 4-step "How it works" · Room-by-room
-"Diamond Standard" checklist tabs · Pricing tiers (Sparkle / Brilliance / Platinum) ·
-Why us · Reviews carousel · Careers / hiring band · FAQ · Contact form · Footer ·
-Mobile "Call / Free Quote" bar.
+Top contact bar · Sticky header · Animated hero with sparkle particles and an instant
+square-footage estimator · Scrolling trust marquee · Who we serve (property managers,
+homeowners/renters, real estate agents) · Services · Before/after slider · 4-step process
+(quote, pre-clean walkthrough, checklist clean, final inspection) · Move-In/Move-Out
+checklist tabs (from Business Plan Appendix A) · Per-square-foot pricing and add-ons ·
+Core values · Reviews carousel · Careers (Cleaning Technician, Crew Lead) · FAQ · Contact
+form · Footer · Mobile "Call / Free Quote" bar.
 
 All animation respects the visitor's "reduce motion" setting.
 
-## Before going live: replace the placeholders
+## Where the content came from
 
-| Item | Where | Current placeholder |
+| Site content | Source |
+|---|---|
+| Metro Detroit service area, client segments, services | Business Plan, Sections 1 to 4 |
+| Pricing tiers, per-visit minimums, add-on prices | Business Plan, Sections 4.4 and 5 |
+| Move-In/Move-Out checklist | Business Plan, Appendix A |
+| Core values, background checks, uniforms, complaint and cancellation policy | Policy & Procedure Manual, Sections 2, 3, 6, 7 |
+| Careers roles, requirements, hiring steps, pay perks | Hiring Package, Sections 2, 3, 9; Manual Section 8 |
+
+## Before going live
+
+| Item | Where | Status |
 |---|---|---|
-| Phone | search `(000) 000-0000` and `tel:+10000000000` | (000) 000-0000 |
+| Phone | search `(000) 000-0000` and `tel:+10000000000` | placeholder |
 | Email | search `info@diamondplatinumcleaning.com` | placeholder address |
-| Service area | search `[Your City]` | [Your City] |
-| Hours | search `Mon to Sat` | Mon to Sat, 7 AM to 7 PM (not confirmed) |
-| Prices | `PRICING` and `PLAN_PRICES` at the top of the script | sample numbers only |
-| Reviews | Reviews section | sample text, marked "Sample review" |
-| Policies | FAQ (24-hour guarantee, 24-hour cancellation, background checks) | confirm against the Policy & Procedure Manual |
-| Forms | quote and contact forms | demo only; connect to an email/CRM form service |
+| Hours | search `Mon to Sat` | placeholder, not in source documents |
+| Logo | `assets/logo.png` | file needs to be added |
+| Prices | `PRICING` at the top of the script | uses Business Plan midpoints; the plan says to confirm with 2 to 3 local competitor quotes before publishing |
+| Reviews | Reviews section | sample text, marked "Sample review"; replace with real client reviews |
+| Forms | quote and contact forms | demo only; connect to an email/CRM form service with privacy protections |
+| Insurance / bonding | not claimed on the site | add "insured & bonded" only after coverage is in place |
 
 ## Preview
 

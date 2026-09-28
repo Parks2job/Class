@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Diamond Platinum Cleaning | Apartment &amp; Business Cleaning</title>
-<meta name="description" content="Diamond Platinum Cleaning delivers brilliant apartment and business cleaning. Background-checked cleaners, detailed checklists, and a satisfaction guarantee. Clean spaces. Strong impressions." />
+<title>Diamond Platinum Cleaning | Metro Detroit Move-Out, Deep &amp; Recurring Cleaning</title>
+<meta name="description" content="Diamond Platinum Cleaning serves Metro Detroit landlords, property managers, homeowners and real estate agents with checklist-driven move-in/move-out, deep and recurring cleaning, finished with a formal final inspection." />
 <meta name="theme-color" content="#0d1b45" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -111,10 +111,11 @@
   .brand-text strong { display: block; font-family: "Cinzel", serif; font-size: 1.08rem; font-weight: 800; color: var(--navy-800); letter-spacing: .05em; }
   .brand-text span { display: block; font-size: .72rem; font-weight: 800; letter-spacing: .42em; color: var(--royal); margin-top: 5px; }
   .nav-links { display: flex; gap: 30px; align-items: center; }
-  .nav-links a { font-weight: 700; font-size: .95rem; color: var(--navy-800); position: relative; padding: 6px 0; }
+  .nav-links a { font-weight: 700; font-size: .95rem; color: var(--navy-800); position: relative; padding: 6px 0; white-space: nowrap; }
   .nav-links a::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: var(--royal); transform: scaleX(0); transform-origin: right; transition: transform .35s var(--ease); }
   .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
   .nav-cta { display: flex; align-items: center; gap: 14px; }
+  .nav-cta .btn, .nav-phone { white-space: nowrap; }
   .nav-phone { font-weight: 800; color: var(--navy-800); display: flex; align-items: center; gap: 8px; }
   .nav-phone svg { width: 18px; height: 18px; color: var(--royal); }
   .menu-btn { display: none; width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--platinum-2); background: #fff; cursor: pointer; place-items: center; }
@@ -223,17 +224,18 @@
   .reveal[data-delay="5"] { transition-delay: .5s; }
 
   /* Audience split */
-  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  .split { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
   .aud {
-    position: relative; overflow: hidden; border-radius: 26px; padding: 42px; min-height: 380px;
-    display: flex; flex-direction: column; justify-content: flex-end; color: #fff; isolation: isolate;
+    position: relative; overflow: hidden; border-radius: 26px; padding: 30px 30px 34px;
+    display: flex; flex-direction: column; justify-content: flex-start; color: #fff; isolation: isolate;
     box-shadow: var(--shadow-md);
   }
   .aud::before { content: ""; position: absolute; inset: 0; z-index: -2; transition: transform 1.2s var(--ease); }
   .aud:hover::before { transform: scale(1.06); }
   .aud-home::before { background: radial-gradient(500px 300px at 80% 10%, rgba(75,115,209,.7), transparent 70%), linear-gradient(160deg, #1a3478, var(--navy-900)); }
   .aud-biz::before { background: radial-gradient(500px 300px at 80% 10%, rgba(200,208,224,.45), transparent 70%), linear-gradient(160deg, #3a4660, #0b1430); }
-  .aud-art { position: absolute; top: 28px; right: 28px; width: 46%; max-width: 230px; opacity: .9; z-index: -1; transition: transform 1s var(--ease); }
+  .aud-agent::before { background: radial-gradient(500px 300px at 80% 10%, rgba(63,162,255,.55), transparent 70%), linear-gradient(160deg, #0f2150, #03050b); }
+  .aud-art { align-self: flex-end; width: 120px; height: 96px; margin-bottom: 8px; opacity: .9; transition: transform 1s var(--ease); }
   .aud:hover .aud-art { transform: translateY(-8px) scale(1.04); }
   .aud .tag { align-self: flex-start; padding: 6px 14px; border-radius: 999px; background: rgba(255,255,255,.14); font-size: .75rem; letter-spacing: .14em; font-weight: 800; text-transform: uppercase; margin-bottom: 14px; }
   .aud h3 { font-family: "Cinzel", serif; font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.15; }
@@ -241,7 +243,7 @@
   .aud ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; margin-bottom: 26px; }
   .aud li { display: flex; gap: 8px; align-items: center; font-weight: 600; font-size: .92rem; }
   .aud li::before { content: ""; width: 8px; height: 8px; transform: rotate(45deg); background: #cfd6e4; flex: none; }
-  .aud .btn { align-self: flex-start; }
+  .aud .btn { align-self: flex-start; margin-top: auto; }
 
   /* Services */
   .services-bg { background: linear-gradient(180deg, #fff, var(--platinum-1)); }
@@ -371,6 +373,19 @@
   .plan li svg { width: 20px; height: 20px; flex: none; color: var(--royal); margin-top: 2px; }
   .plan.featured li svg { color: #9fb7ef; }
   .price-note { text-align: center; color: var(--muted); font-size: .88rem; margin-top: 30px; }
+  .addons { margin-top: 56px; background: #fff; border-radius: 24px; padding: 36px; box-shadow: var(--shadow-sm); border: 1px solid rgba(13,27,69,.08); }
+  .addons h3 { font-size: 1.5rem; color: var(--navy-800); }
+  .addons > p { color: var(--muted); margin: 4px 0 22px; }
+  .addon-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .addon { padding: 18px; border-radius: 16px; background: var(--platinum-1); border: 1px solid rgba(13,27,69,.05); transition: .4s var(--ease); }
+  .addon:hover { background: var(--ice); transform: translateY(-4px); }
+  .addon strong { display: block; color: var(--navy-800); font-size: .95rem; margin-bottom: 6px; }
+  .addon span { display: block; font-family: "Cinzel", serif; font-weight: 800; color: var(--royal); }
+  .addon small { color: var(--muted); font-size: .8rem; }
+  .roles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: -10px 0 28px; }
+  .role { padding: 16px; border-radius: 16px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); }
+  .role strong { display: block; margin-bottom: 4px; }
+  .role span { color: #c9d3ea; font-size: .88rem; }
 
   /* Why us */
   .why { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
@@ -454,7 +469,7 @@
   .ci .ic { flex: none; width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: rgba(255,255,255,.1); }
   .ci .ic svg { width: 20px; height: 20px; }
   .ci small { display: block; color: #9fb7ef; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: .72rem; }
-  .ci a, .ci p { font-weight: 700; font-size: 1.05rem; }
+  .ci a, .ci p { font-weight: 700; font-size: 1.05rem; overflow-wrap: anywhere; }
   .contact-form { background: #fff; border-radius: 26px; padding: 44px; box-shadow: var(--shadow-md); }
   .contact-form h3 { font-family: "Cinzel", serif; font-size: 1.5rem; color: var(--navy-800); margin-bottom: 18px; }
 
@@ -480,9 +495,9 @@
   @keyframes sparkFade { from { opacity: 1; transform: scale(1) rotate(0); } to { opacity: 0; transform: translateY(18px) scale(.2) rotate(90deg); } }
 
   /* Responsive */
+  @media (max-width: 1320px) { .nav-phone { display: none; } }
   @media (max-width: 1080px) {
     .nav-links { gap: 20px; }
-    .nav-phone { display: none; }
     .car-prev { left: -10px; } .car-next { right: -10px; }
   }
   @media (max-width: 960px) {
@@ -497,6 +512,7 @@
     .hero .container, .ba-wrap, .why, .careers, .contact { grid-template-columns: 1fr; }
     .gem-stage { width: 110px; height: 110px; top: -50px; right: 0; }
     .split, .plans { grid-template-columns: 1fr; }
+    .addon-grid { grid-template-columns: 1fr 1fr; }
     .plan.featured { transform: none; } .plan.featured:hover { transform: translateY(-8px); }
     .grid-3 { grid-template-columns: 1fr 1fr; }
     .steps { grid-template-columns: 1fr 1fr; row-gap: 44px; }
@@ -509,8 +525,8 @@
   @media (max-width: 640px) {
     .topbar .tb-right { display: none; }
     .grid-3, .panel.active, .why-grid, .row2 { grid-template-columns: 1fr; }
-    .aud { padding: 30px; min-height: 420px; }
-    .aud ul { grid-template-columns: 1fr; }
+    .aud ul, .addon-grid, .roles { grid-template-columns: 1fr; }
+    .addons { padding: 24px; }
     .quote-card, .contact-form, .contact-info { padding: 26px; }
     .review { padding: 40px 24px 30px; }
     .car-btn { display: none; }
@@ -587,7 +603,7 @@
     </div>
     <div class="tb-right">
       <span><svg><use href="#i-clock"/></svg>Mon to Sat, 7:00 AM to 7:00 PM</span>
-      <span><svg><use href="#i-pin"/></svg>Serving [Your City] &amp; surrounding areas</span>
+      <span><svg><use href="#i-pin"/></svg>Serving Detroit &amp; Metro Detroit</span>
     </div>
   </div>
 </div>
@@ -624,20 +640,20 @@
   </svg>
   <div class="container">
     <div>
-      <span class="hero-badge"><b>NEW</b> Apartment &amp; business cleaning, done brilliantly</span>
+      <span class="hero-badge"><b>METRO DETROIT</b> Move-out, deep &amp; recurring cleaning</span>
       <h1 class="display">
         <span class="line"><span>Clean Spaces.</span></span>
         <span class="line"><span class="shine-text">Strong Impressions.</span></span>
       </h1>
-      <p class="hero-sub">Diamond Platinum Cleaning brings a polished, detail-first clean to apartments, offices and commercial spaces. Trained, background-checked professionals. A clear checklist every visit. Results that shine.</p>
+      <p class="hero-sub">Dependable, checklist-driven cleaning for landlords, property managers, homeowners and real estate agents across Metro Detroit. Every room follows our detailed checklist, and every move-out ends with a signed final inspection. No guesswork, and no follow-up phone calls.</p>
       <div class="hero-actions">
         <a href="#quote" class="btn btn-platinum">Get My Free Quote <svg><use href="#i-arrow"/></svg></a>
         <a href="tel:+10000000000" class="btn btn-ghost"><svg><use href="#i-phone"/></svg> Call (000) 000-0000</a>
       </div>
       <ul class="hero-points">
+        <li><svg><use href="#i-check-circle"/></svg>Room-by-room checklist</li>
+        <li><svg><use href="#i-award"/></svg>Signed final inspection</li>
         <li><svg><use href="#i-shield"/></svg>Background-checked team</li>
-        <li><svg><use href="#i-award"/></svg>Satisfaction guarantee</li>
-        <li><svg><use href="#i-leaf"/></svg>Safe, quality products</li>
       </ul>
     </div>
 
@@ -649,24 +665,29 @@
       <form class="quote-card" id="quoteForm" novalidate>
         <div class="form-body">
           <h3>Get an Instant Estimate</h3>
-          <p>Answer three quick questions. We confirm your final price before we start.</p>
-          <div class="seg" role="radiogroup" aria-label="Type of space">
-            <label><input type="radio" name="space" value="apartment" checked /><span><svg><use href="#i-home"/></svg>Apartment</span></label>
-            <label><input type="radio" name="space" value="office" /><span><svg><use href="#i-building"/></svg>Office</span></label>
-            <label><input type="radio" name="space" value="move" /><span><svg><use href="#i-box"/></svg>Move In/Out</span></label>
+          <p>Pick a service and home size. We confirm your final price after a quick walkthrough or photos.</p>
+          <div class="seg" role="radiogroup" aria-label="Type of service">
+            <label><input type="radio" name="space" value="move" checked /><span><svg><use href="#i-box"/></svg>Move In/Out</span></label>
+            <label><input type="radio" name="space" value="deep" /><span><svg><use href="#i-sparkle"/></svg>Deep Clean</span></label>
+            <label><input type="radio" name="space" value="standard" /><span><svg><use href="#i-home"/></svg>Standard</span></label>
           </div>
           <div class="row2">
             <div class="field">
-              <label for="size" id="sizeLabel">Bedrooms</label>
-              <select id="size" name="size"></select>
+              <label for="size">Home size</label>
+              <select id="size" name="size">
+                <option value="700">Studio / 1 BR (about 700 sq ft)</option>
+                <option value="1200" selected>2 BR (about 1,200 sq ft)</option>
+                <option value="1800">3 BR (about 1,800 sq ft)</option>
+                <option value="2500">4 BR (about 2,500 sq ft)</option>
+                <option value="3200">5+ BR (about 3,200 sq ft)</option>
+              </select>
             </div>
             <div class="field">
-              <label for="freq">How often?</label>
-              <select id="freq" name="freq">
-                <option value="1">One-time</option>
-                <option value="0.85">Weekly (save 15%)</option>
-                <option value="0.9" selected>Every 2 weeks (save 10%)</option>
-                <option value="0.95">Monthly (save 5%)</option>
+              <label for="clientType">I am a</label>
+              <select id="clientType" name="clientType">
+                <option>Landlord / property manager</option>
+                <option>Homeowner / renter</option>
+                <option>Real estate agent</option>
               </select>
             </div>
           </div>
@@ -695,12 +716,12 @@
 <!-- MARQUEE -->
 <div class="marquee" aria-label="Our commitments">
   <div class="marquee-track" id="marquee">
+    <div class="marquee-item"><svg><use href="#i-check-circle"/></svg>Room-by-Room Checklists<i class="dot"></i></div>
+    <div class="marquee-item"><svg><use href="#i-award"/></svg>Signed Final Inspection<i class="dot"></i></div>
+    <div class="marquee-item"><svg><use href="#i-calendar"/></svg>Same-Week Move-Out Availability<i class="dot"></i></div>
     <div class="marquee-item"><svg><use href="#i-shield"/></svg>Background-Checked Cleaners<i class="dot"></i></div>
-    <div class="marquee-item"><svg><use href="#i-award"/></svg>100% Satisfaction Guarantee<i class="dot"></i></div>
-    <div class="marquee-item"><svg><use href="#i-calendar"/></svg>Flexible Scheduling<i class="dot"></i></div>
-    <div class="marquee-item"><svg><use href="#i-leaf"/></svg>Safe, Quality Products<i class="dot"></i></div>
-    <div class="marquee-item"><svg><use href="#i-users"/></svg>Trained, Uniformed Team<i class="dot"></i></div>
-    <div class="marquee-item"><svg><use href="#i-check-circle"/></svg>Detailed Room-by-Room Checklists<i class="dot"></i></div>
+    <div class="marquee-item"><svg><use href="#i-users"/></svg>Uniformed Crews with Photo ID<i class="dot"></i></div>
+    <div class="marquee-item"><svg><use href="#i-bucket"/></svg>We Bring Supplies &amp; Equipment<i class="dot"></i></div>
   </div>
 </div>
 
@@ -708,12 +729,25 @@
 <section class="section">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">Two specialties. One standard.</span>
-      <h2 class="display">Brilliance for Where You Live and Where You Work</h2>
-      <p>Whether it is your apartment or your storefront, we clean it like it is our own reputation on the line. Because it is.</p>
+      <span class="eyebrow">Who we serve</span>
+      <h2 class="display">One Standard for Every Client</h2>
+      <p>Whether you manage a building, live in one or are listing one, you get the same documented checklist and the same final inspection.</p>
     </div>
     <div class="split">
-      <article class="aud aud-home reveal" data-delay="1">
+      <article class="aud aud-biz reveal" data-delay="1">
+        <svg class="aud-art" viewBox="0 0 200 160" aria-hidden="true">
+          <rect x="30" y="40" width="50" height="115" fill="rgba(255,255,255,.12)" stroke="#cfd6e4" stroke-width="4"/>
+          <rect x="90" y="10" width="60" height="145" fill="rgba(255,255,255,.18)" stroke="#fff" stroke-width="4"/>
+          <rect x="158" y="70" width="32" height="85" fill="rgba(255,255,255,.1)" stroke="#cfd6e4" stroke-width="4"/>
+          <g fill="#cfd6e4"><rect x="100" y="25" width="12" height="12"/><rect x="128" y="25" width="12" height="12"/><rect x="100" y="50" width="12" height="12"/><rect x="128" y="50" width="12" height="12"/><rect x="100" y="75" width="12" height="12"/><rect x="128" y="75" width="12" height="12"/><rect x="40" y="55" width="10" height="10"/><rect x="60" y="55" width="10" height="10"/><rect x="40" y="80" width="10" height="10"/><rect x="60" y="80" width="10" height="10"/></g>
+        </svg>
+        <span class="tag">Landlords &amp; property managers</span>
+        <h3>Turnovers That Cut Vacancy Days</h3>
+        <p>Reliable move-out cleaning between tenants, with a signed final inspection and maintenance issues reported back to you.</p>
+        <ul><li>Unit turnovers</li><li>Same-week availability</li><li>Damage reporting</li><li>Multi-unit accounts</li></ul>
+        <a href="#contact" class="btn btn-platinum">Set Up an Account</a>
+      </article>
+      <article class="aud aud-home reveal" data-delay="2">
         <svg class="aud-art" viewBox="0 0 200 160" aria-hidden="true">
           <path d="M20 90 100 30l80 60" fill="none" stroke="#cfd6e4" stroke-width="8" stroke-linejoin="round"/>
           <rect x="45" y="85" width="110" height="70" fill="rgba(255,255,255,.12)" stroke="#cfd6e4" stroke-width="4"/>
@@ -721,24 +755,24 @@
           <rect x="60" y="100" width="18" height="18" fill="#9fb7ef"/><rect x="122" y="100" width="18" height="18" fill="#9fb7ef"/>
           <use href="#i-sparkle" x="150" y="20" width="22" height="22" style="color:#fff"/>
         </svg>
-        <span class="tag">Residential</span>
-        <h3>Apartments &amp; Homes</h3>
-        <p>Come home to fresh, spotless living spaces. Recurring or one-time service built around your schedule.</p>
-        <ul><li>Recurring cleaning</li><li>Deep cleaning</li><li>Move-in / move-out</li><li>Kitchens &amp; baths</li></ul>
-        <a href="#quote" class="btn btn-platinum">Price My Apartment</a>
+        <span class="tag">Homeowners &amp; renters</span>
+        <h3>A Home You Can Trust Us In</h3>
+        <p>Recurring upkeep or a top-to-bottom deep clean, delivered by background-checked cleaners who respect your home and privacy.</p>
+        <ul><li>Weekly / biweekly / monthly</li><li>Deep cleaning</li><li>Move-in / move-out</li><li>Add-on services</li></ul>
+        <a href="#quote" class="btn btn-platinum">Price My Home</a>
       </article>
-      <article class="aud aud-biz reveal" data-delay="2">
+      <article class="aud aud-agent reveal" data-delay="3">
         <svg class="aud-art" viewBox="0 0 200 160" aria-hidden="true">
-          <rect x="30" y="40" width="50" height="115" fill="rgba(255,255,255,.12)" stroke="#cfd6e4" stroke-width="4"/>
-          <rect x="90" y="10" width="60" height="145" fill="rgba(255,255,255,.18)" stroke="#fff" stroke-width="4"/>
-          <rect x="158" y="70" width="32" height="85" fill="rgba(255,255,255,.1)" stroke="#cfd6e4" stroke-width="4"/>
-          <g fill="#cfd6e4"><rect x="100" y="25" width="12" height="12"/><rect x="128" y="25" width="12" height="12"/><rect x="100" y="50" width="12" height="12"/><rect x="128" y="50" width="12" height="12"/><rect x="100" y="75" width="12" height="12"/><rect x="128" y="75" width="12" height="12"/><rect x="40" y="55" width="10" height="10"/><rect x="60" y="55" width="10" height="10"/><rect x="40" y="80" width="10" height="10"/><rect x="60" y="80" width="10" height="10"/></g>
+          <rect x="70" y="20" width="10" height="135" fill="#cfd6e4"/>
+          <rect x="80" y="30" width="95" height="60" rx="6" fill="rgba(255,255,255,.16)" stroke="#fff" stroke-width="4"/>
+          <path d="M100 70 127.5 45 155 70" fill="none" stroke="#cfd6e4" stroke-width="6" stroke-linejoin="round"/>
+          <use href="#i-sparkle" x="30" y="30" width="24" height="24" style="color:#fff"/>
         </svg>
-        <span class="tag">Commercial</span>
-        <h3>Offices &amp; Businesses</h3>
-        <p>A clean workspace is a first impression that never stops working. Reliable after-hours service for teams and property managers.</p>
-        <ul><li>Office janitorial</li><li>Common areas &amp; lobbies</li><li>Unit turnovers</li><li>Post-construction</li></ul>
-        <a href="#contact" class="btn btn-platinum">Request a Walkthrough</a>
+        <span class="tag">Real estate agents</span>
+        <h3>Listing-Ready, Photo-Ready</h3>
+        <p>Fast pre-listing and pre-showing cleans on tight timelines, so every photo and every showing makes a strong impression.</p>
+        <ul><li>Listing prep</li><li>Pre-showing touch-ups</li><li>Tight timelines</li><li>Photo-ready finish</li></ul>
+        <a href="#contact" class="btn btn-platinum">Partner With Us</a>
       </article>
     </div>
   </div>
@@ -750,44 +784,44 @@
     <div class="section-head reveal">
       <span class="eyebrow">Our Services</span>
       <h2 class="display">Every Surface. Every Detail.</h2>
-      <p>Choose the clean that fits your space. Every service follows our Diamond Standard checklist, so you always know exactly what you are getting.</p>
+      <p>Three service tiers, each built on the same room-by-room checklist. We bring our own products and equipment.</p>
     </div>
     <div class="grid-3">
       <article class="svc reveal" data-delay="1">
-        <div class="svc-icon"><svg><use href="#i-home"/></svg></div>
-        <h3>Standard Apartment Cleaning</h3>
-        <p>Recurring upkeep for kitchens, bathrooms, bedrooms and living areas so your home stays guest-ready.</p>
+        <div class="svc-icon"><svg><use href="#i-box"/></svg></div>
+        <h3>Move-In / Move-Out</h3>
+        <p>Our flagship service. Inside cabinets, refrigerator, oven and dishwasher, vents, blinds, walls and closets, finished with a signed final inspection.</p>
         <a href="#quote" class="more">Get a quote <svg><use href="#i-arrow"/></svg></a>
       </article>
       <article class="svc reveal" data-delay="2">
         <div class="svc-icon"><svg><use href="#i-sparkle"/></svg></div>
         <h3>Deep Cleaning</h3>
-        <p>Top-to-bottom detail work: baseboards, vents, inside appliances, grout and build-up in hard-to-reach places.</p>
+        <p>Everything in Standard plus inside appliances, baseboards, light fixtures, window tracks and grease and build-up removal.</p>
         <a href="#quote" class="more">Get a quote <svg><use href="#i-arrow"/></svg></a>
       </article>
       <article class="svc reveal" data-delay="3">
-        <div class="svc-icon"><svg><use href="#i-box"/></svg></div>
-        <h3>Move-In / Move-Out</h3>
-        <p>Empty-unit cleaning that helps tenants recover deposits and helps landlords turn units faster.</p>
+        <div class="svc-icon"><svg><use href="#i-home"/></svg></div>
+        <h3>Standard Recurring</h3>
+        <p>Routine upkeep of kitchens, bathrooms, bedrooms and living areas: dusting, vacuuming and mopping, weekly, biweekly or monthly.</p>
         <a href="#quote" class="more">Get a quote <svg><use href="#i-arrow"/></svg></a>
       </article>
       <article class="svc reveal" data-delay="1">
-        <div class="svc-icon"><svg><use href="#i-building"/></svg></div>
-        <h3>Office &amp; Commercial</h3>
-        <p>Workstations, breakrooms, restrooms and floors, cleaned on a schedule that never interrupts your business.</p>
-        <a href="#contact" class="more">Request a walkthrough <svg><use href="#i-arrow"/></svg></a>
-      </article>
-      <article class="svc reveal" data-delay="2">
         <div class="svc-icon"><svg><use href="#i-key"/></svg></div>
         <h3>Property Manager Turnovers</h3>
-        <p>Fast, consistent unit turns and common-area care for apartment communities and property management firms.</p>
+        <p>Recurring turnover cleaning for landlords and management companies, with access handled securely and issues reported promptly.</p>
+        <a href="#contact" class="more">Set up an account <svg><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="svc reveal" data-delay="2">
+        <div class="svc-icon"><svg><use href="#i-award"/></svg></div>
+        <h3>Listing Prep for Agents</h3>
+        <p>Speedy, polished cleans ahead of listing photos and showings, scheduled around your closing timeline.</p>
         <a href="#contact" class="more">Partner with us <svg><use href="#i-arrow"/></svg></a>
       </article>
       <article class="svc reveal" data-delay="3">
-        <div class="svc-icon"><svg><use href="#i-hammer"/></svg></div>
-        <h3>Post-Construction</h3>
-        <p>Dust, debris and residue removal after renovations, so your new space is ready to show and occupy.</p>
-        <a href="#contact" class="more">Request a walkthrough <svg><use href="#i-arrow"/></svg></a>
+        <div class="svc-icon"><svg><use href="#i-bucket"/></svg></div>
+        <h3>Add-On Services</h3>
+        <p>Carpet shampooing, heavy grease removal, junk and excess trash removal, appliance detailing and interior window washing.</p>
+        <a href="#addons" class="more">See add-on pricing <svg><use href="#i-arrow"/></svg></a>
       </article>
     </div>
   </div>
@@ -861,15 +895,15 @@
   <div class="container" style="position:relative">
     <div class="section-head reveal">
       <span class="eyebrow">How it works</span>
-      <h2 class="display">Sparkling in Four Simple Steps</h2>
-      <p>Booking a professional clean should feel effortless. Here is what to expect.</p>
+      <h2 class="display">A Documented Process, Every Job</h2>
+      <p>The same four steps on every visit, so you always know what was done and what we found.</p>
     </div>
     <div class="steps reveal" id="steps">
       <div class="steps-line"></div>
-      <div class="step"><div class="step-num"><b>1</b></div><h3>Request a Quote</h3><p>Use the instant estimator or call us. It takes about a minute.</p></div>
-      <div class="step"><div class="step-num"><b>2</b></div><h3>Confirm Your Plan</h3><p>We confirm scope, price and a time that works for you.</p></div>
-      <div class="step"><div class="step-num"><b>3</b></div><h3>We Clean Brilliantly</h3><p>Our trained team arrives equipped and follows the Diamond Standard.</p></div>
-      <div class="step"><div class="step-num"><b>4</b></div><h3>Enjoy &amp; Relax</h3><p>Walk into a space that shines. Not happy? We will make it right.</p></div>
+      <div class="step"><div class="step-num"><b>1</b></div><h3>Quote &amp; Schedule</h3><p>Get an instant estimate, then confirm scope by walkthrough or photos. Move-outs are available the same week.</p></div>
+      <div class="step"><div class="step-num"><b>2</b></div><h3>Pre-Clean Walkthrough</h3><p>On arrival, your crew lead notes any pre-existing damage before work begins.</p></div>
+      <div class="step"><div class="step-num"><b>3</b></div><h3>Checklist Clean</h3><p>Kitchen, bathrooms, bedrooms and living areas, then whole-unit details, in order and never skipped.</p></div>
+      <div class="step"><div class="step-num"><b>4</b></div><h3>Final Inspection</h3><p>The crew lead signs off, secures the property and reports any maintenance issues to you.</p></div>
     </div>
   </div>
 </section>
@@ -879,38 +913,48 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">The Diamond Standard</span>
-      <h2 class="display">What Is Included in Every Clean</h2>
-      <p>No guesswork. Here is our room-by-room checklist for standard service. Deep and move-out cleans go even further.</p>
+      <h2 class="display">Our Move-In / Move-Out Checklist</h2>
+      <p>No guesswork. This is the exact checklist our crews complete and sign off on for every turnover clean.</p>
     </div>
-    <div class="tabs reveal" role="tablist" aria-label="Checklist by room">
+    <div class="tabs reveal" role="tablist" aria-label="Checklist by area">
       <button class="tab" role="tab" aria-selected="true" data-panel="kitchen"><svg><use href="#i-kitchen"/></svg>Kitchen</button>
       <button class="tab" role="tab" aria-selected="false" data-panel="bath"><svg><use href="#i-bath"/></svg>Bathrooms</button>
-      <button class="tab" role="tab" aria-selected="false" data-panel="living"><svg><use href="#i-sofa"/></svg>Living &amp; Bedrooms</button>
-      <button class="tab" role="tab" aria-selected="false" data-panel="office"><svg><use href="#i-desk"/></svg>Offices</button>
+      <button class="tab" role="tab" aria-selected="false" data-panel="living"><svg><use href="#i-sofa"/></svg>Bedrooms &amp; Living</button>
+      <button class="tab" role="tab" aria-selected="false" data-panel="unit"><svg><use href="#i-home"/></svg>Whole Unit</button>
+      <button class="tab" role="tab" aria-selected="false" data-panel="final"><svg><use href="#i-award"/></svg>Final Inspection</button>
     </div>
     <ul class="panel active" id="kitchen" role="tabpanel">
-      <li>Countertops and backsplash sanitized</li><li>Stovetop and range hood degreased</li>
-      <li>Microwave cleaned inside and out</li><li>Appliance exteriors polished</li>
-      <li>Sink and faucet scrubbed and shined</li><li>Cabinet fronts and handles wiped</li>
-      <li>Trash emptied and liner replaced</li><li>Floors vacuumed and mopped</li>
+      <li>Remove all trash</li><li>Inside and outside of cabinets and drawers</li>
+      <li>Countertops cleaned and sanitized</li><li>Backsplash cleaned</li>
+      <li>Sink scrubbed and faucet polished</li><li>Refrigerator inside and out</li>
+      <li>Oven inside and out</li><li>Stovetop and burners</li>
+      <li>Microwave inside and out</li><li>Dishwasher wiped inside and out</li>
+      <li>Grease removed from cabinets and appliances</li><li>Floors swept and mopped</li>
     </ul>
     <ul class="panel" id="bath" role="tabpanel">
-      <li>Toilet cleaned and disinfected</li><li>Tub and shower scrubbed</li>
-      <li>Mirrors streak-free</li><li>Sink, vanity and fixtures polished</li>
-      <li>Tile and glass doors wiped</li><li>Towels neatly folded or hung</li>
-      <li>Trash emptied and liner replaced</li><li>Floors vacuumed and mopped</li>
+      <li>Toilet scrubbed and disinfected</li><li>Bathtub and shower cleaned</li>
+      <li>Soap scum and hard-water stains removed</li><li>Sink and countertop cleaned</li>
+      <li>Faucets polished</li><li>Mirrors cleaned</li>
+      <li>Cabinets wiped inside and out</li><li>All surfaces sanitized</li>
+      <li>Floors swept and mopped</li>
     </ul>
     <ul class="panel" id="living" role="tabpanel">
-      <li>All surfaces dusted</li><li>Beds made (linens changed on request)</li>
-      <li>Light switches and door handles sanitized</li><li>Baseboards spot-cleaned</li>
-      <li>Mirrors and glass polished</li><li>Furniture and upholstery vacuumed</li>
-      <li>Carpets vacuumed, edges included</li><li>Hard floors mopped</li>
+      <li>All surfaces dusted</li><li>Cobwebs removed</li>
+      <li>Ceiling fans and light fixtures</li><li>Doors, frames and baseboards wiped</li>
+      <li>Light switches and outlets cleaned</li><li>Windowsills and tracks cleaned</li>
+      <li>Carpets thoroughly vacuumed</li><li>Hard floors swept and mopped</li>
+      <li>Mirrors and glass doors cleaned</li>
     </ul>
-    <ul class="panel" id="office" role="tabpanel">
-      <li>Desks and workstations wiped</li><li>Breakroom and appliances cleaned</li>
-      <li>Restrooms sanitized and restocked</li><li>High-touch points disinfected</li>
-      <li>Glass doors and partitions polished</li><li>Trash and recycling removed</li>
-      <li>Lobby and entryways refreshed</li><li>Floors vacuumed and mopped</li>
+    <ul class="panel" id="unit" role="tabpanel">
+      <li>Air vents dusted</li><li>Walls spot-cleaned</li>
+      <li>Stickers and adhesive residue removed</li><li>Blinds cleaned</li>
+      <li>All trash emptied</li><li>Closets checked and shelves wiped</li>
+      <li>Pet hair removed as needed</li><li>Odors eliminated as needed</li>
+    </ul>
+    <ul class="panel" id="final" role="tabpanel">
+      <li>All appliances clean and working areas spotless</li><li>Mirrors and windows streak-free</li>
+      <li>No trash or supplies left behind</li><li>Doors locked and codes reset as instructed</li>
+      <li>Damage or maintenance issues reported to you</li><li>Crew lead signs off before leaving</li>
     </ul>
   </div>
 </section>
@@ -920,49 +964,61 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Transparent pricing</span>
-      <h2 class="display">Choose Your Level of Brilliance</h2>
-      <p>Straightforward starting prices with no hidden fees. Recurring clients save up to 15% on every visit.</p>
+      <h2 class="display">Priced by the Square Foot</h2>
+      <p>Simple, size-based pricing with a per-visit minimum. Supplies and equipment included. No surprises.</p>
     </div>
     <div class="plans">
       <article class="plan reveal" data-delay="1">
-        <h3>Sparkle</h3>
-        <p class="for">Standard recurring clean</p>
-        <div class="price"><small>from</small><strong data-price="sparkle">$0</strong></div>
+        <h3>Standard</h3>
+        <p class="for">Recurring maintenance clean</p>
+        <div class="price"><small>from</small><strong data-price="standard">$0</strong></div>
         <ul>
-          <li><svg><use href="#i-check-circle"/></svg>Full Diamond Standard checklist</li>
-          <li><svg><use href="#i-check-circle"/></svg>Kitchens, baths and living areas</li>
-          <li><svg><use href="#i-check-circle"/></svg>Weekly, bi-weekly or monthly</li>
-          <li><svg><use href="#i-check-circle"/></svg>Same trusted cleaner when possible</li>
+          <li><svg><use href="#i-check-circle"/></svg>$0.10 to $0.15 per sq ft</li>
+          <li><svg><use href="#i-check-circle"/></svg>Kitchens, baths, bedrooms and living areas</li>
+          <li><svg><use href="#i-check-circle"/></svg>Dusting, vacuuming and mopping</li>
+          <li><svg><use href="#i-check-circle"/></svg>Weekly, biweekly or monthly</li>
         </ul>
-        <a href="#quote" class="btn btn-outline">Choose Sparkle</a>
+        <a href="#quote" class="btn btn-outline" data-service="standard">Choose Standard</a>
       </article>
       <article class="plan featured reveal" data-delay="2">
-        <span class="ribbon">Most popular</span>
-        <h3>Brilliance</h3>
-        <p class="for">Deep clean, top to bottom</p>
-        <div class="price"><small>from</small><strong data-price="brilliance">$0</strong></div>
+        <span class="ribbon">Flagship</span>
+        <h3>Move-In / Move-Out</h3>
+        <p class="for">Turnover clean with final inspection</p>
+        <div class="price"><small>from</small><strong data-price="move">$0</strong></div>
         <ul>
-          <li><svg><use href="#i-check-circle"/></svg>Everything in Sparkle</li>
-          <li><svg><use href="#i-check-circle"/></svg>Baseboards, vents and door frames</li>
-          <li><svg><use href="#i-check-circle"/></svg>Inside microwave and oven</li>
-          <li><svg><use href="#i-check-circle"/></svg>Grout, build-up and detail work</li>
+          <li><svg><use href="#i-check-circle"/></svg>$0.20 to $0.30 per sq ft</li>
+          <li><svg><use href="#i-check-circle"/></svg>Inside cabinets, fridge, oven and dishwasher</li>
+          <li><svg><use href="#i-check-circle"/></svg>Vents, blinds, walls and closets</li>
+          <li><svg><use href="#i-check-circle"/></svg>Signed final inspection and issue report</li>
         </ul>
-        <a href="#quote" class="btn btn-platinum">Choose Brilliance</a>
+        <a href="#quote" class="btn btn-platinum" data-service="move">Choose Move-Out</a>
       </article>
       <article class="plan reveal" data-delay="3">
-        <h3>Platinum</h3>
-        <p class="for">Move-in / move-out &amp; turnovers</p>
-        <div class="price"><small>from</small><strong data-price="platinum">$0</strong></div>
+        <h3>Deep Clean</h3>
+        <p class="for">Top-to-bottom detail clean</p>
+        <div class="price"><small>from</small><strong data-price="deep">$0</strong></div>
         <ul>
-          <li><svg><use href="#i-check-circle"/></svg>Everything in Brilliance</li>
-          <li><svg><use href="#i-check-circle"/></svg>Inside cabinets, fridge and oven</li>
-          <li><svg><use href="#i-check-circle"/></svg>Interior windows and tracks</li>
-          <li><svg><use href="#i-check-circle"/></svg>Move-ready, deposit-friendly finish</li>
+          <li><svg><use href="#i-check-circle"/></svg>$0.16 to $0.24 per sq ft</li>
+          <li><svg><use href="#i-check-circle"/></svg>Everything in Standard</li>
+          <li><svg><use href="#i-check-circle"/></svg>Inside appliances and baseboards</li>
+          <li><svg><use href="#i-check-circle"/></svg>Light fixtures, window tracks, grease and build-up</li>
         </ul>
-        <a href="#quote" class="btn btn-outline">Choose Platinum</a>
+        <a href="#quote" class="btn btn-outline" data-service="deep">Choose Deep Clean</a>
       </article>
     </div>
-    <p class="price-note reveal">Starting prices shown for a one-bedroom apartment. Commercial pricing is custom; <a href="#contact" style="color:var(--royal);font-weight:800">request a free walkthrough</a>.</p>
+    <p class="price-note reveal">Example: a 1,200 sq ft two-bedroom move-out is about $300. Final pricing depends on condition and your neighborhood and is confirmed before we start.</p>
+
+    <div class="addons reveal" id="addons">
+      <h3 class="display">Add-On Services</h3>
+      <p>Billed separately and quoted after a brief walkthrough or photos.</p>
+      <div class="addon-grid">
+        <div class="addon"><strong>Carpet shampooing</strong><span>$35 to $55 per room</span><small>$100 minimum per visit</small></div>
+        <div class="addon"><strong>Heavy grease removal</strong><span>$40 to $75 flat</span><small>Per kitchen</small></div>
+        <div class="addon"><strong>Excess trash / junk removal</strong><span>$50 to $150 flat</span><small>Per load, by volume</small></div>
+        <div class="addon"><strong>Inside-appliance detailing</strong><span>$20 to $40</span><small>Per appliance, beyond standard scope</small></div>
+        <div class="addon"><strong>Interior window washing</strong><span>$5 to $8</span><small>Per window</small></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -974,17 +1030,17 @@
         <img src="assets/logo.png" alt="Diamond Platinum Cleaning logo" width="1000" height="1000" onerror="this.closest('.frame').innerHTML='<svg viewBox=&quot;0 0 100 90&quot; style=&quot;width:60%;margin:30px auto&quot;><use href=&quot;#gem&quot;/></svg>'" />
       </div>
       <div class="floater f1"><svg><use href="#i-shield"/></svg>Vetted &amp; trained</div>
-      <div class="floater f2"><svg><use href="#i-award"/></svg>Guaranteed results</div>
+      <div class="floater f2"><svg><use href="#i-award"/></svg>Inspected &amp; signed off</div>
     </div>
     <div class="reveal" data-delay="2">
       <span class="eyebrow">Why Diamond Platinum</span>
       <h2 class="display">A Higher Standard of Clean</h2>
-      <p>Diamonds are formed under pressure and polished with precision. We bring the same care to every apartment and business we serve.</p>
+      <p>Many cleaners compete on price alone. We compete on process: a documented checklist, a formal final inspection and a team held to four core values.</p>
       <div class="why-grid">
-        <div class="why-item"><svg><use href="#i-users"/></svg><strong>Vetted Professionals</strong><span>Every team member is screened, trained and held to our policies.</span></div>
-        <div class="why-item"><svg><use href="#i-check-circle"/></svg><strong>Consistent Checklists</strong><span>The same detailed standard, every visit, every room.</span></div>
-        <div class="why-item"><svg><use href="#i-calendar"/></svg><strong>Reliable Scheduling</strong><span>On-time arrivals and easy rescheduling when life happens.</span></div>
-        <div class="why-item"><svg><use href="#i-award"/></svg><strong>Satisfaction Guarantee</strong><span>Tell us within 24 hours and we will return to make it right.</span></div>
+        <div class="why-item"><svg><use href="#i-calendar"/></svg><strong>Reliability</strong><span>We show up on time, every time.</span></div>
+        <div class="why-item"><svg><use href="#i-check-circle"/></svg><strong>Thoroughness</strong><span>We follow the checklist in every room, on every visit.</span></div>
+        <div class="why-item"><svg><use href="#i-shield"/></svg><strong>Integrity</strong><span>We respect your property and privacy without exception.</span></div>
+        <div class="why-item"><svg><use href="#i-award"/></svg><strong>Accountability</strong><span>We report problems right away instead of hiding them, and re-clean within 48 hours if needed.</span></div>
       </div>
     </div>
   </div>
@@ -1003,12 +1059,12 @@
         <div class="slides" id="slides">
           <div class="slide"><div class="review"><span class="q"><svg><use href="#i-quote"/></svg></span>
             <div class="stars" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-            <blockquote>"I came home and my apartment honestly looked brand new. The kitchen sparkled and they got corners I had given up on. Booking was easy and they arrived right on time."</blockquote>
-            <cite>Apartment Client<span>Recurring bi-weekly service</span></cite><span class="sample-tag">Sample review</span></div></div>
+            <blockquote>"I came home and my place honestly looked brand new. The kitchen sparkled and they got corners I had given up on. Booking was easy and they arrived right on time."</blockquote>
+            <cite>Homeowner<span>Recurring biweekly service</span></cite><span class="sample-tag">Sample review</span></div></div>
           <div class="slide"><div class="review"><span class="q"><svg><use href="#i-quote"/></svg></span>
             <div class="stars" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-            <blockquote>"Our office has never looked more professional. Clients notice the difference when they walk in, and the team works quietly after hours without disrupting anything."</blockquote>
-            <cite>Office Manager<span>Commercial client</span></cite><span class="sample-tag">Sample review</span></div></div>
+            <blockquote>"They had my listing photo-ready in a day. Every room looked its best for the photographer and the first showing."</blockquote>
+            <cite>Real Estate Agent<span>Listing-prep client</span></cite><span class="sample-tag">Sample review</span></div></div>
           <div class="slide"><div class="review"><span class="q"><svg><use href="#i-quote"/></svg></span>
             <div class="stars" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
             <blockquote>"We use Diamond Platinum for unit turnovers. Fast, thorough and consistent. Our units are show-ready every time, which means they lease faster."</blockquote>
@@ -1029,17 +1085,22 @@
       <div style="position:relative;z-index:1">
         <span class="eyebrow">Careers</span>
         <h2 class="display">Shine With Our Team</h2>
-        <p>We are growing and looking for dependable, detail-oriented cleaning professionals who take pride in their work. Join a company that invests in training, respect and growth.</p>
-        <div class="perks"><span>Flexible schedules</span><span>Paid training</span><span>Growth opportunities</span><span>Supportive team</span></div>
+        <p>We are hiring Cleaning Technicians and Crew Leads across Metro Detroit. Experience is preferred but not required: we train you on our checklist, hands-on, with an experienced crew.</p>
+        <div class="perks"><span>Hands-on training</span><span>Biweekly direct deposit</span><span>Paid drive time between jobs</span><span>Mileage reimbursed between jobs</span><span>Uniform &amp; supply kit provided</span></div>
+        <div class="roles">
+          <div class="role"><strong>Cleaning Technician</strong><span>Reliable transportation, able to lift 25 lbs, pass a background check. No experience required.</span></div>
+          <div class="role"><strong>Crew Lead</strong><span>6+ months of cleaning experience, valid driver's license and clean driving record, strong client communication.</span></div>
+        </div>
         <a href="#contact" class="btn btn-platinum" data-topic="Employment">Apply Today <svg><use href="#i-arrow"/></svg></a>
       </div>
       <div class="careers-card">
         <h3>How to Join</h3>
         <ol>
           <li>Submit your application and availability.</li>
-          <li>Complete a short interview with our team.</li>
-          <li>Pass a background check and verify references.</li>
-          <li>Complete onboarding and hands-on training.</li>
+          <li>Quick phone screen, then a structured interview.</li>
+          <li>Background check and two reference checks.</li>
+          <li>Offer letter and Day 1 onboarding with uniform, ID badge and supply kit.</li>
+          <li>Shadow shifts across standard, deep and move-out jobs before working independently.</li>
         </ol>
       </div>
     </div>
@@ -1054,12 +1115,14 @@
       <h2 class="display">Frequently Asked Questions</h2>
     </div>
     <div class="faq">
-      <details class="reveal" open><summary>Do I need to be home during the cleaning?<span class="pm"></span></summary><div class="ans">No. Many clients provide a key, lockbox or access code. Your access information is stored securely and shared only with your assigned team.</div></details>
-      <details class="reveal"><summary>Do you bring your own supplies and equipment?<span class="pm"></span></summary><div class="ans">Yes. Our team arrives with professional-grade supplies and equipment. If you prefer specific products, just let us know and we will use yours.</div></details>
-      <details class="reveal"><summary>Are your cleaners background-checked?<span class="pm"></span></summary><div class="ans">Yes. Every team member completes a background check and our training program before working in any client space.</div></details>
-      <details class="reveal"><summary>What if I am not satisfied with my clean?<span class="pm"></span></summary><div class="ans">Contact us within 24 hours and we will return to re-clean the areas of concern at no additional charge.</div></details>
-      <details class="reveal"><summary>What is your cancellation policy?<span class="pm"></span></summary><div class="ans">We ask for at least 24 hours notice to reschedule or cancel so we can offer the time to another client.</div></details>
-      <details class="reveal"><summary>Do you offer commercial contracts?<span class="pm"></span></summary><div class="ans">Yes. We build custom cleaning plans for offices, retail spaces and apartment communities. Request a free walkthrough and we will prepare a tailored proposal.</div></details>
+      <details class="reveal" open><summary>What areas do you serve?<span class="pm"></span></summary><div class="ans">Detroit and the surrounding Metro Detroit area, including suburbs such as Troy, Dearborn, Bloomfield Hills and Ann Arbor. Contact us to confirm your address.</div></details>
+      <details class="reveal"><summary>How is pricing calculated?<span class="pm"></span></summary><div class="ans">By square footage and service tier, with a per-visit minimum so every job is covered. Add-ons such as carpet shampooing are quoted separately after a brief walkthrough or photos.</div></details>
+      <details class="reveal"><summary>Do I need to be there during the clean?<span class="pm"></span></summary><div class="ans">No. Many clients provide a key, lockbox or access code. Access information is kept confidential, and codes are returned or reset as you instruct after each job.</div></details>
+      <details class="reveal"><summary>Do you bring your own supplies?<span class="pm"></span></summary><div class="ans">Yes. We bring our own professional products and equipment. If you prefer we use your supplies, ask about a discounted rate.</div></details>
+      <details class="reveal"><summary>Are your cleaners background-checked?<span class="pm"></span></summary><div class="ans">Yes. Every team member is background-checked before working any job on their own, and new hires train on supervised crews first. Crews wear company uniforms and a visible photo ID badge.</div></details>
+      <details class="reveal"><summary>What happens if something is not right?<span class="pm"></span></summary><div class="ans">Contact us and a supervisor will acknowledge your concern within 24 hours. If a re-clean is warranted, we schedule it within 48 hours at no additional charge.</div></details>
+      <details class="reveal"><summary>What if you find damage in the unit?<span class="pm"></span></summary><div class="ans">We note pre-existing damage during our walkthrough on arrival, and we report any damage or maintenance issues to you with photos before we leave.</div></details>
+      <details class="reveal"><summary>What is your cancellation policy?<span class="pm"></span></summary><div class="ans">Please give at least 24 hours' notice to cancel or reschedule a standard visit, and 48 hours for a move-out job. Late cancellations may be subject to a fee under your service agreement.</div></details>
     </div>
   </div>
 </section>
@@ -1069,11 +1132,11 @@
   <div class="container contact">
     <div class="contact-info reveal">
       <h2>Let Us Make Your Space Shine</h2>
-      <p>Tell us about your apartment or business and we will prepare a free, no-obligation quote.</p>
+      <p>Tell us about your property and timeline and we will prepare a free, no-obligation quote.</p>
       <div class="ci"><span class="ic"><svg><use href="#i-phone"/></svg></span><div><small>Call or text</small><a href="tel:+10000000000">(000) 000-0000</a></div></div>
       <div class="ci"><span class="ic"><svg><use href="#i-mail"/></svg></span><div><small>Email</small><a href="mailto:info@diamondplatinumcleaning.com">info@diamondplatinumcleaning.com</a></div></div>
       <div class="ci"><span class="ic"><svg><use href="#i-clock"/></svg></span><div><small>Hours</small><p>Mon to Sat, 7:00 AM to 7:00 PM</p></div></div>
-      <div class="ci"><span class="ic"><svg><use href="#i-pin"/></svg></span><div><small>Service area</small><p>[Your City] &amp; surrounding areas</p></div></div>
+      <div class="ci"><span class="ic"><svg><use href="#i-pin"/></svg></span><div><small>Service area</small><p>Detroit &amp; Metro Detroit</p></div></div>
     </div>
     <form class="contact-form reveal" data-delay="2" id="contactForm" novalidate>
       <div class="form-body">
@@ -1086,8 +1149,8 @@
           <div class="field"><label for="cEmail">Email</label><input id="cEmail" name="email" type="email" required autocomplete="email" /></div>
           <div class="field"><label for="cTopic">I am interested in</label>
             <select id="cTopic" name="topic">
-              <option>Apartment cleaning</option><option>Deep cleaning</option><option>Move-in / move-out</option>
-              <option>Office / commercial</option><option>Property manager turnovers</option><option>Post-construction</option><option>Employment</option>
+              <option>Move-in / move-out cleaning</option><option>Deep cleaning</option><option>Standard recurring cleaning</option>
+              <option>Property manager turnovers</option><option>Real estate listing prep</option><option>Add-on services</option><option>Employment</option>
             </select>
           </div>
         </div>
@@ -1111,11 +1174,11 @@
     <div class="foot">
       <div>
         <a href="#top" class="brand"><svg class="brand-mark" viewBox="0 0 100 90" aria-hidden="true"><use href="#gem"/></svg><div class="brand-text"><strong>DIAMOND PLATINUM</strong><span>CLEANING</span></div></a>
-        <p>Apartment and business cleaning with a brilliant finish. Clean spaces. Strong impressions.</p>
+        <p>Checklist-driven move-out, deep and recurring cleaning for Metro Detroit. Clean spaces. Strong impressions.</p>
       </div>
-      <div><h4>Services</h4><ul><li><a href="#services">Apartment Cleaning</a></li><li><a href="#services">Deep Cleaning</a></li><li><a href="#services">Move-In / Move-Out</a></li><li><a href="#services">Office &amp; Commercial</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="#services">Move-In / Move-Out</a></li><li><a href="#services">Deep Cleaning</a></li><li><a href="#services">Standard Recurring</a></li><li><a href="#addons">Add-On Services</a></li></ul></div>
       <div><h4>Company</h4><ul><li><a href="#process">How It Works</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#careers">Careers</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-      <div><h4>Contact</h4><ul><li><a href="tel:+10000000000">(000) 000-0000</a></li><li><a href="mailto:info@diamondplatinumcleaning.com">Email us</a></li><li>Mon to Sat, 7 AM to 7 PM</li><li>[Your City]</li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+10000000000">(000) 000-0000</a></li><li><a href="mailto:info@diamondplatinumcleaning.com">Email us</a></li><li>Mon to Sat, 7 AM to 7 PM</li><li>Detroit &amp; Metro Detroit</li></ul></div>
     </div>
     <div class="foot-bottom">
       <span>&copy; <span id="year"></span> Diamond Platinum Cleaning. All rights reserved.</span>
@@ -1132,16 +1195,16 @@
 <script>
 (function () {
   /* ---------------------------------------------------------------
-     PRICING CONFIG: replace these sample numbers with your real rates.
-     base = one-time price for the smallest size; perStep = added per
-     extra bedroom (apartments / move) or per 1,000 sq ft (office).
+     PRICING CONFIG (Business Plan, Section 5): midpoint rate per sq ft
+     and per-visit minimum for each tier. Adjust after local competitor
+     quotes confirm positioning.
   ----------------------------------------------------------------*/
   var PRICING = {
-    apartment: { base: 120, perStep: 30, label: "Bedrooms", options: ["Studio", "1 bedroom", "2 bedrooms", "3 bedrooms", "4+ bedrooms"] },
-    move:      { base: 220, perStep: 50, label: "Bedrooms", options: ["Studio", "1 bedroom", "2 bedrooms", "3 bedrooms", "4+ bedrooms"] },
-    office:    { base: 150, perStep: 60, label: "Office size", options: ["Under 1,000 sq ft", "1,000 to 2,500 sq ft", "2,500 to 5,000 sq ft", "5,000 to 10,000 sq ft", "10,000+ sq ft"] }
+    standard: { rate: 0.125, min: 100 },
+    deep:     { rate: 0.20,  min: 170 },
+    move:     { rate: 0.25,  min: 195 }
   };
-  var PLAN_PRICES = { sparkle: 120, brilliance: 220, platinum: 260 };
+  var PLAN_PRICES = { standard: PRICING.standard.min, deep: PRICING.deep.min, move: PRICING.move.min };
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -1198,25 +1261,23 @@
   document.querySelectorAll("[data-price]").forEach(function (el) { planIO.observe(el); });
 
   /* Instant estimator */
-  var form = document.getElementById("quoteForm"), sizeSel = document.getElementById("size"), sizeLabel = document.getElementById("sizeLabel"), freq = document.getElementById("freq"), est = document.getElementById("estPrice");
-  function currentSpace() { return form.querySelector("input[name=space]:checked").value; }
-  function fillSizes() {
-    var cfg = PRICING[currentSpace()], prev = sizeSel.selectedIndex;
-    sizeLabel.textContent = cfg.label;
-    sizeSel.innerHTML = cfg.options.map(function (o, i) { return "<option value='" + i + "'>" + o + "</option>"; }).join("");
-    sizeSel.selectedIndex = prev > 0 ? prev : 1;
-  }
+  var form = document.getElementById("quoteForm"), sizeSel = document.getElementById("size"), est = document.getElementById("estPrice");
+  function currentService() { return form.querySelector("input[name=space]:checked").value; }
   function updateEstimate() {
-    var cfg = PRICING[currentSpace()];
-    var one = cfg.base + cfg.perStep * parseInt(sizeSel.value, 10);
-    var mult = currentSpace() === "move" ? 1 : parseFloat(freq.value);
-    freq.disabled = currentSpace() === "move";
-    animateNumber(est, Math.round(one * mult));
+    var cfg = PRICING[currentService()];
+    animateNumber(est, Math.max(cfg.min, Math.round(cfg.rate * parseInt(sizeSel.value, 10))));
   }
-  form.querySelectorAll("input[name=space]").forEach(function (r) { r.addEventListener("change", function () { fillSizes(); updateEstimate(); }); });
+  form.querySelectorAll("input[name=space]").forEach(function (r) { r.addEventListener("change", updateEstimate); });
   sizeSel.addEventListener("change", updateEstimate);
-  freq.addEventListener("change", updateEstimate);
-  fillSizes(); updateEstimate();
+  updateEstimate();
+
+  /* Plan buttons preselect the matching service in the estimator */
+  document.querySelectorAll("[data-service]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var r = form.querySelector("input[name=space][value=" + b.dataset.service + "]");
+      if (r) { r.checked = true; updateEstimate(); }
+    });
+  });
 
   /* Demo form handling (connect to your form service before launch) */
   function wireForm(f) {
