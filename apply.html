@@ -381,15 +381,18 @@
 <!-- ===== Application form ===== -->
 <section class="section" style="padding-top:24px">
   <div class="container app-wrap">
-    <form class="book" id="apply" onsubmit="return handleApplication(event)" data-endpoint="" data-method="POST">
+    <form class="book" id="apply" onsubmit="return handleApplication(event)" data-endpoint="https://formsubmit.co/ajax/carepathllc26@gmail.com" data-method="POST">
       <!--
-        AUTOMATION HOOK
-        To connect submissions to an automation (Formspree, Zapier, Make, a webhook,
-        or an ATS/onboarding workflow):
-          1. Put the destination URL in this form's data-endpoint attribute.
-          2. The script POSTs all fields as JSON (checkbox groups arrive as lists).
-        Leave data-endpoint empty to keep the on-page confirmation (demo) behavior.
+        SUBMISSIONS
+        Applications are relayed by FormSubmit (formsubmit.co) to carepathllc26@gmail.com.
+        To route them elsewhere later (Zapier, Make, a webhook, or an onboarding workflow),
+        change this form's data-endpoint attribute. The script POSTs all fields as JSON.
+        Fields starting with "_" are FormSubmit settings, not applicant answers.
       -->
+      <input type="hidden" name="_subject" value="New Driver Application - CarePath Transport" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
       <div class="form-msg" id="applyMsg">Thank you for applying! We've received your application and will contact you about next steps.</div>
 
       <fieldset>
@@ -557,7 +560,7 @@
       </fieldset>
 
       <button class="btn btn--primary btn--lg" type="submit" style="width:100%">Submit Application</button>
-      <p class="form-note">Please do not enter your Social Security number, date of birth, driver's license number, or medical information here. We collect those securely later in the hiring process. CarePath Transport is an equal opportunity employer. This form is not yet connected to a live inbox.</p>
+      <p class="form-note">Please do not enter your Social Security number, date of birth, driver's license number, or medical information here. We collect those securely later in the hiring process. CarePath Transport is an equal opportunity employer.</p>
     </form>
   </div>
 </section>
@@ -665,17 +668,27 @@
       const vals = fd.getAll(key);
       data[key] = form.querySelectorAll(`input[type="checkbox"][name="${key}"]`).length > 1 ? vals : vals[0];
     }
+    // Email relays show lists poorly, so send checkbox groups as comma-separated text there
+    if (endpoint && endpoint.includes('formsubmit.co')) {
+      for (const k in data) if (Array.isArray(data[k])) data[k] = data[k].join(', ');
+    }
     if (endpoint) {
+      const btn = form.querySelector('button[type="submit"]');
+      const label = btn.textContent;
+      btn.disabled = true; btn.textContent = 'Sending...';
       try {
         const res = await fetch(endpoint, {
           method: form.getAttribute('data-method') || 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify(data)
         });
-        if (!res.ok) throw new Error('Request failed');
+        const out = await res.json().catch(() => ({}));
+        if (!res.ok || String(out.success) === 'false') throw new Error(out.message || 'Request failed');
       } catch (err) {
-        alert('Sorry, something went wrong submitting your application. Please try again later.');
+        alert('Sorry, something went wrong submitting your application. Please try again, or call us at (989) 481-1186.');
         return false;
+      } finally {
+        btn.disabled = false; btn.textContent = label;
       }
     }
     msg.classList.add('show');
