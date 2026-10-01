@@ -25,13 +25,16 @@ python3 -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
+## Contact details
+
+Phone (989) 481-1186, email carepathllc26@gmail.com, office 203 S. Washington Ave,
+Saginaw, MI 48607 — set across all three pages.
+
 ## Before going live — replace the placeholders
 
 These are marked with placeholder values throughout `index.html`:
 
-- **Phone number** — `(000) 000-0000` (search and replace, including `tel:+10000000000`)
-- **Email** — `dispatch@carepathtransport.com`
-- **Office address & hours**
+- **Office hours** — confirm the Mon–Fri hours shown in the Contact section
 - **Service area** — city/county tags in the Service Area section
 - **Testimonials** — replace samples with real, permission-granted reviews
 - **FAQ answers** — insurance/payment answer especially

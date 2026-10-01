@@ -308,6 +308,14 @@
   header.nav.scrolled{box-shadow:var(--shadow-md)}
   header.nav.scrolled .nav-inner{padding-top:6px;padding-bottom:6px}
   header.nav.scrolled .brand img{height:40px}
+  /* Header fit */
+  .nav-links{gap:22px}
+  .nav-links a{white-space:nowrap}
+  @media (max-width:1140px){.nav-cta .btn--ghost{display:none}}
+  @media (max-width:680px){
+    .topbar .container{justify-content:center;padding-top:7px;padding-bottom:7px}
+    .topbar .tb-right{gap:14px;justify-content:center;font-size:.82rem}
+  }
 </style>
 </head>
 <body>
@@ -319,8 +327,8 @@
       <span class="dot">●</span> Available 24 / 7 &nbsp;•&nbsp; Same-day &amp; scheduled rides
     </div>
     <div class="tb-right">
-      <span>Phone &amp; email coming soon</span>
-      <a href="#contact">Request a ride online</a>
+      <span><a href="tel:+19894811186">(989) 481-1186</a></span>
+      <a href="mailto:carepathllc26@gmail.com">carepathllc26@gmail.com</a>
     </div>
   </div>
 </div>
@@ -341,7 +349,7 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a href="#contact" class="btn btn--ghost">Contact</a>
+      <a href="tel:+19894811186" class="btn btn--ghost">Call Now</a>
       <a href="#contact" class="btn btn--primary">Book a Ride</a>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
@@ -362,7 +370,7 @@
         <p class="lead">Door-to-door wheelchair and ambulatory transportation for seniors and individuals with mobility needs. Trained, compassionate drivers. On time, every time.</p>
         <div class="hero-cta">
           <a href="#contact" class="btn btn--primary btn--lg">Book a Ride</a>
-          <a href="#contact" class="btn btn--teal btn--lg">Request a Callback</a>
+          <a href="tel:+19894811186" class="btn btn--teal btn--lg">Call (989) 481-1186</a>
         </div>
         <div class="hero-trust">
           <span>✔ Licensed &amp; Insured</span>
@@ -657,9 +665,10 @@
   <div class="container">
     <div class="cta-band">
       <h2>Ready to book your ride?</h2>
-      <p>Request a ride online for same-day availability, and we'll take care of the rest.</p>
+      <p>Call now for same-day availability, or request a ride online and we'll take care of the rest.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
-        <a href="#contact" class="btn btn--primary btn--lg">Request a Callback</a>
+        <a href="tel:+19894811186" class="btn btn--primary btn--lg">Call (989) 481-1186</a>
+        <a href="#contact" class="btn btn--ghost btn--lg">Request a Ride Online</a>
       </div>
     </div>
   </div>
@@ -671,18 +680,18 @@
     <div class="center">
       <p class="eyebrow">Get In Touch</p>
       <h2>Book a ride or ask a question</h2>
-      <p class="lead">Fill out the form and our team will reach out to confirm your trip. Phone and email will be added here soon.</p>
+      <p class="lead">Fill out the form and our team will reach out to confirm your trip. For same-day or urgent rides, call us at <a href="tel:+19894811186" style="color:var(--teal-600);font-weight:600">(989) 481-1186</a>.</p>
     </div>
 
     <div class="contact-grid" style="margin-top:44px">
       <div class="contact-info">
         <div class="ci-item">
           <div class="ci-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-          <div><h4>Phone / Dispatch</h4><p>Coming soon — please use the booking form for now.</p></div>
+          <div><h4>Phone / Dispatch</h4><a href="tel:+19894811186">(989) 481-1186</a><p>Available 24/7</p></div>
         </div>
         <div class="ci-item">
           <div class="ci-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
-          <div><h4>Email</h4><p>Coming soon — please use the booking form for now.</p></div>
+          <div><h4>Email</h4><a href="mailto:carepathllc26@gmail.com">carepathllc26@gmail.com</a></div>
         </div>
         <div class="ci-item">
           <div class="ci-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
@@ -693,8 +702,8 @@
           <div><h4>Hours</h4><p>Rides available 24/7<br/>Office: Mon–Fri, 8am–6pm</p></div>
         </div>
         <div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow-sm)">
-          <strong style="font-family:var(--font-head);color:var(--navy)">Quick &amp; easy</strong>
-          <p style="margin:6px 0 0;color:var(--muted);font-size:.95rem">Submit the form and a real person will help you book in minutes.</p>
+          <strong style="font-family:var(--font-head);color:var(--navy)">Prefer to talk?</strong>
+          <p style="margin:6px 0 0;color:var(--muted);font-size:.95rem">Call <a href="tel:+19894811186" style="color:var(--teal-600);font-weight:600">(989) 481-1186</a> and a real person will help you book in minutes.</p>
         </div>
       </div>
 
@@ -764,8 +773,8 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li>Phone coming soon</li>
-          <li><a href="#contact">Request a ride online</a></li>
+          <li><a href="tel:+19894811186">(989) 481-1186</a></li>
+          <li><a href="mailto:carepathllc26@gmail.com">carepathllc26@gmail.com</a></li>
           <li>203 S. Washington Ave, Saginaw, MI 48607</li>
           <li>Rides available 24/7</li>
         </ul>
@@ -782,7 +791,7 @@
 
 <!-- FAQ (placed above footer visually via order? keep here) -->
 
-<a href="#contact" class="mobile-call">Request a Ride Online</a>
+<a href="tel:+19894811186" class="mobile-call">Tap to Call (989) 481-1186</a>
 
 <script>
   // Mobile nav
