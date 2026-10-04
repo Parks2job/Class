@@ -8,6 +8,7 @@ Package (July 2026).
 ## What's included
 
 - `index.html`: the full responsive site (HTML, CSS and JavaScript in one file, no build step)
+- `property-managers.html`: dedicated page for landlords and property managers (turnover process, pricing table, account standards, account request form)
 - `assets/logo.webp`: the original full-size DPC logo (transparent background). A web-sized copy is embedded directly in `index.html`, so the page shows the logo even when the HTML file is downloaded or opened on its own.
 
 ## Sections
@@ -41,7 +42,9 @@ All animation respects the visitor's "reduce motion" setting.
 | Hours | search `Mon to Sat` | placeholder, not in source documents |
 | Prices | `PRICING` at the top of the script | uses Business Plan midpoints; the plan says to confirm with 2 to 3 local competitor quotes before publishing |
 | Reviews | Reviews section | sample text, marked "Sample review"; replace with real client reviews |
-| Forms | quote and contact forms | demo only; connect to an email/CRM form service with privacy protections |
+| Forms | quote, contact and property manager account forms | demo only; connect to a form service with privacy protections |
+| Text button | `sms:+13137506159` | confirm the number can receive texts |
+| Online booking | not yet added | choose booking software, then embed or link its booking page |
 | Insurance / bonding | not claimed on the site | add "insured & bonded" only after coverage is in place |
 
 ## Preview
