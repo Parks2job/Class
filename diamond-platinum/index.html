@@ -552,6 +552,54 @@
     .js .reveal { transform: none; }
     .hero h1 .line > span { transform: none; }
   }
+  /* Appointment request calendar */
+  .book-bg { background: linear-gradient(180deg, #fff, var(--ice)); }
+  .book { max-width: 1040px; margin: 0 auto; background: #fff; border-radius: 26px; box-shadow: var(--shadow-lg); border: 1px solid rgba(13,27,69,.06); overflow: hidden; }
+  .book-grid { display: grid; grid-template-columns: 1fr 1.05fr; }
+  .book-cal { padding: 32px; background: linear-gradient(165deg, var(--navy-800), var(--navy-900)); color: #fff; }
+  .book-side { padding: 32px; display: grid; gap: 4px; align-content: start; }
+  .cal-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+  .cal-head h3 { font-family: "Cinzel", serif; font-size: 1.3rem; text-align: center; flex: 1; }
+  .cal-nav { width: 40px; height: 40px; border-radius: 12px; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.06); color: #fff; display: grid; place-items: center; cursor: pointer; transition: .25s var(--ease); }
+  .cal-nav:hover:not(:disabled) { background: rgba(255,255,255,.16); }
+  .cal-nav:disabled { opacity: .3; cursor: default; }
+  .cal-nav svg { width: 18px; height: 18px; }
+  .cal-dow, .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+  .cal-dow span { text-align: center; font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #9fb7ef; padding-bottom: 6px; }
+  .cal-day { aspect-ratio: 1; border-radius: 12px; border: 1px solid transparent; background: rgba(255,255,255,.07); color: #fff; font-weight: 700; font-size: .95rem; cursor: pointer; position: relative; font-variant-numeric: tabular-nums; transition: transform .2s var(--ease), background .2s; }
+  .cal-day:hover:not(:disabled) { background: rgba(63,162,255,.35); transform: translateY(-2px); }
+  .cal-day:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .cal-day:disabled { background: transparent; color: rgba(255,255,255,.22); cursor: default; }
+  .cal-day.appt::after { content: ""; position: absolute; left: 50%; bottom: 6px; width: 5px; height: 5px; border-radius: 50%; background: #9fb7ef; transform: translateX(-50%); }
+  .cal-day.today { border-color: rgba(255,255,255,.35); }
+  .cal-day[aria-pressed="true"] { background: var(--platinum-grad); background-size: 200% 100%; color: var(--navy-800); animation: shimmer 5s linear infinite; box-shadow: 0 8px 22px rgba(0,0,0,.35); }
+  .cal-pad { visibility: hidden; }
+  .cal-legend { display: flex; align-items: center; gap: 8px; margin-top: 16px; font-size: .8rem; color: #c3cde6; flex-wrap: wrap; }
+  .lg { display: inline-block; width: 12px; height: 12px; border-radius: 4px; margin-left: 8px; }
+  .lg:first-child { margin-left: 0; }
+  .lg-open { background: rgba(255,255,255,.25); }
+  .lg-appt { background: rgba(255,255,255,.07); box-shadow: inset 0 -4px 0 -1px #9fb7ef; }
+  .cal-nojs { margin-top: 16px; font-size: .9rem; color: #dfe6f5; }
+  .js .cal-nojs { display: none; }
+  .slots { border: 0; margin-bottom: 10px; }
+  .slots legend { font-weight: 800; color: var(--navy-800); margin-bottom: 10px; font-size: .95rem; }
+  .slot-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .slot { cursor: pointer; }
+  .slot input { position: absolute; opacity: 0; pointer-events: none; }
+  .slot span { display: block; padding: 12px 14px; border-radius: 14px; border: 1.5px solid var(--platinum-2); transition: .2s var(--ease); }
+  .slot strong { display: block; color: var(--navy-800); font-size: .9rem; }
+  .slot small { display: block; color: var(--muted); font-size: .8rem; }
+  .slot em { display: inline-block; margin-top: 4px; font-style: normal; font-size: .66rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--royal); }
+  .slot input:checked + span { border-color: var(--royal); background: var(--ice); box-shadow: 0 6px 16px rgba(44,79,163,.15); }
+  .slot input:focus-visible + span { outline: 2px solid var(--royal); outline-offset: 2px; }
+  .slot-empty { grid-column: 1 / -1; color: var(--muted); font-size: .9rem; padding: 14px; border-radius: 14px; background: var(--platinum-1); }
+  .flex-check { display: flex; gap: 8px; align-items: center; margin-top: 10px; font-size: .88rem; color: var(--muted); cursor: pointer; }
+  .flex-check input { width: 18px; height: 18px; accent-color: var(--royal); }
+  .book-summary { margin: 4px 0 12px; padding: 14px 16px; border-radius: 14px; background: linear-gradient(135deg, var(--navy-800), var(--royal)); color: #fff; font-weight: 700; font-size: .92rem; }
+  .book-error { color: #b42318; font-weight: 700; font-size: .88rem; margin-bottom: 10px; }
+  .book .form-success { padding: 48px 24px; }
+  @media (max-width: 860px) { .book-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) { .book-cal, .book-side { padding: 22px 18px; } .cal-dow, .cal-grid { gap: 4px; } .slot-list { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -1018,7 +1066,7 @@
         <a href="#quote" class="btn btn-outline" data-service="deep">Choose Deep Clean</a>
       </article>
     </div>
-    <p class="price-note reveal">Example: a 1,200 sq ft two-bedroom move-out is about $300. Final pricing depends on condition and your neighborhood and is confirmed before we start.</p>
+    <p class="price-note reveal">Example: a 1,200 sq ft two-bedroom move-out is about $300. Final pricing depends on condition and your neighborhood and is confirmed before we start. <a href="#book" style="color:var(--royal);font-weight:800">Request a date</a>.</p>
 
     <div class="addons reveal" id="addons">
       <h3 class="display">Add-On Services</h3>
@@ -1031,6 +1079,73 @@
         <div class="addon"><strong>Interior window washing</strong><span>$5 to $8</span><small>Per window</small></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="section book-bg" id="book">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Request an appointment</span>
+      <h2 class="display">Pick a Day That Works for You</h2>
+      <p>Choose a date and time window, and we will call or text to confirm your appointment. Evening and weekend slots are available.</p>
+    </div>
+    <form class="book reveal" id="bookForm" novalidate>
+      <div class="form-body book-grid">
+        <div class="book-cal">
+          <div class="cal-head">
+            <button type="button" class="cal-nav" id="calPrev" aria-label="Previous month"><svg><use href="#i-left"/></svg></button>
+            <h3 id="calTitle" aria-live="polite">Select a date</h3>
+            <button type="button" class="cal-nav" id="calNext" aria-label="Next month"><svg><use href="#i-right"/></svg></button>
+          </div>
+          <div class="cal-dow" aria-hidden="true"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+          <div class="cal-grid" id="calGrid" role="group" aria-label="Available dates"></div>
+          <p class="cal-legend"><span class="lg lg-open"></span>Available <span class="lg lg-appt"></span>By appointment</p>
+          <p class="cal-nojs">The appointment calendar needs JavaScript. Call or text <strong>(313) 750-6159</strong> to request a date.</p>
+        </div>
+
+        <div class="book-side">
+          <fieldset class="slots" id="slotSet">
+            <legend id="slotLegend">Choose a date to see time windows</legend>
+            <div class="slot-list" id="slotList"></div>
+            <label class="flex-check"><input type="checkbox" id="bkFlexible" name="flexible" /> I am flexible on the time</label>
+          </fieldset>
+
+          <div class="row2">
+            <div class="field"><label for="bkService">Service</label>
+              <select id="bkService" name="service">
+                <option>Move-in / move-out</option><option>Deep cleaning</option><option>Standard recurring</option>
+                <option>Property manager turnover</option><option>Real estate listing prep</option>
+              </select>
+            </div>
+            <div class="field"><label for="bkSize">Home size</label>
+              <select id="bkSize" name="size">
+                <option>Studio / 1 BR</option><option selected>2 BR</option><option>3 BR</option><option>4 BR</option><option>5+ BR</option><option>Not sure</option>
+              </select>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="bkName">Name</label><input id="bkName" name="name" required autocomplete="name" /></div>
+            <div class="field"><label for="bkPhone">Phone</label><input id="bkPhone" name="phone" type="tel" required autocomplete="tel" /></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="bkEmail">Email (optional)</label><input id="bkEmail" name="email" type="email" autocomplete="email" /></div>
+            <div class="field"><label for="bkZip">ZIP code</label><input id="bkZip" name="zip" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="48201" /></div>
+          </div>
+          <input type="hidden" id="bkDate" name="date" />
+          <input type="hidden" id="bkWindow" name="window" />
+          <div class="book-summary" id="bookSummary" aria-live="polite">No date selected yet.</div>
+          <p class="book-error" id="bookError" role="alert" hidden></p>
+          <button class="btn btn-primary" type="submit" style="width:100%">Request This Appointment <svg><use href="#i-calendar"/></svg></button>
+          <p class="form-note">This is a request, not a confirmed booking. We will contact you to confirm the time.</p>
+        </div>
+      </div>
+      <div class="form-success">
+        <svg><use href="#i-check-circle"/></svg>
+        <h4>Request received</h4>
+        <p>Thank you. We will call or text you to confirm your appointment.</p>
+      </div>
+    </form>
   </div>
 </section>
 
@@ -1213,7 +1328,7 @@
 <div class="mobile-bar" id="mobileBar">
   <a href="tel:+13137506159" class="btn btn-ghost"><svg><use href="#i-phone"/></svg>Call</a>
   <a href="sms:+13137506159" class="btn btn-ghost"><svg><use href="#i-chat"/></svg>Text</a>
-  <a href="#quote" class="btn btn-platinum">Quote</a>
+  <a href="#book" class="btn btn-platinum">Book</a>
 </div>
 
 <script>
@@ -1462,6 +1577,129 @@
   }
   resize(); addEventListener("resize", resize);
   requestAnimationFrame(frame);
+})();
+</script>
+
+<script>
+(function () {
+  var form = document.getElementById("bookForm");
+  if (!form) return;
+  /* Time windows follow the posted business hours (0 = Sunday). */
+  var WINDOWS = {
+    weekday: [
+      { id: "morning", label: "Morning", time: "8 AM to 11 AM" },
+      { id: "midday", label: "Midday", time: "11 AM to 2 PM" },
+      { id: "afternoon", label: "Afternoon", time: "2 PM to 5 PM" },
+      { id: "evening", label: "Evening", time: "6 PM to 10 PM", after: true }
+    ],
+    saturday: [
+      { id: "morning", label: "Morning", time: "9 AM to 12 PM" },
+      { id: "midday", label: "Midday", time: "12 PM to 3 PM" },
+      { id: "evening", label: "Evening", time: "4 PM to 9 PM", after: true }
+    ],
+    sunday: [
+      { id: "appointment", label: "By appointment", time: "We will call to arrange a time", after: true }
+    ]
+  };
+  var MAX_DAYS_AHEAD = 60;
+  var MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  var DAYS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+  var today = new Date(); today.setHours(0, 0, 0, 0);
+  var first = new Date(today); first.setDate(first.getDate() + 1);           // earliest: tomorrow
+  var last = new Date(today); last.setDate(last.getDate() + MAX_DAYS_AHEAD);
+  var view = new Date(first.getFullYear(), first.getMonth(), 1);
+  var selected = null;
+
+  var grid = document.getElementById("calGrid"), title = document.getElementById("calTitle");
+  var prev = document.getElementById("calPrev"), next = document.getElementById("calNext");
+  var slotList = document.getElementById("slotList"), legend = document.getElementById("slotLegend");
+  var summary = document.getElementById("bookSummary"), err = document.getElementById("bookError");
+  var dateField = document.getElementById("bkDate"), winField = document.getElementById("bkWindow");
+  var service = document.getElementById("bkService"), flexible = document.getElementById("bkFlexible");
+
+  function sameDay(a, b) { return a && b && a.getTime() === b.getTime(); }
+  function windowsFor(d) { var w = d.getDay(); return w === 0 ? WINDOWS.sunday : w === 6 ? WINDOWS.saturday : WINDOWS.weekday; }
+  function fmt(d) { return DAYS[d.getDay()].slice(0, 3) + ", " + MONTHS[d.getMonth()].slice(0, 3) + " " + d.getDate(); }
+  function iso(d) { return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+
+  function renderCalendar() {
+    title.textContent = MONTHS[view.getMonth()] + " " + view.getFullYear();
+    prev.disabled = view <= new Date(first.getFullYear(), first.getMonth(), 1);
+    next.disabled = new Date(view.getFullYear(), view.getMonth() + 1, 1) > last;
+    grid.innerHTML = "";
+    var lead = view.getDay(), days = new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate();
+    for (var i = 0; i < lead; i++) { var pad = document.createElement("span"); pad.className = "cal-pad"; grid.appendChild(pad); }
+    for (var d = 1; d <= days; d++) {
+      var date = new Date(view.getFullYear(), view.getMonth(), d);
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "cal-day"; b.textContent = d;
+      var open = date >= first && date <= last;
+      b.disabled = !open;
+      if (date.getDay() === 0) b.classList.add("appt");
+      if (sameDay(date, today)) b.classList.add("today");
+      b.setAttribute("aria-label", DAYS[date.getDay()] + ", " + MONTHS[date.getMonth()] + " " + d + (date.getDay() === 0 ? ", by appointment" : "") + (open ? "" : ", unavailable"));
+      b.setAttribute("aria-pressed", sameDay(date, selected) ? "true" : "false");
+      b.dataset.time = date.getTime();
+      b.addEventListener("click", function () { choose(new Date(+this.dataset.time)); });
+      grid.appendChild(b);
+    }
+  }
+
+  function choose(date) {
+    selected = date; dateField.value = iso(date); winField.value = "";
+    renderCalendar(); renderSlots(); update();
+    var focusBtn = grid.querySelector('[aria-pressed="true"]'); if (focusBtn) focusBtn.focus();
+  }
+
+  function renderSlots() {
+    slotList.innerHTML = "";
+    if (!selected) { legend.textContent = "Choose a date to see time windows"; slotList.innerHTML = '<p class="slot-empty">Pick a date on the calendar first.</p>'; return; }
+    legend.textContent = "Time windows for " + fmt(selected);
+    var list = windowsFor(selected);
+    list.forEach(function (w) {
+      var l = document.createElement("label"); l.className = "slot";
+      l.innerHTML = '<input type="radio" name="slot" value="' + w.id + '" /><span><strong>' + w.label + '</strong><small>' + w.time + '</small>' + (w.after ? '<em>After hours</em>' : '') + '</span>';
+      l.querySelector("input").addEventListener("change", function () { winField.value = w.label + " (" + w.time + ")"; update(); });
+      slotList.appendChild(l);
+    });
+    if (list.length === 1) { var only = slotList.querySelector("input"); only.checked = true; winField.value = list[0].label; }
+  }
+
+  function update() {
+    err.hidden = true;
+    if (!selected) { summary.textContent = "No date selected yet."; return; }
+    var parts = [fmt(selected)];
+    parts.push(winField.value ? winField.value : "choose a time window");
+    parts.push(service.value);
+    if (flexible.checked) parts.push("flexible on time");
+    summary.textContent = "Requesting: " + parts.join(" · ");
+  }
+  service.addEventListener("change", update);
+  flexible.addEventListener("change", update);
+  prev.addEventListener("click", function () { view = new Date(view.getFullYear(), view.getMonth() - 1, 1); renderCalendar(); });
+  next.addEventListener("click", function () { view = new Date(view.getFullYear(), view.getMonth() + 1, 1); renderCalendar(); });
+
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var problems = [];
+    if (!selected) problems.push("pick a date");
+    else if (!winField.value) problems.push("choose a time window");
+    var name = document.getElementById("bkName"), phone = document.getElementById("bkPhone"), email = document.getElementById("bkEmail"), zip = document.getElementById("bkZip");
+    [name, phone, email, zip].forEach(function (i) { i.style.borderColor = ""; });
+    if (!name.value.trim()) { problems.push("enter your name"); name.style.borderColor = "#d14b4b"; }
+    if (phone.value.replace(/\D/g, "").length < 10) { problems.push("enter a 10-digit phone number"); phone.style.borderColor = "#d14b4b"; }
+    if (email.value && !/^\S+@\S+\.\S+$/.test(email.value)) { problems.push("check your email address"); email.style.borderColor = "#d14b4b"; }
+    if (zip.value && !/^\d{5}$/.test(zip.value)) { problems.push("enter a 5-digit ZIP code"); zip.style.borderColor = "#d14b4b"; }
+    if (problems.length) {
+      err.textContent = "To send your request, please " + problems.join(", ") + ".";
+      err.hidden = false; return;
+    }
+    form.classList.add("sent");
+    form.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+
+  renderCalendar(); renderSlots(); update();
 })();
 </script>
 </body>

@@ -44,7 +44,7 @@ All animation respects the visitor's "reduce motion" setting.
 | Reviews | Reviews section | sample text, marked "Sample review"; replace with real client reviews |
 | Forms | quote, contact and property manager account forms | demo only; connect to a form service with privacy protections |
 | Text button | `sms:+13137506159` | confirm the number can receive texts |
-| Online booking | not yet added | choose booking software, then embed or link its booking page |
+| Appointment requests | `#book` calendar section | built; requests are delivered once the form service is connected (same as other forms) |
 | Insurance / bonding | not claimed on the site | add "insured & bonded" only after coverage is in place |
 
 ## Preview
