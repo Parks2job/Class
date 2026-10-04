@@ -473,6 +473,13 @@
   .ci small { display: block; color: #9fb7ef; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: .72rem; }
   .ci a, .ci p { font-weight: 700; font-size: 1.05rem; overflow-wrap: anywhere; }
   .ci a[href^="mailto"] { font-size: .9rem; }
+  .ci-hours { flex: 1; min-width: 0; }
+  .hours { width: 100%; border-collapse: collapse; margin-top: 6px; font-size: .9rem; font-variant-numeric: tabular-nums; }
+  .hours th, .hours td { text-align: left; padding: 6px 8px 6px 0; border-bottom: 1px solid rgba(255,255,255,.1); font-weight: 600; }
+  .hours thead th { color: #9fb7ef; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 800; }
+  .hours tbody th { color: #fff; font-weight: 800; white-space: nowrap; }
+  .hours td { color: #dfe6f5; }
+  .hours tbody tr:last-child th, .hours tbody tr:last-child td { border-bottom: 0; }
   .contact-form { background: #fff; border-radius: 26px; padding: 44px; box-shadow: var(--shadow-md); }
   .contact-form h3 { font-family: "Cinzel", serif; font-size: 1.5rem; color: var(--navy-800); margin-bottom: 18px; }
 
@@ -525,6 +532,9 @@
     footer { padding-bottom: 100px; }
   }
   @media (max-width: 640px) {
+    .ci:has(.ci-hours) .ic { display: none; }
+    .hours { font-size: .84rem; }
+    .hours td, .hours th { white-space: nowrap; padding-right: 10px; }
     .section { padding-block: 56px; }
     .topbar .tb-right { display: none; }
     .grid-3, .panel.active, .why-grid, .row2 { grid-template-columns: 1fr; }
@@ -629,7 +639,7 @@
       <a href="mailto:info@diamondplatinumcleaning.com"><svg><use href="#i-mail"/></svg>info@diamondplatinumcleaning.com</a>
     </div>
     <div class="tb-right">
-      <span><svg><use href="#i-clock"/></svg>Mon to Sat, 7:00 AM to 7:00 PM</span>
+      <span><svg><use href="#i-clock"/></svg>Mon to Fri 8 AM to 5 PM, Sat 9 AM to 3 PM, evenings available</span>
       <span><svg><use href="#i-pin"/></svg>Serving Detroit &amp; Metro Detroit</span>
     </div>
   </div>
@@ -789,6 +799,16 @@
       <div class="ci"><span class="ic"><svg><use href="#i-phone"/></svg></span><div><small>Call</small><a href="tel:+13137506159">(313) 750-6159</a></div></div>
       <div class="ci"><span class="ic"><svg><use href="#i-chat"/></svg></span><div><small>Text us</small><a href="sms:+13137506159">(313) 750-6159</a></div></div>
       <div class="ci"><span class="ic"><svg><use href="#i-mail"/></svg></span><div><small>Email</small><a href="mailto:info@diamondplatinumcleaning.com">info@diamondplatinumcleaning.com</a></div></div>
+      <div class="ci"><span class="ic"><svg><use href="#i-clock"/></svg></span><div class="ci-hours"><small>Hours</small>
+        <table class="hours">
+          <thead><tr><th scope="col">Day</th><th scope="col">Regular</th><th scope="col">After hours</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Mon to Fri</th><td>8 AM to 5 PM</td><td>6 PM to 10 PM</td></tr>
+            <tr><th scope="row">Saturday</th><td>9 AM to 3 PM</td><td>4 PM to 9 PM</td></tr>
+            <tr><th scope="row">Sunday</th><td>Closed</td><td>By appointment</td></tr>
+          </tbody>
+        </table>
+      </div></div>
       <div class="ci"><span class="ic"><svg><use href="#i-pin"/></svg></span><div><small>Service area</small><p>Detroit &amp; Metro Detroit</p></div></div>
     </div>
     <form class="contact-form reveal" data-delay="2" id="pmForm" novalidate>
@@ -836,7 +856,7 @@
       </div>
       <div><h4>Services</h4><ul><li><a href="index.html#services">Move-In / Move-Out</a></li><li><a href="index.html#services">Deep Cleaning</a></li><li><a href="index.html#services">Standard Recurring</a></li><li><a href="index.html#addons">Add-On Services</a></li></ul></div>
       <div><h4>Company</h4><ul><li><a href="property-managers.html">Property Managers</a></li><li><a href="index.html#process">How It Works</a></li><li><a href="index.html#pricing">Pricing</a></li><li><a href="index.html#careers">Careers</a></li><li><a href="index.html#faq">FAQ</a></li></ul></div>
-      <div><h4>Contact</h4><ul><li><a href="tel:+13137506159">(313) 750-6159</a></li><li><a href="mailto:info@diamondplatinumcleaning.com">Email us</a></li><li>Mon to Sat, 7 AM to 7 PM</li><li>Detroit &amp; Metro Detroit</li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+13137506159">(313) 750-6159</a></li><li><a href="mailto:info@diamondplatinumcleaning.com">Email us</a></li><li>Mon to Fri: 8 AM to 5 PM</li><li>Sat: 9 AM to 3 PM</li><li>Evenings &amp; Sunday by appointment</li><li>Detroit &amp; Metro Detroit</li></ul></div>
     </div>
     <div class="foot-bottom">
       <span>&copy; <span id="year"></span> Diamond Platinum Cleaning. All rights reserved.</span>
