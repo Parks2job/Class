@@ -37,7 +37,7 @@ All animation respects the visitor's "reduce motion" setting.
 | Item | Where | Status |
 |---|---|---|
 | Phone | (313) 750-6159 | done |
-| Email | search `info@diamondplatinumcleaning.com` | placeholder address |
+| Email | info@diamondplatinumcleaning.com | done (confirmed by owner) |
 | Hours | search `Mon to Sat` | placeholder, not in source documents |
 | Prices | `PRICING` at the top of the script | uses Business Plan midpoints; the plan says to confirm with 2 to 3 local competitor quotes before publishing |
 | Reviews | Reviews section | sample text, marked "Sample review"; replace with real client reviews |
