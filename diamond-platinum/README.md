@@ -36,7 +36,7 @@ All animation respects the visitor's "reduce motion" setting.
 
 | Item | Where | Status |
 |---|---|---|
-| Phone | search `(000) 000-0000` and `tel:+10000000000` | placeholder |
+| Phone | (313) 750-6159 | done |
 | Email | search `info@diamondplatinumcleaning.com` | placeholder address |
 | Hours | search `Mon to Sat` | placeholder, not in source documents |
 | Prices | `PRICING` at the top of the script | uses Business Plan midpoints; the plan says to confirm with 2 to 3 local competitor quotes before publishing |
