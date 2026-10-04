@@ -30,16 +30,29 @@ Then visit `http://localhost:8000`.
 Phone (989) 481-1186, email carepathllc26@gmail.com, office 203 S. Washington Ave,
 Saginaw, MI 48607 — set across all three pages.
 
-## Before going live — replace the placeholders
+## Pages
 
-These are marked with placeholder values throughout `index.html`:
+- `index.html` — homepage, including Payment & Insurance and a facilities teaser
+- `facilities.html` — for facilities and case managers, with a partnership inquiry form
+- `careers.html` / `apply.html` — driver recruiting and the full application
+- `privacy.html`, `terms.html`, `accessibility.html` — drafts pending legal review
 
+## Forms
+
+All four forms (callback, ride request, facility inquiry, driver application) send
+to carepathllc26@gmail.com through FormSubmit. FormSubmit must be activated once:
+after the site is live, submit a test and click the "Activate Form" email.
+
+## Before going live
+
+Items still to fill in are highlighted in yellow on the pages themselves.
+
+- **Legal pages** — attorney review; then remove the yellow "Draft" notice
+- **Payment methods, cancellation and wait-time rules** — Payment section and Terms
+- **Contracted health plans** — list them in the Payment section once contracted
 - **Office hours** — confirm the Mon–Fri hours shown in the Contact section
 - **Service area** — city/county tags in the Service Area section
-- **Testimonials** — replace samples with real, permission-granted reviews
-- **FAQ answers** — insurance/payment answer especially
-- **Form backend** — the booking and quick-quote forms are demos; connect them to
-  an email service, CRM, or form handler to receive submissions.
+- **Testimonials** — removed; add real, permission-granted reviews later
 
 ## Compliance note
 
