@@ -48,10 +48,8 @@ after the site is live, submit a test and click the "Activate Form" email.
 Items still to fill in are highlighted in yellow on the pages themselves.
 
 - **Legal pages** — attorney review; then remove the yellow "Draft" notice
-- **Payment methods, cancellation and wait-time rules** — Payment section and Terms
+- **No-show wait time, cancellation notice, late-cancellation fee** — Terms
 - **Contracted health plans** — list them in the Payment section once contracted
-- **Office hours** — confirm the Mon–Fri hours shown in the Contact section
-- **Service area** — city/county tags in the Service Area section
 - **Testimonials** — removed; add real, permission-granted reviews later
 
 ## Compliance note
