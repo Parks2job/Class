@@ -48,7 +48,6 @@ after the site is live, submit a test and click the "Activate Form" email.
 Items still to fill in are highlighted in yellow on the pages themselves.
 
 - **Legal pages** — attorney review; then remove the yellow "Draft" notice
-- **Late-cancellation fee** — Terms
 - **Contracted health plans** — list them in the Payment section once contracted
 - **Testimonials** — removed; add real, permission-granted reviews later
 
