@@ -48,7 +48,7 @@ after the site is live, submit a test and click the "Activate Form" email.
 Items still to fill in are highlighted in yellow on the pages themselves.
 
 - **Legal pages** — attorney review; then remove the yellow "Draft" notice
-- **Contracted health plans** — list them in the Payment section once contracted
+- **Contracted health plans** — add them to the Medicaid card in the Payment section once contracts are signed
 - **Testimonials** — removed; add real, permission-granted reviews later
 
 ## Compliance note
