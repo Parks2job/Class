@@ -18,7 +18,9 @@
     --navy:#0e2a4d;
     --navy-700:#123763;
     --teal:#22b6c6;
-    --teal-600:#1aa0af;
+    --teal-600:#0b7480;
+    --teal-head:#0e8593;
+    --orange-text:#9a5a00;
     --teal-050:#e7f7f9;
     --orange:#f5a623;
     --orange-600:#e0940f;
@@ -108,7 +110,7 @@
     linear-gradient(180deg,#f5f8fb 0%,#ffffff 100%)}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:74px 0 84px}
   .hero h1{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.025em}
-  .hero h1 .accent{color:var(--teal)}
+  .hero h1 .accent{color:var(--teal-head)}
   .hero p.lead{font-size:1.2rem;margin-bottom:1.7rem}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:1.6rem}
   .hero-trust{display:flex;gap:22px;flex-wrap:wrap;color:var(--muted);font-size:.95rem;font-weight:600}
@@ -150,7 +152,7 @@
   /* Services */
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
   .cards--2{grid-template-columns:repeat(2,1fr);max-width:820px;margin-left:auto;margin-right:auto}
-  .card-tag{font-family:var(--font-head);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:10px}
+  .card-tag{font-family:var(--font-head);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-text);display:block;margin-bottom:10px}
   .card{border-top:4px solid var(--teal)}
   .card{
     background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;
@@ -200,7 +202,7 @@
   /* Service area */
   .area-box{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow-sm)}
   .area-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-  .area-tags span{background:var(--teal-050);color:var(--orange);border-radius:999px;padding:8px 16px;font-weight:700;font-size:.92rem}
+  .area-tags span{background:var(--teal-050);color:var(--orange-text);border-radius:999px;padding:8px 16px;font-weight:700;font-size:.92rem}
 
   /* Testimonials */
   .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
@@ -329,9 +331,14 @@
   .check input{width:18px;height:18px;margin-top:3px;accent-color:var(--orange);flex-shrink:0}
   .q{font-weight:600;font-size:.9rem;color:var(--navy);margin-bottom:6px;display:block}
   @media (max-width:680px){.check-grid{grid-template-columns:1fr}}
+  .skip-link{position:absolute;left:-9999px;top:0;z-index:200;background:#fff;color:var(--navy);font-weight:700;padding:10px 16px;border-radius:0 0 10px 10px;box-shadow:var(--shadow-md)}
+  .skip-link:focus{left:16px}
+  :focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+  input:focus,input:focus-within,select:focus,textarea:focus{border-color:var(--teal-600)!important;box-shadow:0 0 0 3px rgba(11,116,128,.25)!important}
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to main content</a>
 
 <!-- ===== Top bar ===== -->
 <div class="topbar">
@@ -369,13 +376,14 @@
     </button>
   </div>
 </header>
+<main id="main">
 
 <!-- ===== Page hero ===== -->
 <section class="hero">
   <div class="container">
     <div style="max-width:780px;margin:0 auto;text-align:center;padding:56px 0 36px">
       <p class="eyebrow">For Facilities &amp; Case Managers</p>
-      <h1 style="font-size:clamp(2rem,4.5vw,3.1rem)">A transportation partner <span style="color:var(--teal)">your patients can count on.</span></h1>
+      <h1 style="font-size:clamp(2rem,4.5vw,3.1rem)">A transportation partner <span style="color:var(--teal-head)">your patients can count on.</span></h1>
       <p class="lead" style="margin-left:auto;margin-right:auto">Dependable wheelchair and ambulatory rides for discharges, dialysis, therapy, and everyday appointments, with one point of contact for your team.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:24px">
         <a href="#partner" class="btn btn--primary btn--lg">Partner With Us</a>
@@ -527,6 +535,8 @@
     </form>
   </div>
 </section>
+
+</main>
 
 <!-- ===== Footer ===== -->
 <footer>

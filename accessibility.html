@@ -18,7 +18,9 @@
     --navy:#0e2a4d;
     --navy-700:#123763;
     --teal:#22b6c6;
-    --teal-600:#1aa0af;
+    --teal-600:#0b7480;
+    --teal-head:#0e8593;
+    --orange-text:#9a5a00;
     --teal-050:#e7f7f9;
     --orange:#f5a623;
     --orange-600:#e0940f;
@@ -108,7 +110,7 @@
     linear-gradient(180deg,#f5f8fb 0%,#ffffff 100%)}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:74px 0 84px}
   .hero h1{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.025em}
-  .hero h1 .accent{color:var(--teal)}
+  .hero h1 .accent{color:var(--teal-head)}
   .hero p.lead{font-size:1.2rem;margin-bottom:1.7rem}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:1.6rem}
   .hero-trust{display:flex;gap:22px;flex-wrap:wrap;color:var(--muted);font-size:.95rem;font-weight:600}
@@ -150,7 +152,7 @@
   /* Services */
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
   .cards--2{grid-template-columns:repeat(2,1fr);max-width:820px;margin-left:auto;margin-right:auto}
-  .card-tag{font-family:var(--font-head);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:10px}
+  .card-tag{font-family:var(--font-head);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-text);display:block;margin-bottom:10px}
   .card{border-top:4px solid var(--teal)}
   .card{
     background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;
@@ -200,7 +202,7 @@
   /* Service area */
   .area-box{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow-sm)}
   .area-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-  .area-tags span{background:var(--teal-050);color:var(--orange);border-radius:999px;padding:8px 16px;font-weight:700;font-size:.92rem}
+  .area-tags span{background:var(--teal-050);color:var(--orange-text);border-radius:999px;padding:8px 16px;font-weight:700;font-size:.92rem}
 
   /* Testimonials */
   .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
@@ -329,9 +331,14 @@
   .check input{width:18px;height:18px;margin-top:3px;accent-color:var(--orange);flex-shrink:0}
   .q{font-weight:600;font-size:.9rem;color:var(--navy);margin-bottom:6px;display:block}
   @media (max-width:680px){.check-grid{grid-template-columns:1fr}}
+  .skip-link{position:absolute;left:-9999px;top:0;z-index:200;background:#fff;color:var(--navy);font-weight:700;padding:10px 16px;border-radius:0 0 10px 10px;box-shadow:var(--shadow-md)}
+  .skip-link:focus{left:16px}
+  :focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+  input:focus,input:focus-within,select:focus,textarea:focus{border-color:var(--teal-600)!important;box-shadow:0 0 0 3px rgba(11,116,128,.25)!important}
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to main content</a>
 
 <!-- ===== Top bar ===== -->
 <div class="topbar">
@@ -369,6 +376,7 @@
     </button>
   </div>
 </header>
+<main id="main">
 
 <!-- ===== Page hero ===== -->
 <section class="hero">
@@ -397,11 +405,14 @@
       <li>Pages work with a keyboard and with screen readers, and form fields have labels.</li>
       <li>Phone numbers are tap-to-call on mobile devices.</li>
       <li>Animations turn off automatically when your device's "reduce motion" setting is on.</li>
+      <li>A "Skip to main content" link lets keyboard and screen reader users jump past the menu.</li>
+      <li>Every link, button, and form field shows a clear outline when selected with a keyboard.</li>
       <li>The site adjusts to phones, tablets, and computers, and supports browser zoom.</li>
     </ul>
 
-    <h2>Ongoing work</h2>
-    <p>Accessibility is ongoing. We review the site as we add content, and we welcome your feedback. <span class="todo">Schedule a formal WCAG review before launch and update this section with the date.</span></p>
+    <h2>Our most recent review</h2>
+    <p>We last reviewed this website for accessibility on <strong>October 7, 2026</strong>. The review included automated testing of every page against WCAG 2.1 Level AA at both computer and phone screen sizes, plus hands-on testing with a keyboard only. We fixed the issues we found, including text color contrast and keyboard focus visibility.</p>
+    <p>We review the site at least once a year, and whenever we add new pages or make major changes. Accessibility is ongoing, and we welcome your feedback.</p>
 
     <h2>Other ways to reach us</h2>
     <p>If anything on this website is hard to use, you don't have to use it. Call us at <a href="tel:+19894811186">(989) 481-1186</a> and we'll book your ride, answer your questions, or take your job application by phone.</p>
@@ -412,6 +423,8 @@
 
   </div>
 </section>
+
+</main>
 
 <!-- ===== Footer ===== -->
 <footer>

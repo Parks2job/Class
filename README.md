@@ -50,6 +50,9 @@ Items still to fill in are highlighted in yellow on the pages themselves.
 - **Legal pages** — attorney review; then remove the yellow "Draft" notice
 - **Contracted health plans** — add them to the Medicaid card in the Payment section once contracts are signed
 - **Testimonials** — removed; add real, permission-granted reviews later
+- **Insurance coverage** — confirm the coverage statement in Terms section 10 with your agent
+- **Accessibility** — last reviewed October 7, 2026 (WCAG 2.1 AA automated scan + keyboard test);
+  review again at least yearly and after major changes
 
 ## Compliance note
 
