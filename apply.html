@@ -349,6 +349,9 @@
   .skip-link:focus{left:16px}
   :focus-visible{outline:3px solid var(--orange);outline-offset:2px}
   input:focus,input:focus-within,select:focus,textarea:focus{border-color:var(--teal-600)!important;box-shadow:0 0 0 3px rgba(11,116,128,.25)!important}
+  /* Square online payment: hidden until a payment link is set in href */
+  .pay-online[href=""]{display:none!important}
+  li:has(> .pay-online[href=""]){display:none}
 </style>
 </head>
 <body>
@@ -628,6 +631,7 @@
           <li><a href="mailto:carepathllc26@gmail.com">carepathllc26@gmail.com</a></li>
           <li>203 S. Washington Ave, Saginaw, MI 48607</li>
           <li>Rides available 24/7</li>
+          <li><a href="" data-square-link class="pay-online" target="_blank" rel="noopener">Pay your bill online</a></li>
         </ul>
         <a href="#apply" class="btn btn--primary" style="margin-top:14px">Apply to Drive</a>
       </div>

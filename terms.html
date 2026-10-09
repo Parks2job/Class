@@ -335,6 +335,9 @@
   .skip-link:focus{left:16px}
   :focus-visible{outline:3px solid var(--orange);outline-offset:2px}
   input:focus,input:focus-within,select:focus,textarea:focus{border-color:var(--teal-600)!important;box-shadow:0 0 0 3px rgba(11,116,128,.25)!important}
+  /* Square online payment: hidden until a payment link is set in href */
+  .pay-online[href=""]{display:none!important}
+  li:has(> .pay-online[href=""]){display:none}
 </style>
 </head>
 <body>
@@ -435,7 +438,7 @@
     <p>Our drivers may delay, change, or refuse a trip if they reasonably believe it is unsafe for the rider, the driver, or others, for example because of severe weather, unsafe access at a pickup location, or equipment that can't be secured.</p>
 
     <h2>7. Payment</h2>
-    <p>Private-pay rides are due at the end of each ride. We accept all major credit and debit cards and Cash App. Facility and agency accounts are invoiced monthly. Rides covered by a health plan, broker, or facility are billed under that arrangement, and riders are responsible for any amount the payer does not cover, where allowed by the program.</p>
+    <p>Private-pay rides are due at the end of each ride. We accept all major credit and debit cards, including tap-to-pay, and Cash App. Card payments are processed securely by Square, and CarePath does not store your card number. You can also pay online through a secure Square payment link on our website or one we text or email you. Facility and agency accounts are invoiced monthly. Rides covered by a health plan, broker, or facility are billed under that arrangement, and riders are responsible for any amount the payer does not cover, where allowed by the program.</p>
 
     <h2>8. Personal belongings</h2>
     <p>Please keep personal items with you. CarePath is not responsible for items left in vehicles, though we'll make reasonable efforts to return anything found.</p>
@@ -503,6 +506,7 @@
           <li><a href="mailto:carepathllc26@gmail.com">carepathllc26@gmail.com</a></li>
           <li>203 S. Washington Ave, Saginaw, MI 48607</li>
           <li>Rides available 24/7</li>
+          <li><a href="" data-square-link class="pay-online" target="_blank" rel="noopener">Pay your bill online</a></li>
         </ul>
         <a href="index.html#contact" class="btn btn--primary" style="margin-top:14px">Book a Ride</a>
       </div>

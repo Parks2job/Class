@@ -335,6 +335,9 @@
   .skip-link:focus{left:16px}
   :focus-visible{outline:3px solid var(--orange);outline-offset:2px}
   input:focus,input:focus-within,select:focus,textarea:focus{border-color:var(--teal-600)!important;box-shadow:0 0 0 3px rgba(11,116,128,.25)!important}
+  /* Square online payment: hidden until a payment link is set in href */
+  .pay-online[href=""]{display:none!important}
+  li:has(> .pay-online[href=""]){display:none}
 </style>
 </head>
 <body>
@@ -422,6 +425,7 @@
     <p>We do not sell your personal information. We share it only as needed to run our business:</p>
     <ul>
       <li><strong>Service providers</strong> that help us operate, such as our website host, the form service that delivers website submissions to our email (currently FormSubmit), our email provider, and scheduling or billing tools.</li>
+      <li><strong>Our payment processor, Square,</strong> which handles card payments under its own privacy policy. We do not store full card numbers.</li>
       <li><strong>Health plans, transportation brokers, and facilities</strong> that arrange or pay for your ride, when you ride through them.</li>
       <li><strong>Background check, driving record, and drug screening providers</strong> for driver applicants, only with the applicant's separate written authorization.</li>
       <li><strong>Legal and safety reasons,</strong> such as complying with the law, responding to lawful requests, or protecting the safety of riders, drivers, and the public.</li>
@@ -498,6 +502,7 @@
           <li><a href="mailto:carepathllc26@gmail.com">carepathllc26@gmail.com</a></li>
           <li>203 S. Washington Ave, Saginaw, MI 48607</li>
           <li>Rides available 24/7</li>
+          <li><a href="" data-square-link class="pay-online" target="_blank" rel="noopener">Pay your bill online</a></li>
         </ul>
         <a href="index.html#contact" class="btn btn--primary" style="margin-top:14px">Book a Ride</a>
       </div>

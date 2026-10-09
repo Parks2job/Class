@@ -43,6 +43,12 @@ All four forms (callback, ride request, facility inquiry, driver application) se
 to carepathllc26@gmail.com through FormSubmit. FormSubmit must be activated once:
 after the site is live, submit a test and click the "Activate Form" email.
 
+## Online payments (Square)
+
+"Pay Your Bill Online" buttons sit in the homepage Payment section and every footer,
+hidden until a Square payment link is added. To turn them on, replace every
+`href="" data-square-link` with `href="YOUR-LINK" data-square-link` (set "Allow buyer to set the price" in Square).
+
 ## Before going live
 
 Items still to fill in are highlighted in yellow on the pages themselves.
