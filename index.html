@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>CarePath Transport | Wheelchair &amp; Non-Emergency Medical Transportation</title>
-<meta name="description" content="CarePath Transport provides safe, reliable, door-to-door non-emergency medical transportation — wheelchair and ambulatory rides. Available 24/7. Licensed, insured, and staffed by trained, compassionate drivers." />
+<meta name="description" content="CarePath Transport provides safe, reliable, door-to-door non-emergency medical transportation, wheelchair and ambulatory rides, in towns and rural communities across Mid-Michigan. Available 24/7." />
 <meta name="theme-color" content="#0e2a4d" />
 
 <!-- Open Graph / social preview -->
@@ -338,6 +338,11 @@
   /* Square online payment: hidden until a payment link is set in href */
   .pay-online[href=""]{display:none!important}
   li:has(> .pay-online[href=""]){display:none}
+  /* Rural block */
+  .rural{margin-top:56px}
+  .rural h2{max-width:760px;margin-left:auto;margin-right:auto}
+  .rural-list{display:grid;grid-template-columns:1fr 1fr;gap:6px 40px;max-width:980px;margin:34px auto 0}
+  @media (max-width:760px){.rural-list{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -390,7 +395,7 @@
       <div class="hero-copy">
         <p class="eyebrow">Non-Emergency Medical Transportation</p>
         <h1>Safe, dependable rides <span class="accent">to every appointment.</span></h1>
-        <p class="lead">Door-to-door wheelchair and ambulatory transportation for seniors and individuals with mobility needs. Trained, compassionate drivers. On time, every time.</p>
+        <p class="lead">Door-to-door wheelchair and ambulatory transportation for seniors and individuals with mobility needs, in town and across rural Mid-Michigan. Trained, compassionate drivers. On time, every time.</p>
         <div class="hero-cta">
           <a href="#contact" class="btn btn--primary btn--lg">Book a Ride</a>
           <a href="tel:+19894811186" class="btn btn--teal btn--lg">Call (989) 481-1186</a>
@@ -462,7 +467,7 @@
 <section class="trust-strip">
   <div class="container">
     <div><div class="num teal">24/7</div><div class="lbl">Rides day &amp; night</div></div>
-    <div><div class="num">On-Time</div><div class="lbl">Punctual pickups you can count on</div></div>
+    <div><div class="num">Rural</div><div class="lbl">Town &amp; country coverage</div></div>
     <div><div class="num teal">100%</div><div class="lbl">Wheelchair-accessible fleet</div></div>
     <div><div class="num">Trained</div><div class="lbl">Certified, compassionate drivers</div></div>
   </div>
@@ -592,22 +597,37 @@
       <div class="split" style="gap:40px">
         <div>
           <p class="eyebrow">Service Area</p>
-          <h2>Serving Mid-Michigan and beyond</h2>
-          <p class="lead">Based in Saginaw, we provide non-emergency medical transportation across these counties and much of West Michigan. Not sure if we cover your area? Give us a call — we're happy to help.</p>
+          <h2>Serving Mid-Michigan, town and country</h2>
+          <p class="lead">Based in Saginaw, we provide non-emergency medical transportation across these counties, including their rural communities, and much of West Michigan. Not sure if we cover your area? Give us a call — we're happy to help.</p>
           <div class="area-tags">
             <span>Saginaw County</span><span>Bay County</span><span>Midland County</span>
             <span>Genesee County</span><span>Isabella County</span><span>Wayne County</span>
-            <span>West Michigan</span>
+            <span>West Michigan</span><span>Rural Communities</span>
           </div>
         </div>
         <div>
           <div style="background:linear-gradient(150deg,var(--teal-050),#fff);border:1px solid var(--line);border-radius:16px;padding:34px;height:100%;display:flex;flex-direction:column;justify-content:center;gap:14px">
-            <div style="display:flex;gap:12px;align-items:center"><strong style="font-family:var(--font-head);color:var(--navy);font-size:1.1rem">Coverage &amp; Availability</strong></div>
-            <p style="margin:0;color:var(--muted)">Same-day requests are welcome based on availability. For dialysis and other recurring appointments, ask about setting up a standing schedule.</p>
+            <div style="display:flex;gap:12px;align-items:center"><strong style="font-family:var(--font-head);color:var(--navy);font-size:1.1rem">Rural or remote address?</strong></div>
+            <p style="margin:0;color:var(--muted)">Rural pickups are a core part of our service, not an exception. Call or request a ride and we'll confirm timing for your location. Same-day requests are welcome based on availability.</p>
             <a href="#contact" class="btn btn--teal" style="margin-top:8px">Check My Area</a>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Rural service -->
+    <div class="rural">
+      <div class="center">
+        <p class="eyebrow">Rural Transportation</p>
+        <h2>Rural communities are at the heart of what we do</h2>
+        <p class="lead">In much of Mid-Michigan, the nearest specialist, dialysis center, or hospital can be a long drive away, and public transit doesn't reach. We built CarePath to close that gap.</p>
+      </div>
+      <ul class="why-list rural-list">
+        <li><div class="w-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><div><h4>Long-distance medical trips</h4><p>Rides from rural homes to regional hospitals, specialists, and dialysis centers, with distance quoted upfront.</p></div></li>
+        <li><div class="w-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><div><h4>Country addresses welcome</h4><p>Long driveways, gravel roads, and homes off the main road. Tell us about your pickup and we'll plan for it.</p></div></li>
+        <li><div class="w-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><div><h4>Wait-and-return trips</h4><p>For long appointments far from home, we can wait or come back, so you're not stranded miles away.</p></div></li>
+        <li><div class="w-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><div><h4>Recurring rural schedules</h4><p>Standing rides for dialysis and therapy, planned around longer travel times.</p></div></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -726,6 +746,10 @@
       <details>
         <summary>What areas do you serve?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
         <div class="answer">We serve Saginaw, Bay, Midland, Genesee, Isabella, and Wayne counties, plus much of West Michigan. Long-distance trips are available, too. If you're unsure whether we reach your area, give us a call — we're glad to check.</div>
+      </details>
+      <details>
+        <summary>Do you serve rural areas?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="answer">Yes. Rural communities are a core part of our service. We pick up from country homes, long driveways, and gravel roads, and take riders to hospitals, specialists, and dialysis centers across the region. Long-distance trips are quoted upfront, and we can wait or return for long appointments.</div>
       </details>
       <details>
         <summary>Can you set up recurring rides for dialysis or therapy?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
