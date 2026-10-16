@@ -35,7 +35,7 @@ Saginaw, MI 48607 — set across all three pages.
 - `index.html` — homepage, including Payment & Insurance and a facilities teaser
 - `facilities.html` — for facilities and case managers, with a partnership inquiry form
 - `careers.html` / `apply.html` — driver recruiting and the full application
-- `privacy.html`, `terms.html`, `accessibility.html` — drafts pending legal review
+- `privacy.html`, `terms.html`, `accessibility.html` — approved by counsel (October 2026)
 
 ## Forms
 
@@ -51,9 +51,6 @@ hidden until a Square payment link is added. To turn them on, replace every
 
 ## Before going live
 
-Items still to fill in are highlighted in yellow on the pages themselves.
-
-- **Legal pages** — attorney review; then remove the yellow "Draft" notice
 - **Contracted health plans** — add them to the Medicaid card in the Payment section once contracts are signed
 - **Testimonials** — removed; add real, permission-granted reviews later
 - **Insurance coverage** — confirm the coverage statement in Terms section 10 with your agent
