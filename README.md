@@ -1,19 +1,13 @@
 # CarePath Transport — Website
 
-A single-page marketing website for **CarePath Transport**, a non-emergency medical
-transportation (NEMT) company specializing in wheelchair, stretcher, and ambulatory rides.
+The website for **CarePath Transport**, a Saginaw, Michigan non-emergency medical
+transportation (NEMT) company providing wheelchair and ambulatory rides in town and
+across rural Mid-Michigan.
 
 ## What's included
 
-- `index.html` — the full responsive website (HTML + embedded CSS/JS, no build step)
-- `assets/images/carepath-logo.webp` — company logo
-
-## Sections
-
-Sticky header · Hero with quick-quote form · Trust strip · Services (Wheelchair /
-Stretcher / Ambulatory) · Use cases · How it works · Why us · Service area ·
-Testimonials · FAQ · Call-to-action band · Contact / booking form · Footer ·
-Sticky "tap to call" bar on mobile.
+Seven pages (plain HTML with embedded CSS/JS, no build step) plus the logo in
+`assets/images/`. See **Pages** below.
 
 ## How to preview
 
