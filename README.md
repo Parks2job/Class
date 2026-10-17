@@ -4,6 +4,13 @@ The website for **CarePath Transport**, a Saginaw, Michigan non-emergency medica
 transportation (NEMT) company providing wheelchair and ambulatory rides in town and
 across rural Mid-Michigan.
 
+## Live site
+
+https://carepathtransportmi.com, hosted free on GitHub Pages from this branch. The domain
+is registered at Hostinger (auto-renews; expires 2027-10-17). DNS: four A records for `@`
+(185.199.108.153, .109.153, .110.153, .111.153) and a CNAME `www` to `parks2job.github.io`.
+The `CNAME` file in this folder must stay, or the custom domain disconnects.
+
 ## What's included
 
 Seven pages (plain HTML with embedded CSS/JS, no build step) plus the logo in
