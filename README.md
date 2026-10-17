@@ -13,7 +13,7 @@ The `CNAME` file in this folder must stay, or the custom domain disconnects.
 
 ## What's included
 
-Seven pages (plain HTML with embedded CSS/JS, no build step) plus the logo in
+Eight pages (plain HTML with embedded CSS/JS, no build step) plus the logo in
 `assets/images/`. See **Pages** below.
 
 ## How to preview
@@ -36,19 +36,21 @@ Saginaw, MI 48607 — set across all three pages.
 - `index.html` — homepage, including Payment & Insurance and a facilities teaser
 - `facilities.html` — for facilities and case managers, with a partnership inquiry form
 - `careers.html` / `apply.html` — driver recruiting and the full application
+- `pay.html` — Pay Your Bill: collects payer, rider, ride date, amount; emails a reference (CP-YYMMDD-XXXX) then sends the customer to Square
 - `privacy.html`, `terms.html`, `accessibility.html` — approved by counsel (October 2026)
 
 ## Forms
 
-All four forms (callback, ride request, facility inquiry, driver application) send
+All five forms (callback, ride request, facility inquiry, driver application, payment details) send
 to carepathllc26@gmail.com through FormSubmit. FormSubmit must be activated once:
 after the site is live, submit a test and click the "Activate Form" email.
 
 ## Online payments (Square)
 
-"Pay Your Bill Online" buttons sit in the homepage Payment section and every footer,
-live, linked to Square (https://square.link/u/48He2oRs). To change the link, replace it in every
-`data-square-link` button across all seven pages.
+"Pay Your Bill Online" buttons (homepage Payment section and every footer) open `pay.html`.
+That page emails the ride details with a payment reference, then links to Square
+(https://square.link/u/48He2oRs). To change the Square link, edit the `paySquare` button in `pay.html`.
+Match each Square payment to its email by amount and time.
 
 ## Before going live
 
