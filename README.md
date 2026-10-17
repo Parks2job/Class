@@ -47,8 +47,8 @@ after the site is live, submit a test and click the "Activate Form" email.
 ## Online payments (Square)
 
 "Pay Your Bill Online" buttons sit in the homepage Payment section and every footer,
-hidden until a Square payment link is added. To turn them on, replace every
-`href="" data-square-link` with `href="YOUR-LINK" data-square-link` (set "Allow buyer to set the price" in Square).
+live, linked to Square (https://square.link/u/48He2oRs). To change the link, replace it in every
+`data-square-link` button across all seven pages.
 
 ## Before going live
 
