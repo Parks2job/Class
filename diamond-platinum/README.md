@@ -9,6 +9,7 @@ Package (July 2026).
 
 - `index.html`: the full responsive site (HTML, CSS and JavaScript in one file, no build step)
 - `property-managers.html`: dedicated page for landlords and property managers (turnover process, pricing table, account standards, account request form)
+- `pay.html`: Pay Your Invoice page (Square checkout button, ways to pay, billing questions). Linked from the top bar, phone menu and footer on every page.
 - `assets/logo.webp`: the original full-size DPC logo (transparent background). A web-sized copy is embedded directly in `index.html`, so the page shows the logo even when the HTML file is downloaded or opened on its own.
 
 ## Sections
@@ -45,6 +46,7 @@ All animation respects the visitor's "reduce motion" setting.
 | Forms | quote, contact and property manager account forms | demo only; connect to a form service with privacy protections |
 | Text button | `sms:+13137506159` | confirm the number can receive texts |
 | Appointment requests | `#book` calendar section | built; requests are delivered once the form service is connected (same as other forms) |
+| Square payments | `pay.html`, the `#payBtn` link | waiting on owner's Square account. In the Square Dashboard create a payment link (ideally one that lets the customer enter the amount), then replace `href="#pay-help"` on `#payBtn` with that link and remove `aria-disabled="true"` and the `is-pending` class |
 | Insurance / bonding | not claimed on the site | add "insured & bonded" only after coverage is in place |
 
 ## Preview

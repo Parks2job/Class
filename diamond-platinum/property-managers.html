@@ -480,6 +480,10 @@
   .hours tbody th { color: #fff; font-weight: 800; white-space: nowrap; }
   .hours td { color: #dfe6f5; }
   .hours tbody tr:last-child th, .hours tbody tr:last-child td { border-bottom: 0; }
+  .topbar .tb-pay { color: #fff; font-weight: 800; }
+  .topbar .tb-area { display: none; }
+  .nav-links .nav-mobile-only { display: none; }
+  @media (max-width: 960px) { .nav-links .nav-mobile-only { display: block; } }
   .contact-form { background: #fff; border-radius: 26px; padding: 44px; box-shadow: var(--shadow-md); }
   .contact-form h3 { font-family: "Cinzel", serif; font-size: 1.5rem; color: var(--navy-800); margin-bottom: 18px; }
 
@@ -574,6 +578,7 @@
   .pm-table td:last-child { font-family: "Cinzel", serif; font-weight: 800; color: var(--royal); font-size: 1.1rem; }
   .pm-table tbody tr:last-child td { border-bottom: 0; }
   .pm-table tbody tr:hover { background: var(--ice); }
+  .pm-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
   @media (max-width: 960px) { .pm-timeline { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 640px) { .pm-timeline { grid-template-columns: 1fr; } .pm-table th, .pm-table td { padding: 14px; } }
 </style>
@@ -599,6 +604,7 @@
   <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></g></symbol>
   <symbol id="i-leaf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/></g></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.9-.9L3 20l1.1-4.5a8.4 8.4 0 0 1-.9-4A8.5 8.5 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></g></symbol>
   <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></symbol>
   <symbol id="i-sparkle" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.6 5.6 2.4 8.4 12 12-9.6 3.6-11.4 6.4-12 12-.6-5.6-2.4-8.4-12-12 9.6-3.6 11.4-6.4 12-12z"/></symbol>
   <symbol id="i-home" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v12h14V9"/><path d="M10 21v-6h4v6"/></g></symbol>
@@ -638,10 +644,11 @@
     <div class="tb-left">
       <a href="tel:+13137506159"><svg><use href="#i-phone"/></svg>(313) 750-6159</a>
       <a href="mailto:info@diamondplatinumcleaning.com"><svg><use href="#i-mail"/></svg>info@diamondplatinumcleaning.com</a>
+      <a href="pay.html" class="tb-pay"><svg><use href="#i-card"/></svg>Pay Invoice</a>
     </div>
     <div class="tb-right">
       <span><svg><use href="#i-clock"/></svg>Mon to Fri 8 AM to 5 PM, Sat 9 AM to 3 PM, evenings available</span>
-      <span><svg><use href="#i-pin"/></svg>Serving Detroit &amp; Metro Detroit</span>
+      <span class="tb-area"><svg><use href="#i-pin"/></svg>Serving Detroit &amp; Metro Detroit</span>
     </div>
   </div>
 </div>
@@ -659,6 +666,7 @@
       <a href="property-managers.html" aria-current="page">Property Managers</a>
       <a href="index.html#careers">Careers</a>
       <a href="index.html#faq">FAQ</a>
+      <a href="pay.html" class="nav-mobile-only">Pay Invoice</a>
     </nav>
     <div class="nav-cta">
       <a class="nav-phone" href="tel:+13137506159"><svg><use href="#i-phone"/></svg>(313) 750-6159</a>
@@ -780,13 +788,18 @@
       <span class="eyebrow">Account standards</span>
       <h2 class="display">What You Can Count On</h2>
       <p>Clear policies, so you always know what happens next.</p>
-      <a href="index.html#checklist" class="btn btn-outline" style="margin-top:22px">View the Full Checklist <svg><use href="#i-arrow"/></svg></a>
+      <div class="pm-actions">
+  <a href="index.html#checklist" class="btn btn-outline">View the Full Checklist <svg><use href="#i-arrow"/></svg></a>
+        <a href="pay.html" class="btn btn-outline">Pay an Invoice <svg><use href="#i-card"/></svg></a>
+      </div>
     </div>
     <div class="why-grid reveal" data-delay="2">
       <div class="why-item"><svg><use href="#i-users"/></svg><strong>Vetted crews</strong><span>Background-checked, uniformed and wearing a visible photo ID badge.</span></div>
       <div class="why-item"><svg><use href="#i-shield"/></svg><strong>Supervisor spot checks</strong><span>Move-out jobs are inspected more often than routine cleans.</span></div>
       <div class="why-item"><svg><use href="#i-clock"/></svg><strong>24-hour response</strong><span>A supervisor acknowledges any concern within 24 hours.</span></div>
       <div class="why-item"><svg><use href="#i-award"/></svg><strong>48-hour re-clean</strong><span>If a re-clean is warranted, we return within 48 hours at no charge.</span></div>
+      <div class="why-item"><svg><use href="#i-card"/></svg><strong>Online invoices</strong><span>Each job is invoiced through Square, so you can pay securely by card online.</span></div>
+      <div class="why-item"><svg><use href="#i-mail"/></svg><strong>Clear records</strong><span>A walkthrough note, signed inspection and invoice for every unit.</span></div>
     </div>
   </div>
 </section>
@@ -856,7 +869,7 @@
         <p>Checklist-driven move-out, deep and recurring cleaning for Metro Detroit. Clean spaces. Strong impressions.</p>
       </div>
       <div><h4>Services</h4><ul><li><a href="index.html#services">Move-In / Move-Out</a></li><li><a href="index.html#services">Deep Cleaning</a></li><li><a href="index.html#services">Standard Recurring</a></li><li><a href="index.html#addons">Add-On Services</a></li></ul></div>
-      <div><h4>Company</h4><ul><li><a href="property-managers.html">Property Managers</a></li><li><a href="index.html#process">How It Works</a></li><li><a href="index.html#pricing">Pricing</a></li><li><a href="index.html#careers">Careers</a></li><li><a href="index.html#faq">FAQ</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="property-managers.html">Property Managers</a></li><li><a href="index.html#process">How It Works</a></li><li><a href="index.html#pricing">Pricing</a></li><li><a href="index.html#careers">Careers</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="pay.html">Pay Invoice</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="tel:+13137506159">(313) 750-6159</a></li><li><a href="mailto:info@diamondplatinumcleaning.com">info@diamondplatinumcleaning.com</a></li><li>Mon to Fri: 8 AM to 5 PM</li><li>Sat: 9 AM to 3 PM</li><li>Evenings &amp; Sunday by appointment</li><li>Detroit &amp; Metro Detroit</li></ul></div>
     </div>
     <div class="foot-bottom">
