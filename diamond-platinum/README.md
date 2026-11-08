@@ -5,6 +5,10 @@ checklist-driven move-in/move-out, deep and recurring cleaning service in Metro 
 Content is drawn from the company's Business Plan, Policy & Procedure Manual and Hiring
 Package (July 2026).
 
+## Live site
+
+https://diamondplatinumcleaning.com (Netlify project `fastidious-kangaroo-1ee6c3`, deployed automatically from branch `claude/jolly-dijkstra-oj9ozx`, base and publish directory `diamond-platinum`). Domain registered through Netlify with Netlify DNS and automatic HTTPS. Form alerts go to parks2job@gmail.com.
+
 ## What's included
 
 - `index.html`: the full responsive site (HTML, CSS and JavaScript in one file, no build step)
