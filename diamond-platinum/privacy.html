@@ -670,6 +670,11 @@
   .policy-list li::before { content: ""; position: absolute; left: 0; top: .62em; width: 7px; height: 7px; transform: rotate(45deg); background: var(--royal); }
   .policy-list strong { color: var(--navy-800); }
   .policy-block p + p { margin-top: 10px; }
+  /* Room for Netlify's "Powered by Netlify" badge (fixed, bottom-right) when it is present */
+  :root { --badge-clear: 0px; }
+  .mobile-bar { bottom: calc(12px + var(--badge-clear) + env(safe-area-inset-bottom, 0px)); }
+  footer { padding-bottom: calc(30px + var(--badge-clear)); }
+  @media (max-width: 960px) { footer { padding-bottom: calc(100px + var(--badge-clear)); } }
 </style>
 </head>
 <body>
@@ -974,6 +979,28 @@
     if (!reduceMotion) requestAnimationFrame(frame);
   }
   resize(); addEventListener("resize", resize); requestAnimationFrame(frame);
+})();
+</script>
+<script>
+/* Measure Netlify's badge, if it is on the page, and lift the bottom bar above it. */
+(function () {
+  function isOurs(el) { return el.closest && el.closest("#mobileBar, #header, .progress, .spark"); }
+  function measure() {
+    var h = 0, vh = window.innerHeight, vw = window.innerWidth;
+    document.querySelectorAll("body > *").forEach(function (el) {
+      if (isOurs(el)) return;
+      var cs = getComputedStyle(el);
+      if (cs.position !== "fixed" || cs.display === "none" || cs.visibility === "hidden") return;
+      var r = el.getBoundingClientRect();
+      if (r.width < 20 || r.height < 20 || r.height > vh / 3) return;
+      if (r.bottom >= vh - 40 && r.right >= vw - 40) h = Math.max(h, vh - r.top);
+    });
+    document.documentElement.style.setProperty("--badge-clear", h ? Math.ceil(h + 8) + "px" : "0px");
+  }
+  new MutationObserver(measure).observe(document.body, { childList: true });
+  addEventListener("resize", measure);
+  addEventListener("load", function () { measure(); setTimeout(measure, 1500); setTimeout(measure, 4000); });
+  measure();
 })();
 </script>
 </body>
