@@ -1193,37 +1193,7 @@
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section class="section reviews-bg" id="reviews">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Client love</span>
-      <h2 class="display">Impressions That Last</h2>
-      <p>What our clients say after a Diamond Platinum clean.</p>
-    </div>
-    <div class="carousel reveal" id="carousel">
-      <div style="overflow:hidden;padding-top:30px">
-        <div class="slides" id="slides">
-          <div class="slide"><div class="review"><span class="q"><svg><use href="#i-quote"/></svg></span>
-            <div class="stars" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-            <blockquote>"I came home and my place honestly looked brand new. The kitchen sparkled and they got corners I had given up on. Booking was easy and they arrived right on time."</blockquote>
-            <cite>Homeowner<span>Recurring biweekly service</span></cite><span class="sample-tag">Sample review</span></div></div>
-          <div class="slide"><div class="review"><span class="q"><svg><use href="#i-quote"/></svg></span>
-            <div class="stars" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-            <blockquote>"They had my listing photo-ready in a day. Every room looked its best for the photographer and the first showing."</blockquote>
-            <cite>Real Estate Agent<span>Listing-prep client</span></cite><span class="sample-tag">Sample review</span></div></div>
-          <div class="slide"><div class="review"><span class="q"><svg><use href="#i-quote"/></svg></span>
-            <div class="stars" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-            <blockquote>"We use Diamond Platinum for unit turnovers. Fast, thorough and consistent. Our units are show-ready every time, which means they lease faster."</blockquote>
-            <cite>Property Manager<span>Apartment community partner</span></cite><span class="sample-tag">Sample review</span></div></div>
-        </div>
-      </div>
-      <button class="car-btn car-prev" id="prev" aria-label="Previous review"><svg><use href="#i-left"/></svg></button>
-      <button class="car-btn car-next" id="next" aria-label="Next review"><svg><use href="#i-right"/></svg></button>
-      <div class="dots" id="dots"></div>
-    </div>
-  </div>
-</section>
+<!-- REVIEWS: removed until real client reviews are available (restore from git history, commit before 2026-11-08 removal). -->
 
 <!-- CAREERS -->
 <section class="section" id="careers" style="padding-top:40px">
@@ -1554,7 +1524,9 @@
   new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { steps.classList.add("in"); o.disconnect(); } }, { threshold: 0.4 }).observe(steps);
 
   /* Testimonials carousel */
-  var slides = document.getElementById("slides"), dotsWrap = document.getElementById("dots"), count = slides.children.length, idx = 0, timer;
+  var slides = document.getElementById("slides");
+  if (slides) {
+  var dotsWrap = document.getElementById("dots"), count = slides.children.length, idx = 0, timer;
   for (var i = 0; i < count; i++) dotsWrap.insertAdjacentHTML("beforeend", '<button aria-label="Show review ' + (i + 1) + '"></button>');
   var dots = dotsWrap.querySelectorAll("button");
   function go(n) {
@@ -1567,6 +1539,7 @@
   document.getElementById("prev").addEventListener("click", function () { go(idx - 1); auto(); });
   document.getElementById("next").addEventListener("click", function () { go(idx + 1); auto(); });
   go(0); auto();
+  }
 
   /* Sparkle burst helper */
   var sparkSVG = '<svg viewBox="0 0 24 24"><path fill="COLOR" d="M12 0c.6 5.6 2.4 8.4 12 12-9.6 3.6-11.4 6.4-12 12-.6-5.6-2.4-8.4-12-12 9.6-3.6 11.4-6.4 12-12z"/></svg>';

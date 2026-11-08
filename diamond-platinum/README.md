@@ -44,7 +44,7 @@ All animation respects the visitor's "reduce motion" setting.
 | Email | info@diamondcleaningp.com | done (confirmed by owner) |
 | Hours | Mon to Fri 8 AM to 5 PM (after hours 6 to 10 PM); Sat 9 AM to 3 PM (after hours 4 to 9 PM); Sun closed, by appointment | done |
 | Prices | `PRICING` at the top of the script | uses Business Plan midpoints; the plan says to confirm with 2 to 3 local competitor quotes before publishing |
-| Reviews | Reviews section | sample text, marked "Sample review"; replace with real client reviews |
+| Reviews | removed | section removed until real, permission-granted client reviews are available; carousel code is kept and only runs if the section is restored |
 | Forms | quote, appointment, contact and property manager account forms | connected to Netlify Forms (`data-netlify`, honeypot spam field, AJAX submit). After the first deploy: enable form detection and set email notifications to info@diamondcleaningp.com in Netlify |
 | Text button | `sms:+13137506159` | confirm the number can receive texts |
 | Appointment requests | `#book` calendar section | delivered through Netlify Forms as the `appointment` form |
