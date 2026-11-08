@@ -982,25 +982,41 @@
 })();
 </script>
 <script>
-/* Measure Netlify's badge, if it is on the page, and lift the bottom bar above it. */
+/* Measure Netlify's badge, wherever it sits along the bottom of the screen, and lift the bottom bar above it. */
 (function () {
-  function isOurs(el) { return el.closest && el.closest("#mobileBar, #header, .progress, .spark"); }
+  function isOurs(el) { return el.closest && el.closest("#mobileBar, #header, .progress, .spark, footer, main, .topbar"); }
+  function fixedAncestor(el) {
+    for (var n = el; n && n !== document.body; n = n.parentElement) {
+      if (getComputedStyle(n).position === "fixed") return true;
+    }
+    return false;
+  }
+  function candidates() {
+    var list = [].slice.call(document.querySelectorAll("iframe, [id^='nl-'], [id*='netlify'], [class*='netlify']"));
+    [].forEach.call(document.body.children, function (el) { if (list.indexOf(el) < 0) list.push(el); });
+    return list;
+  }
+  var pending = false;
   function measure() {
-    var h = 0, vh = window.innerHeight, vw = window.innerWidth;
-    document.querySelectorAll("body > *").forEach(function (el) {
-      if (isOurs(el)) return;
+    pending = false;
+    var vh = window.innerHeight, h = 0;
+    candidates().forEach(function (el) {
+      if (isOurs(el) || !fixedAncestor(el)) return;
       var cs = getComputedStyle(el);
-      if (cs.position !== "fixed" || cs.display === "none" || cs.visibility === "hidden") return;
+      if (cs.display === "none" || cs.visibility === "hidden" || +cs.opacity === 0) return;
       var r = el.getBoundingClientRect();
       if (r.width < 20 || r.height < 20 || r.height > vh / 3) return;
-      if (r.bottom >= vh - 40 && r.right >= vw - 40) h = Math.max(h, vh - r.top);
+      if (r.bottom >= vh - 60 && r.top > vh / 2) h = Math.max(h, vh - r.top);
     });
     document.documentElement.style.setProperty("--badge-clear", h ? Math.ceil(h + 8) + "px" : "0px");
   }
-  new MutationObserver(measure).observe(document.body, { childList: true });
-  addEventListener("resize", measure);
-  addEventListener("load", function () { measure(); setTimeout(measure, 1500); setTimeout(measure, 4000); });
-  measure();
+  function schedule() { if (!pending) { pending = true; requestAnimationFrame(measure); } }
+  new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true });
+  addEventListener("resize", schedule);
+  addEventListener("scroll", schedule, { passive: true });
+  if (window.visualViewport) visualViewport.addEventListener("resize", schedule);
+  addEventListener("load", function () { schedule(); [800, 2000, 4000, 8000].forEach(function (t) { setTimeout(schedule, t); }); });
+  schedule();
 })();
 </script>
 </body>
