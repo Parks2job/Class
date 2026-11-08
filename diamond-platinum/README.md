@@ -45,9 +45,9 @@ All animation respects the visitor's "reduce motion" setting.
 | Hours | Mon to Fri 8 AM to 5 PM (after hours 6 to 10 PM); Sat 9 AM to 3 PM (after hours 4 to 9 PM); Sun closed, by appointment | done |
 | Prices | `PRICING` at the top of the script | uses Business Plan midpoints; the plan says to confirm with 2 to 3 local competitor quotes before publishing |
 | Reviews | Reviews section | sample text, marked "Sample review"; replace with real client reviews |
-| Forms | quote, contact and property manager account forms | demo only; connect to a form service with privacy protections |
+| Forms | quote, appointment, contact and property manager account forms | connected to Netlify Forms (`data-netlify`, honeypot spam field, AJAX submit). After the first deploy: enable form detection and set email notifications to info@diamondcleaningp.com in Netlify |
 | Text button | `sms:+13137506159` | confirm the number can receive texts |
-| Appointment requests | `#book` calendar section | built; requests are delivered once the form service is connected (same as other forms) |
+| Appointment requests | `#book` calendar section | delivered through Netlify Forms as the `appointment` form |
 | Square payments | `pay.html`, the `#payBtn` link | waiting on owner's Square account. In the Square Dashboard create a payment link (ideally one that lets the customer enter the amount), then replace `href="#pay-help"` on `#payBtn` with that link and remove `aria-disabled="true"` and the `is-pending` class |
 | Deposits | home page booking section and FAQ; `pay.html` `#deposit` | flat $50 (first-time/one-time standard, deep, listing prep) and $100 (move-in/out, and each property manager turnover), credited to the bill; refund or reschedule with 24 h notice (48 h move-outs). Create two fixed-price Square links and put them on `#depositStd` and `#depositMove` (same steps as `#payBtn`). Have a Michigan attorney review the terms and add them to the client service agreement |
 | Cancellation policy | `cancellation.html` | built from Policy & Procedure Manual 7.2 and the deposit terms; have a Michigan attorney review it with the client service agreement |

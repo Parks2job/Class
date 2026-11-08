@@ -484,6 +484,9 @@
   .topbar .tb-area { display: none; }
   .nav-links .nav-mobile-only { display: none; }
   @media (max-width: 960px) { .nav-links .nav-mobile-only { display: block; } }
+  .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .form-error { color: #b42318; font-weight: 700; font-size: .88rem; margin: 8px 0 4px; }
+  button[type="submit"]:disabled { opacity: .6; cursor: progress; }
   .contact-form { background: #fff; border-radius: 26px; padding: 44px; box-shadow: var(--shadow-md); }
   .contact-form h3 { font-family: "Cinzel", serif; font-size: 1.5rem; color: var(--navy-800); margin-bottom: 18px; }
 
@@ -732,7 +735,9 @@
     </div>
 
     <div class="hero-visual" id="quote">
-      <form class="quote-card" id="quoteForm" novalidate>
+      <form name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="quote-card" id="quoteForm" novalidate>
+      <input type="hidden" name="form-name" value="quote" />
+      <p class="hp-field" aria-hidden="true"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
         <div class="form-body">
           <h3>Get an Instant Estimate</h3>
           <p>Pick a service and home size. We confirm your final price after a quick walkthrough or photos.</p>
@@ -761,6 +766,7 @@
               </select>
             </div>
           </div>
+          <input type="hidden" name="estimate" id="qEstimate" value="$300" />
           <div class="estimate" aria-live="polite">
             <div><small>Estimated from</small><strong id="estPrice" data-current="300">$300</strong></div>
             <em>Final price confirmed after a quick walkthrough</em>
@@ -769,6 +775,7 @@
             <div class="field"><label for="qName">Name</label><input id="qName" name="name" required autocomplete="name" placeholder="Your name" /></div>
             <div class="field"><label for="qPhone">Phone</label><input id="qPhone" name="phone" type="tel" required autocomplete="tel" placeholder="(555) 555-5555" /></div>
           </div>
+          <p class="form-error" role="alert" hidden></p>
           <button class="btn btn-primary" type="submit">Book My Sparkling Clean <svg><use href="#i-sparkle"/></svg></button>
           <p class="form-note">No obligation. We reply within one business day.</p>
         </div>
@@ -1100,7 +1107,9 @@
       <h2 class="display">Pick a Day That Works for You</h2>
       <p>Choose a date and time window, and we will call or text to confirm your appointment. Evening and weekend slots are available.</p>
     </div>
-    <form class="book reveal" id="bookForm" novalidate>
+    <form name="appointment" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="book reveal" id="bookForm" novalidate>
+      <input type="hidden" name="form-name" value="appointment" />
+      <p class="hp-field" aria-hidden="true"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
       <div class="form-body book-grid">
         <div class="book-cal">
           <div class="cal-head">
@@ -1288,7 +1297,9 @@
       </div></div>
       <div class="ci"><span class="ic"><svg><use href="#i-pin"/></svg></span><div><small>Service area</small><p>Detroit &amp; Metro Detroit</p></div></div>
     </div>
-    <form class="contact-form reveal" data-delay="2" id="contactForm" novalidate>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form reveal" data-delay="2" id="contactForm" novalidate>
+      <input type="hidden" name="form-name" value="contact" />
+      <p class="hp-field" aria-hidden="true"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
       <div class="form-body">
         <h3>Request a Free Quote</h3>
         <div class="row2">
@@ -1305,6 +1316,7 @@
           </div>
         </div>
         <div class="field"><label for="cMsg">Tell us about your space</label><textarea id="cMsg" name="message" rows="4" placeholder="Size, number of rooms, preferred dates, anything we should know."></textarea></div>
+        <p class="form-error" role="alert" hidden></p>
         <button class="btn btn-primary" type="submit" style="width:100%">Send My Request <svg><use href="#i-arrow"/></svg></button>
         <p class="form-note">We never sell your information. See our <a href="privacy.html" style="color:var(--royal);font-weight:800">Privacy Policy</a>.</p>
       </div>
@@ -1346,6 +1358,29 @@
 <script>
 (function () {
   document.documentElement.classList.add("js");
+
+  /* Form delivery through Netlify Forms. On a local copy or a preview, nothing is sent. */
+  var DPC_PREVIEW = false;
+  window.dpcSend = function (form) {
+    var err = form.querySelector(".form-error, .book-error");
+    var btn = form.querySelector('button[type="submit"]');
+    if (err) err.hidden = true;
+    function done() { form.classList.add("sent"); }
+    if (DPC_PREVIEW || location.protocol === "file:") {
+      var h = form.querySelector(".form-success h4"), p = form.querySelector(".form-success p");
+      if (h) h.textContent = "Preview only";
+      if (p) p.textContent = "This copy of the site is not online yet, so nothing was sent. Once the site is live, this form delivers your request to our team.";
+      done(); return Promise.resolve();
+    }
+    if (btn) btn.disabled = true;
+    var body = new URLSearchParams(new FormData(form)).toString();
+    return fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); done(); })
+      .catch(function () {
+        if (btn) btn.disabled = false;
+        if (err) { err.textContent = "Sorry, your request did not go through. Please try again, or call or text (313) 750-6159."; err.hidden = false; }
+      });
+  };
   /* ---------------------------------------------------------------
      PRICING CONFIG (Business Plan, Section 5): midpoint rate per sq ft
      and per-visit minimum for each tier. Adjust after local competitor
@@ -1417,7 +1452,9 @@
   function currentService() { return form.querySelector("input[name=space]:checked").value; }
   function updateEstimate() {
     var cfg = PRICING[currentService()];
-    animateNumber(est, Math.max(cfg.min, Math.round(cfg.rate * parseInt(sizeSel.value, 10))));
+    var amount = Math.max(cfg.min, Math.round(cfg.rate * parseInt(sizeSel.value, 10)));
+    document.getElementById("qEstimate").value = "$" + amount;
+    animateNumber(est, amount);
   }
   form.querySelectorAll("input[name=space]").forEach(function (r) { r.addEventListener("change", updateEstimate); });
   sizeSel.addEventListener("change", updateEstimate);
@@ -1438,8 +1475,7 @@
       var bad = Array.prototype.filter.call(f.querySelectorAll("[required]"), function (i) { return !i.value.trim() || (i.type === "email" && !/^\S+@\S+\.\S+$/.test(i.value)); });
       f.querySelectorAll("[required]").forEach(function (i) { i.style.borderColor = ""; });
       if (bad.length) { bad.forEach(function (i) { i.style.borderColor = "#d14b4b"; }); bad[0].focus(); return; }
-      f.classList.add("sent");
-      burst(f);
+      dpcSend(f).then(function () { if (f.classList.contains("sent")) burst(f); });
     });
   }
   wireForm(form); wireForm(document.getElementById("contactForm"));
@@ -1717,8 +1753,7 @@
       err.textContent = "To send your request, please " + problems.join(", ") + ".";
       err.hidden = false; return;
     }
-    form.classList.add("sent");
-    form.scrollIntoView({ behavior: "smooth", block: "center" });
+    dpcSend(form).then(function () { if (form.classList.contains("sent")) form.scrollIntoView({ behavior: "smooth", block: "center" }); });
   });
 
   renderCalendar(); renderSlots(); update();
