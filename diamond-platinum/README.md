@@ -41,7 +41,7 @@ All animation respects the visitor's "reduce motion" setting.
 | Item | Where | Status |
 |---|---|---|
 | Phone | (313) 750-6159 | done |
-| Email | info@diamondplatinumcleaning.com | done (confirmed by owner) |
+| Email | info@diamondcleaningp.com | done (confirmed by owner) |
 | Hours | Mon to Fri 8 AM to 5 PM (after hours 6 to 10 PM); Sat 9 AM to 3 PM (after hours 4 to 9 PM); Sun closed, by appointment | done |
 | Prices | `PRICING` at the top of the script | uses Business Plan midpoints; the plan says to confirm with 2 to 3 local competitor quotes before publishing |
 | Reviews | Reviews section | sample text, marked "Sample review"; replace with real client reviews |
