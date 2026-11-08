@@ -600,6 +600,8 @@
   .slot-empty { grid-column: 1 / -1; color: var(--muted); font-size: .9rem; padding: 14px; border-radius: 14px; background: var(--platinum-1); }
   .flex-check { display: flex; gap: 8px; align-items: center; margin-top: 10px; font-size: .88rem; color: var(--muted); cursor: pointer; }
   .flex-check input { width: 18px; height: 18px; accent-color: var(--royal); }
+  .book-deposit { display: flex; gap: 10px; align-items: flex-start; margin: 4px 0 10px; padding: 12px 14px; border-radius: 14px; background: var(--ice); color: var(--navy-800); font-size: .88rem; font-weight: 600; }
+  .book-deposit svg { width: 18px; height: 18px; flex: none; color: var(--royal); margin-top: 1px; }
   .book-summary { margin: 4px 0 12px; padding: 14px 16px; border-radius: 14px; background: linear-gradient(135deg, var(--navy-800), var(--royal)); color: #fff; font-weight: 700; font-size: .92rem; }
   .book-error { color: #b42318; font-weight: 700; font-size: .88rem; margin-bottom: 10px; }
   .book .form-success { padding: 48px 24px; }
@@ -1074,7 +1076,7 @@
         <a href="#quote" class="btn btn-outline" data-service="deep">Choose Deep Clean</a>
       </article>
     </div>
-    <p class="price-note reveal">Example: a 1,200 sq ft two-bedroom move-out is about $300. Final pricing depends on condition and your neighborhood and is confirmed before we start. <a href="#book" style="color:var(--royal);font-weight:800">Request a date</a>.</p>
+    <p class="price-note reveal">Example: a 1,200 sq ft two-bedroom move-out is about $300. Final pricing depends on condition and your neighborhood and is confirmed before we start. A flat $50 deposit ($100 for move-outs) reserves your date and is credited to your bill. <a href="#book" style="color:var(--royal);font-weight:800">Request a date</a>.</p>
 
     <div class="addons reveal" id="addons">
       <h3 class="display">Add-On Services</h3>
@@ -1142,10 +1144,11 @@
           </div>
           <input type="hidden" id="bkDate" name="date" />
           <input type="hidden" id="bkWindow" name="window" />
+          <div class="book-deposit" id="bookDeposit" aria-live="polite"></div>
           <div class="book-summary" id="bookSummary" aria-live="polite">No date selected yet.</div>
           <p class="book-error" id="bookError" role="alert" hidden></p>
           <button class="btn btn-primary" type="submit" style="width:100%">Request This Appointment <svg><use href="#i-calendar"/></svg></button>
-          <p class="form-note">This is a request, not a confirmed booking. We will contact you to confirm the time.</p>
+          <p class="form-note">This is a request, not a confirmed booking. We will contact you to confirm the time, then send a secure Square link for any deposit.</p>
         </div>
       </div>
       <div class="form-success">
@@ -1258,6 +1261,7 @@
       <details class="reveal"><summary>What happens if something is not right?<span class="pm"></span></summary><div class="ans">Contact us and a supervisor will acknowledge your concern within 24 hours. If a re-clean is warranted, we schedule it within 48 hours at no additional charge.</div></details>
       <details class="reveal"><summary>What if you find damage in the unit?<span class="pm"></span></summary><div class="ans">We note pre-existing damage during our walkthrough on arrival, and we report any damage or maintenance issues to you with photos before we leave.</div></details>
       <details class="reveal"><summary>Do you offer evening or weekend cleaning?<span class="pm"></span></summary><div class="ans">Yes. Beyond regular hours, we offer after-hours service from 6 PM to 10 PM Monday through Friday and 4 PM to 9 PM on Saturday. Sunday service is available by appointment. Evening slots work well for occupied homes and tight turnover schedules.</div></details>
+      <details class="reveal"><summary>Do you require a deposit?<span class="pm"></span></summary><div class="ans">Yes, for first-time and one-time cleans. A $50 deposit reserves a standard, deep or listing-prep clean, and a $100 deposit reserves a move-in or move-out clean. The deposit is credited to your final bill. Recurring visits after the first need no deposit. If you cancel with at least 24 hours' notice (48 hours for move-outs), we refund your deposit or apply it to your new date. Later cancellations may forfeit the deposit as a late-cancellation fee.</div></details>
       <details class="reveal"><summary>What is your cancellation policy?<span class="pm"></span></summary><div class="ans">Please give at least 24 hours' notice to cancel or reschedule a standard visit, and 48 hours for a move-out job. Late cancellations may be subject to a fee under your service agreement.</div></details>
     </div>
   </div>
@@ -1674,7 +1678,17 @@
     if (list.length === 1) { var only = slotList.querySelector("input"); only.checked = true; winField.value = list[0].label; }
   }
 
+  /* Flat deposits to reserve a date, credited to the final bill. */
+  var DEPOSITS = {
+    "Move-in / move-out": "A $100 deposit reserves your move-out date and is credited to your final bill.",
+    "Deep cleaning": "A $50 deposit reserves your date and is credited to your final bill.",
+    "Standard recurring": "A $50 deposit reserves your first visit and is credited to that bill. Later recurring visits need no deposit.",
+    "Property manager turnover": "Account clients: deposit terms are set when your account is opened.",
+    "Real estate listing prep": "A $50 deposit reserves your date and is credited to your final bill."
+  };
+  var depositBox = document.getElementById("bookDeposit");
   function update() {
+    depositBox.innerHTML = '<svg><use href="#i-card"/></svg><span>' + (DEPOSITS[service.value] || "") + "</span>";
     err.hidden = true;
     if (!selected) { summary.textContent = "No date selected yet."; return; }
     var parts = [fmt(selected)];
