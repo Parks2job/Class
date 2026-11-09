@@ -1,0 +1,64 @@
+# Diamond Platinum Cleaning: Website
+
+A single-page, animated marketing website for **Diamond Platinum Cleaning**, a
+checklist-driven move-in/move-out, deep and recurring cleaning service in Metro Detroit.
+Content is drawn from the company's Business Plan, Policy & Procedure Manual and Hiring
+Package (July 2026).
+
+## Live site
+
+https://diamondplatinumcleaning.com (Netlify project `fastidious-kangaroo-1ee6c3`, deployed automatically from branch `claude/jolly-dijkstra-oj9ozx`, base and publish directory `diamond-platinum`). Domain registered through Netlify with Netlify DNS and automatic HTTPS. Form alerts go to parks2job@gmail.com.
+
+## What's included
+
+- `index.html`: the full responsive site (HTML, CSS and JavaScript in one file, no build step)
+- `property-managers.html`: dedicated page for landlords and property managers (turnover process, pricing table, account standards, account request form)
+- `cancellation.html`: Cancellation & rescheduling policy (24 h notice; 48 h for move-outs and property manager turnovers; deposit handling; late-cancellation fees). Linked from every footer, the booking section, the FAQ and the deposit terms.
+- `privacy.html`: Privacy policy (what is collected, how it is used and shared, in-home confidentiality, cookies and Do Not Track, security, retention, choices, children, changes). Written to meet California's CalOPPA posting rules. Linked from every footer and the form notes.
+- `pay.html`: Pay Your Invoice page (Square checkout button, ways to pay, billing questions). Linked from the top bar, phone menu and footer on every page.
+- `assets/logo.webp`: the original full-size DPC logo (transparent background). A web-sized copy is embedded directly in `index.html`, so the page shows the logo even when the HTML file is downloaded or opened on its own.
+
+## Sections
+
+Top contact bar · Sticky header · Animated hero with sparkle particles and an instant
+square-footage estimator · Scrolling trust marquee · Who we serve (property managers,
+homeowners/renters, real estate agents) · Services · Before/after slider · 4-step process
+(quote, pre-clean walkthrough, checklist clean, final inspection) · Move-In/Move-Out
+checklist tabs (from Business Plan Appendix A) · Per-square-foot pricing and add-ons ·
+Core values · Reviews carousel · Careers (Cleaning Technician, Crew Lead) · FAQ · Contact
+form · Footer · Mobile "Call / Free Quote" bar.
+
+All animation respects the visitor's "reduce motion" setting.
+
+## Where the content came from
+
+| Site content | Source |
+|---|---|
+| Metro Detroit service area, client segments, services | Business Plan, Sections 1 to 4 |
+| Pricing tiers, per-visit minimums, add-on prices | Business Plan, Sections 4.4 and 5 |
+| Move-In/Move-Out checklist | Business Plan, Appendix A |
+| Core values, background checks, uniforms, complaint and cancellation policy | Policy & Procedure Manual, Sections 2, 3, 6, 7 |
+| Careers roles, requirements, hiring steps, pay perks | Hiring Package, Sections 2, 3, 9; Manual Section 8 |
+
+## Before going live
+
+| Item | Where | Status |
+|---|---|---|
+| Phone | (313) 750-6159 | done |
+| Email | info@diamondcleaningp.com | done (confirmed by owner) |
+| Hours | Mon to Fri 8 AM to 5 PM (after hours 6 to 10 PM); Sat 9 AM to 3 PM (after hours 4 to 9 PM); Sun closed, by appointment | done |
+| Prices | `PRICING` at the top of the script | uses Business Plan midpoints; the plan says to confirm with 2 to 3 local competitor quotes before publishing |
+| Reviews | removed | section removed until real, permission-granted client reviews are available; carousel code is kept and only runs if the section is restored |
+| Forms | quote, appointment, contact and property manager account forms | connected to Netlify Forms (`data-netlify`, honeypot spam field, AJAX submit). After the first deploy: enable form detection and set email notifications to info@diamondcleaningp.com in Netlify |
+| Text button | `sms:+13137506159` | confirm the number can receive texts |
+| Appointment requests | `#book` calendar section | delivered through Netlify Forms as the `appointment` form |
+| Square payments | `pay.html`, the `#payBtn` link | waiting on owner's Square account. In the Square Dashboard create a payment link (ideally one that lets the customer enter the amount), then replace `href="#pay-help"` on `#payBtn` with that link and remove `aria-disabled="true"` and the `is-pending` class |
+| Deposits | home page booking section and FAQ; `pay.html` `#deposit` | flat $50 (first-time/one-time standard, deep, listing prep) and $100 (move-in/out, and each property manager turnover), credited to the bill; refund or reschedule with 24 h notice (48 h move-outs). Create two fixed-price Square links and put them on `#depositStd` and `#depositMove` (same steps as `#payBtn`). Have a Michigan attorney review the terms and add them to the client service agreement |
+| Cancellation policy | `cancellation.html` | built from Policy & Procedure Manual 7.2 and the deposit terms; have a Michigan attorney review it with the client service agreement |
+| Privacy policy | `privacy.html` | have an attorney review; update it if analytics, cookies, marketing texts or new service providers are added, and name the form and booking providers once chosen |
+| Insurance / bonding | not claimed on the site | add "insured & bonded" only after coverage is in place |
+
+## Preview
+
+Open `index.html` in a browser, or run `python3 -m http.server 8000` in this folder and
+visit `http://localhost:8000`.
