@@ -627,7 +627,7 @@
   .deposit-terms li { display: flex; gap: 10px; align-items: flex-start; font-size: .95rem; }
   .deposit-terms li svg { width: 20px; height: 20px; flex: none; color: var(--royal); margin-top: 2px; }
   .deposit-terms .pay-pending { margin-top: 18px; }
-  .deposit-grid:has(.pay-btn:not(.is-pending)) ~ .deposit-terms .pay-pending { display: none; }
+  .deposit-grid:not(:has(.pay-btn.is-pending)) ~ .deposit-terms .pay-pending { display: none; }
   @media (max-width: 700px) { .deposit-grid { grid-template-columns: 1fr; } .deposit-terms { padding: 22px; } }
   /* Room for Netlify's "Powered by Netlify" badge (fixed, bottom-right) when it is present */
   :root { --badge-clear: 0px; }
@@ -808,8 +808,8 @@
         <h3>Standard, Deep or Listing Prep</h3>
         <p class="for">First-time and one-time cleans</p>
         <div class="price"><strong>$50</strong><small>deposit</small></div>
-        <!-- SQUARE LINK ($50 deposit): replace href="#deposit-terms", then remove aria-disabled and the is-pending class. -->
-        <a class="btn btn-primary pay-btn is-pending" id="depositStd" href="#deposit-terms" aria-disabled="true" data-live-label="Pay $50 Deposit">
+        <!-- SQUARE LINK ($50 deposit): connected. -->
+        <a class="btn btn-primary pay-btn" id="depositStd" href="https://square.link/u/BjqKf94T" data-live-label="Pay $50 Deposit">
           <svg><use href="#i-card"/></svg> <span class="pay-label">Deposit Link Coming Soon</span>
         </a>
       </article>
@@ -817,8 +817,8 @@
         <h3>Move-In / Move-Out</h3>
         <p class="for">Move-outs and property manager turnovers</p>
         <div class="price"><strong>$100</strong><small>deposit</small></div>
-        <!-- SQUARE LINK ($100 deposit): replace href="#deposit-terms", then remove aria-disabled and the is-pending class. -->
-        <a class="btn btn-platinum pay-btn is-pending" id="depositMove" href="#deposit-terms" aria-disabled="true" data-live-label="Pay $100 Deposit">
+        <!-- SQUARE LINK ($100 deposit): connected. -->
+        <a class="btn btn-platinum pay-btn" id="depositMove" href="https://square.link/u/q6cbl2zM" data-live-label="Pay $100 Deposit">
           <svg><use href="#i-card"/></svg> <span class="pay-label">Deposit Link Coming Soon</span>
         </a>
       </article>
