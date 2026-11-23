@@ -80,8 +80,8 @@
   .files .thumb-cover{width:216px;max-width:100%;height:auto}
   .files div{font-size:14px;min-width:0}
   .files code{font-size:13px;background:var(--code);padding:2px 6px;border-radius:6px;word-break:break-all}
-  .swatch{display:inline-flex;align-items:center;gap:8px;font-weight:600}
-  .swatch i{width:20px;height:20px;border-radius:6px;background:#139FDD;display:inline-block;border:1px solid var(--line)}
+  .design-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+  .paste-label .dot{display:inline-block;width:14px;height:14px;border-radius:4px;border:1px solid var(--line);vertical-align:-2px;margin-right:8px}
 
   .qs{display:grid;gap:10px}
   .q{border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:10px;min-width:0}
@@ -171,12 +171,17 @@
         <p class="paste-text">Thank you for your interest in First Choice Staffing Agency. Answer a few quick questions and our team will contact you to talk about next steps. This takes about 2 minutes.</p>
       </div>
       <ul class="tasks">
-        <li><label class="task"><input type="checkbox" id="s2f"><span>Click <b class="ui">Customize</b> (it may say <b class="ui">Design</b>) at the top. Set the button and accent color to <span class="swatch"><i></i>#139FDD</span>. Leave the background white.</span></label></li>
+        <li><label class="task"><input type="checkbox" id="s2f"><span>Click <b class="ui">Customize</b> (it may say <b class="ui">Design</b>) at the top and enter the settings below.</span></label></li>
       </ul>
-      <div class="paste">
-        <div class="paste-top"><span class="paste-label">Brand blue color code</span><button type="button" class="copy">Copy</button></div>
-        <p class="paste-text">#139FDD</p>
+      <div class="design-grid">
+        <div class="paste"><div class="paste-top"><span class="paste-label">Font</span><button type="button" class="copy">Copy</button></div><p class="paste-text">Quicksand</p></div>
+        <div class="paste"><div class="paste-top"><span class="paste-label"><i class="dot" style="background:#FFFFFF"></i>Background</span><button type="button" class="copy">Copy</button></div><p class="paste-text">#FFFFFF</p></div>
+        <div class="paste"><div class="paste-top"><span class="paste-label"><i class="dot" style="background:#1B2833"></i>Text</span><button type="button" class="copy">Copy</button></div><p class="paste-text">#1B2833</p></div>
+        <div class="paste"><div class="paste-top"><span class="paste-label"><i class="dot" style="background:#E5188E"></i>Button background</span><button type="button" class="copy">Copy</button></div><p class="paste-text">#E5188E</p></div>
+        <div class="paste"><div class="paste-top"><span class="paste-label"><i class="dot" style="background:#FFFFFF"></i>Button text</span><button type="button" class="copy">Copy</button></div><p class="paste-text">#FFFFFF</p></div>
+        <div class="paste"><div class="paste-top"><span class="paste-label"><i class="dot" style="background:#139FDD"></i>Accent</span><button type="button" class="copy">Copy</button></div><p class="paste-text">#139FDD</p></div>
       </div>
+      <div class="tip"><strong>Why these:</strong> Pink buttons match the Apply Now button in your ad, and white text on pink is easy to read. Blue as the accent highlights the answer a person taps. Quicksand is a rounded font close to the “Staffing Agency” lettering in your logo. If you can't find it, choose Nunito, or leave the default.</div>
     </section>
 
     <!-- STEP 3 -->

@@ -21,7 +21,7 @@ Question wording is in `Caption_and_Form_Questions.md` (Part 2).
 4. Hover over the title and click **Add logo**. Upload `Tally_Logo_400x400.png`.
 5. Under the title, type the intro text:
    > Thank you for your interest in First Choice Staffing Agency. Answer a few quick questions and our team will contact you to talk about next steps. This takes about 2 minutes.
-6. Click **Customize** (or **Design**) at the top. Set the button and accent color to blue **#139FDD**. Leave the background white.
+6. Click **Customize** (or **Design**) at the top. Font: **Quicksand**. Background **#FFFFFF**, text **#1B2833**, button background **#E5188E**, button text **#FFFFFF**, accent **#139FDD**.
 
 ## Step 3: Add the questions
 Tally works like a typed document. Press **Enter** for a new line, then type **/** to open a menu of question types. Pick the type, then type the question.
