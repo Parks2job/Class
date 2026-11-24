@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root{--blue:#139FDD;--pink:#E5188E;--ink:#1B2833;--muted:#4A5866;--tint:#EEF8FD}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#ddd;font-family:'Inter',sans-serif;color:var(--ink)}
+  .ad{position:relative;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+  .feed{width:1080px;height:1350px}
+  .story{width:1080px;height:1920px}
+
+  .wash{position:absolute;border-radius:50%}
+  .wash.b{background:var(--tint)}
+  .wash.p{background:#FDEEF6}
+
+  .top{position:relative;padding:64px 72px 0}
+  .logo{height:150px;display:block}
+  .body{position:relative;padding:0 72px;flex:1;display:flex;flex-direction:column}
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-weight:700;font-size:27px;letter-spacing:.12em;color:var(--pink);text-transform:uppercase;margin-top:46px}
+  .eyebrow:before{content:"";width:44px;height:5px;border-radius:3px;background:var(--pink)}
+  h1{font-family:'Inter Display','Inter',sans-serif;font-weight:800;font-size:96px;line-height:1.0;letter-spacing:-.02em;margin-top:26px;color:var(--ink)}
+  .sub{font-size:36px;line-height:1.35;color:var(--muted);margin-top:26px;max-width:880px;font-weight:500}
+
+  .lower{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;margin-top:34px}
+  .left{min-width:0}
+  .pay{display:flex;align-items:flex-end;gap:14px}
+  .amt{font-family:'Inter Display','Inter',sans-serif;font-weight:900;font-size:168px;line-height:.86;letter-spacing:-.01em;color:var(--blue);white-space:nowrap}
+  .amt sup{font-size:.5em;vertical-align:.62em;margin-right:4px;letter-spacing:0}
+  .amt .dot{margin:0 .07em 0 .05em}
+  .per{font-family:'Inter Display','Inter',sans-serif;font-weight:800;font-size:48px;color:var(--pink);padding-bottom:10px;white-space:nowrap}
+  ul{list-style:none;margin-top:38px;display:grid;gap:18px}
+  li{display:flex;align-items:center;gap:16px;font-size:29px;font-weight:600;color:var(--ink);white-space:nowrap}
+  li i{flex:none;width:44px;height:44px;border-radius:50%;background:var(--pink);display:grid;place-items:center}
+  li i svg{width:26px;height:26px}
+
+  .photo{position:relative;width:310px}
+  .photo:before{content:"";position:absolute;inset:18px -18px -18px 18px;border-radius:28px;background:var(--pink);opacity:.9}
+  .photo img{position:relative;display:block;width:100%;aspect-ratio:1080/1280;object-fit:cover;border-radius:28px;border:6px solid #fff;box-shadow:0 14px 30px rgba(16,40,60,.22)}
+
+  .band{position:relative;background:var(--blue);color:#fff;padding:40px 72px 34px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+  .band .site{font-size:34px;font-weight:700;letter-spacing:.01em}
+  .band .note{font-size:22px;font-weight:500;opacity:.92;margin-top:8px}
+  .btn{flex:none;background:var(--pink);color:#fff;font-weight:800;font-size:40px;padding:26px 46px;border-radius:999px;display:flex;align-items:center;gap:16px;box-shadow:0 8px 0 rgba(0,0,0,.12)}
+  .btn svg{width:34px;height:34px}
+
+  /* story */
+  .story .top{padding-top:180px}
+  .story .logo{height:170px}
+  .story .eyebrow{margin-top:56px}
+  .story h1{font-size:108px;margin-top:30px}
+  .story .sub{font-size:40px;margin-top:30px;max-width:950px}
+  .story .lower{margin-top:50px;gap:30px}
+  .story .amt{font-size:166px}
+  .story .per{font-size:50px}
+  .story ul{margin-top:44px;gap:24px}
+  .story li{font-size:28px}
+  .story li i{width:48px;height:48px}
+  .story .photo{width:320px}
+  .story .band{flex-direction:column;align-items:flex-start;padding:48px 72px 230px;gap:30px}
+  .story .btn{font-size:48px;padding:32px 56px}
+  .story .lower{margin-top:60px}
+  .story ul{margin-top:50px;gap:28px}
+</style>
+</head>
+<body>
+<template id="content">
+  <div class="wash p" style="width:520px;height:520px;right:-200px;top:-210px"></div>
+  <div class="wash b" style="width:900px;height:900px;right:-420px;top:520px"></div>
+  <div class="top"><img class="logo" src="logo.png" alt="First Choice Staffing Agency"></div>
+  <div class="body">
+    <div class="eyebrow">Michigan Home Help Program</div>
+    <h1>Caring for a loved one at home?</h1>
+    <p class="sub">If they have Michigan Medicaid, you may be able to get paid for the care you already give.</p>
+    <div class="lower">
+      <div class="left">
+        <div class="pay">
+          <div class="amt"><sup>$</sup>17<span class="dot">.</span>13</div>
+          <div class="per">/hour</div>
+        </div>
+        <ul>
+          <li><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>Care for someone you already know</li>
+          <li><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>Michigan Medicaid Home Help</li>
+          <li><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>Sign up in 2 minutes from your phone</li>
+        </ul>
+      </div>
+      <div class="photo"><img src="photo_side.jpg" alt="Caregiver with client at home"></div>
+    </div>
+  </div>
+  <div class="band">
+    <div>
+      <div class="site">firstchoicehcmi.com</div>
+      <div class="note">Eligibility requirements apply.</div>
+    </div>
+    <div class="btn">Apply Now <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+  </div>
+</template>
+
+<div id="feed" class="ad feed"></div>
+<div style="height:40px"></div>
+<div id="story" class="ad story"></div>
+
+<script>
+  const t=document.getElementById('content');
+  for(const id of ['feed','story']) document.getElementById(id).appendChild(t.content.cloneNode(true));
+</script>
+</body>
+</html>
