@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root{--blue:#139FDD;--blue-dark:#0B7DB0;--pink:#E5188E;--ink:#1B2833;--muted:#4A5866;--tint:#EEF8FD}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#ddd;font-family:'Inter',sans-serif;color:var(--ink)}
+  .ad{position:relative;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+  .feed{width:1080px;height:1350px}
+  .story{width:1080px;height:1920px}
+  .wash{position:absolute;border-radius:50%}
+  .wash.b{background:var(--tint)}
+  .wash.p{background:#FDEEF6}
+
+  .main{position:relative;flex:1;display:flex;flex-direction:column;padding:52px 64px 0}
+  .logo{height:120px;width:auto;align-self:flex-start;display:block}
+  .eyebrow{display:inline-flex;align-self:flex-start;align-items:center;gap:12px;font-weight:700;font-size:23px;letter-spacing:.12em;color:var(--pink);text-transform:uppercase;margin-top:26px}
+  .eyebrow:before{content:"";width:40px;height:5px;border-radius:3px;background:var(--pink)}
+  h1{font-family:'Inter Display','Inter',sans-serif;font-weight:800;font-size:70px;line-height:1.03;letter-spacing:-.02em;margin-top:16px;max-width:940px}
+  .sub{font-size:29px;line-height:1.38;color:var(--muted);margin-top:18px;font-weight:500;max-width:940px}
+
+  .lower{display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center;margin-top:30px}
+  .left{min-width:0}
+  .start{font-size:24px;font-weight:600;color:var(--muted);letter-spacing:.01em}
+  .pay{display:flex;align-items:flex-end;gap:12px;margin-top:4px}
+  .amt{font-family:'Inter Display','Inter',sans-serif;font-weight:900;font-size:140px;line-height:.86;letter-spacing:-.01em;color:var(--blue);white-space:nowrap}
+  .amt sup{font-size:.5em;vertical-align:.62em;margin-right:3px}
+  .amt .dot{margin:0 .07em 0 .05em}
+  .per{font-family:'Inter Display','Inter',sans-serif;font-weight:800;font-size:44px;color:var(--pink);padding-bottom:6px}
+  ul{list-style:none;margin-top:28px;display:grid;gap:16px}
+  li{display:flex;align-items:center;gap:14px;font-size:27px;font-weight:600;line-height:1.25}
+  li i{flex:none;width:38px;height:38px;border-radius:50%;background:var(--pink);display:grid;place-items:center}
+  li i svg{width:23px;height:23px}
+
+  .photo{position:relative;width:318px}
+  .photo:before{content:"";position:absolute;inset:16px -16px -16px 16px;border-radius:26px;background:var(--pink)}
+  .photo img{position:relative;display:block;width:100%;aspect-ratio:1080/1280;object-fit:cover;border-radius:26px;border:6px solid #fff;box-shadow:0 12px 26px rgba(16,40,60,.22)}
+
+  .contact{margin-top:auto;padding:22px 0 18px;display:grid;gap:6px;text-align:center}
+  .contact .row{display:flex;justify-content:center;align-items:center;gap:22px;flex-wrap:wrap}
+  .phone{font-size:34px;font-weight:800;letter-spacing:.01em}
+  .site{font-size:26px;font-weight:600;color:var(--blue-dark)}
+  .sep{width:8px;height:8px;border-radius:50%;background:var(--pink)}
+  .tag{font-size:24px;font-style:italic;font-weight:500;color:var(--ink)}
+  .legal{font-size:17px;line-height:1.35;color:var(--muted);max-width:900px;margin:4px auto 0}
+
+  .cta{position:relative;background:var(--blue);color:#fff;padding:26px 64px 28px;display:flex;align-items:center;justify-content:space-between;gap:26px}
+  .cta .t1{font-family:'Inter Display','Inter',sans-serif;font-size:44px;font-weight:800;letter-spacing:-.01em}
+  .cta .t2{font-size:24px;font-weight:500;opacity:.95;margin-top:4px}
+  .down{flex:none;width:92px;height:92px;border-radius:50%;background:var(--pink);display:grid;place-items:center;box-shadow:0 7px 0 rgba(0,0,0,.12)}
+  .down svg{width:46px;height:46px}
+
+  /* story */
+  .story .main{padding:190px 72px 0}
+  .story .logo{height:140px}
+  .story .eyebrow{font-size:27px;margin-top:40px}
+  .story h1{font-size:84px;margin-top:20px}
+  .story .sub{font-size:34px;margin-top:24px}
+  .story .lower{margin-top:40px;gap:30px}
+  .story .start{font-size:28px}
+  .story .amt{font-size:150px}
+  .story .per{font-size:48px}
+  .story ul{margin-top:30px;gap:18px}
+  .story li{font-size:28px;white-space:normal}
+  .story li i{width:44px;height:44px}
+  .story .photo{width:320px}
+  .story .contact{padding:30px 0 26px;gap:10px}
+  .story .phone{font-size:42px}
+  .story .site{font-size:30px}
+  .story .tag{font-size:28px}
+  .story .legal{font-size:21px}
+  .story .cta{padding:34px 72px 250px;align-items:flex-start}
+  .story .cta .t1{font-size:50px}
+  .story .cta .t2{font-size:28px}
+</style>
+</head>
+<body>
+<template id="content">
+  <div class="wash p" style="width:480px;height:480px;right:-190px;top:-200px"></div>
+  <div class="wash b" style="width:860px;height:860px;right:-430px;top:420px"></div>
+  <div class="main">
+    <img class="logo" src="logo.png" alt="First Choice Staffing Agency">
+    <div class="eyebrow">Michigan Home Help Program</div>
+    <h1>Already Caring for a Family Member or Friend?</h1>
+    <p class="sub">If your loved one has Michigan Medicaid and needs assistance with bathing, dressing or other personal care tasks, you may qualify to become their paid caregiver through First Choice.</p>
+    <div class="lower">
+      <div class="left">
+        <div class="start">Starting caregiver pay</div>
+        <div class="pay"><div class="amt"><sup>$</sup>17<span class="dot">.</span>13</div><div class="per">/hour</div></div>
+        <ul>
+          <li><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Care for someone you know and love</span></li>
+          <li><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Get assistance with the Home Help application</span></li>
+          <li><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Receive support throughout the enrollment process</span></li>
+        </ul>
+      </div>
+      <div class="photo"><img src="photo_side.jpg" alt="Caregiver with client at home"></div>
+    </div>
+    <div class="contact">
+      <div class="row"><span class="phone">989-890-1659</span><span class="sep"></span><span class="site">firstchoicestaffinghcmi.com</span></div>
+      <div class="tag">Choose Care. Choose First Choice.</div>
+      <div class="legal">Subject to MDHHS eligibility, service authorization and agency employment requirements. Compensation applies to authorized services.</div>
+    </div>
+  </div>
+  <div class="cta">
+    <div>
+      <div class="t1">Find Out If You May Qualify!</div>
+      <div class="t2">Complete our quick 2-minute questionnaire.</div>
+    </div>
+    <div class="down"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
+  </div>
+</template>
+
+<div id="feed" class="ad feed"></div>
+<div style="height:40px"></div>
+<div id="story" class="ad story"></div>
+
+<script>
+  const t=document.getElementById('content');
+  for(const id of ['feed','story']) document.getElementById(id).appendChild(t.content.cloneNode(true));
+</script>
+</body>
+</html>
