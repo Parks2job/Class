@@ -48,7 +48,7 @@ Add your logo at the top, and set the button and accent color to blue **#139FDD*
 | 11 | Consent | Checkbox | "I agree that First Choice Staffing Agency may contact me by phone, text, or email about this opportunity. Message and data rates may apply. I can opt out at any time." | Yes |
 
 **Thank-you page:**
-> Thank you! We received your information. A member of the First Choice Staffing Agency team will contact you within 1 business day. Questions? Visit firstchoicestaffinghcmi.com.
+> Thank you! We received your information. A member of the First Choice Staffing Agency team will contact you within 1 business day. Questions? Visit firstchoicehcmi.com.
 
 ### Why questions 3 and 4 are there
 

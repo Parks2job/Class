@@ -48,7 +48,7 @@ Tally works like a typed document. Press **Enter** for a new line, then type **/
 ## Step 4: Add the thank-you page
 1. At the very end of the form, type **/** and choose **Thank you page**.
 2. Type:
-   > Thank you! We received your information. A member of the First Choice Staffing Agency team will contact you within 1 business day. Questions? Visit firstchoicestaffinghcmi.com.
+   > Thank you! We received your information. A member of the First Choice Staffing Agency team will contact you within 1 business day. Questions? Visit firstchoicehcmi.com.
 
 ## Step 5: Turn on email notifications
 1. Open your form's **Settings**.
