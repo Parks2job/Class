@@ -4,7 +4,7 @@ Time needed: about 30 minutes. Cost: free.
 
 Files you will upload (in the `Tally_Uploads` folder):
 - `Tally_Logo_400x400.png`: your heart logo
-- `Tally_Cover_1800x600.jpg`: banner photo for the top of the form
+- `Tally_Cover_1800x600.png`: banner photo for the top of the form
 
 Question wording is in `Caption_and_Form_Questions.md` (Part 2).
 
@@ -17,7 +17,7 @@ Question wording is in `Caption_and_Form_Questions.md` (Part 2).
 ## Step 2: Start the form and add your branding
 1. Click **Create form** and choose to start from a blank form.
 2. Type the title: **Get Paid to Care for Your Loved One**
-3. Hover over the title and click **Add cover**. Upload `Tally_Cover_1800x600.jpg`.
+3. Hover over the title and click **Add cover**. Upload `Tally_Cover_1800x600.png`.
 4. Hover over the title and click **Add logo**. Upload `Tally_Logo_400x400.png`.
 5. Under the title, type the intro text:
    > Thank you for your interest in First Choice Staffing Agency. Answer a few quick questions and our team will contact you to talk about next steps. This takes about 2 minutes.
