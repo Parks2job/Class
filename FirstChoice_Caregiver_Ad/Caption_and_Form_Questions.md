@@ -24,6 +24,35 @@
 
 ---
 
+## Part 1B: Caption for the second flyer ("Already Caring for a Family Member or Friend?")
+
+**Primary text**
+
+> Already caring for a family member or friend?
+>
+> If your loved one has Michigan Medicaid and needs assistance with bathing, dressing or other personal care tasks, you may qualify to become their paid caregiver through First Choice.
+>
+> - Starting caregiver pay: $17.13/hour
+> - Care for someone you know and love
+> - Get assistance with the Home Help application
+> - Receive support throughout the enrollment process
+>
+> Find out if you may qualify. Tap "Apply Now" and complete our quick 2-minute questionnaire.
+>
+> Questions? Call 989-890-1659 or visit firstchoicehcmi.com.
+>
+> Subject to MDHHS eligibility, service authorization and agency employment requirements. Compensation applies to authorized services.
+
+**Headline:** Already Caring for a Family Member or Friend?
+
+**Description:** Starting caregiver pay $17.13/hour. Michigan Home Help Program.
+
+**Button:** Apply Now
+
+**Images:** FirstChoice_Ad2_Feed_1080x1350.png and FirstChoice_Ad2_Story_1080x1920.png
+
+---
+
 ## Part 2: Tally form, question by question
 
 **Form title:** Get Paid to Care for Your Loved One
